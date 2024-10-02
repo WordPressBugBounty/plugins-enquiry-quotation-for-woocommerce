@@ -1,0 +1,225 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+ .pi-custom-button{
+     width:100%;
+     display:block !important;
+     margin-top:10px !important;
+     margin-bottom:10px !important;
+     text-align: center;
+     cursor:pointer;
+     padding:15px;
+ }
+
+ .pi-thumbnail img{
+    max-width:60px !important;
+ }
+
+ .pi-quantity{
+     max-width:70px;
+     text-align: center;
+ }
+
+ #pi-loading{
+     display:block;
+     width:100%;
+     height:100%;
+     position:absolute;
+     top:0;
+     left:0;
+     background:url(../img/loading.svg) rgba(0,0,0,0.2) no-repeat center center ;
+ }
+
+ .pi-attribute-label{
+     text-transform: capitalize;
+ }
+
+ .pi-row{
+     display:block;
+     padding:10px 0;
+ }
+
+ .pi-col-12{
+     width:100%;
+ }
+
+ .pi-form-control{
+     padding:10px;
+     width:100%;
+     display:block;
+     border:1px solid #ccc;
+     box-sizing: border-box;
+ }
+
+ .pi-btn{
+     padding:10px 20px;
+     background:#ee6443;
+     color:#fff;
+     border:0px;
+     cursor:pointer;
+ }
+
+ #pi_tandc-error{
+    position:absolute;
+    right:0;
+}
+
+label.error{
+    background-color:#F00 !important;
+    color:#fff !important;
+    padding:5px 10px;
+}
+
+#pi-eqw-enquiry-form{
+    clear:both;
+}
+
+.button.add-to-enquiry-loop{
+    margin:auto;
+    max-width:100%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .woocommerce table.shop_table_responsive thead,.woocommerce-page table.shop_table_responsive thead {
+        display: none
+    }
+    
+    .woocommerce table.shop_table_responsive tbody tr:first-child td:first-child,.woocommerce-page table.shop_table_responsive tbody tr:first-child td:first-child {
+        border-top: 0
+    }
+    
+    .woocommerce table.shop_table_responsive tbody th,.woocommerce-page table.shop_table_responsive tbody th {
+        display: none
+    }
+    
+    .woocommerce table.shop_table_responsive tr,.woocommerce-page table.shop_table_responsive tr {
+        display: block
+    }
+    
+    .woocommerce table.shop_table_responsive tr td,.woocommerce-page table.shop_table_responsive tr td {
+        display: block;
+        text-align: right!important
+    }
+    
+    .woocommerce table.shop_table_responsive tr td.order-actions,.woocommerce-page table.shop_table_responsive tr td.order-actions {
+        text-align: left!important
+    }
+    
+    .woocommerce table.shop_table_responsive tr td::before,.woocommerce-page table.shop_table_responsive tr td::before {
+        content: attr(data-title) ": ";
+        font-weight: 700;
+        float: left
+    }
+
+    .woocommerce table.shop_table_responsive tr td.product-thumbnail::before{
+        content:"" !important;
+    }
+    
+    .woocommerce table.shop_table_responsive tr td.actions::before,.woocommerce table.shop_table_responsive tr td.product-remove::before,.woocommerce-page table.shop_table_responsive tr td.actions::before,.woocommerce-page table.shop_table_responsive tr td.product-remove::before {
+        display: none
+    }
+    
+    .woocommerce table.shop_table_responsive tr:nth-child(2n) td,.woocommerce-page table.shop_table_responsive tr:nth-child(2n) td {
+        background-color: rgba(0,0,0,.025)
+    }
+    
+}
+
+/** New cart table css design so we can avoid conflicts with themes */
+.enquiry-cart-content-table{
+    width:100%;
+    border-spacing:0 15px;
+    border: 0px !important;
+    border: none !important;
+    border-collapse: collapse !important; 
+}
+
+.enquiry-cart-content-table td{
+    border:none !important;
+    border-bottom:1px solid #ccc !important;
+}
+
+.enquiry-cart-content-table th{
+    text-align:center;
+    padding:10px 0px;
+    background-color:#eee;
+    border:0 !important;
+}
+
+.enquiry-cart-content-table td{
+    text-align:center;
+}
+
+.enquiry-cart-content-table td textarea{
+    padding:5px 10px;
+    width:100%;
+    resize:none;
+    box-sizing: border-box;
+}
+
+.enquiry-cart-content-table .pi-eqw-product-thumb{
+    margin:auto;
+    max-width:100%;
+    height:auto;
+}
+
+.enquiry-cart-content-table .woocommerce-cart-form__cart-item td.product-name a{
+    text-decoration:none;
+}
+
+.enquiry-cart-content-table .woocommerce-cart-form__cart-item td{
+    padding:10px;
+}
+
+
+.pi-remove-product{
+    text-decoration:none;
+}
+
+@media(max-width:768px){
+
+    .enquiry-cart-content-table thead{
+        display:none;
+    }
+
+    .enquiry-cart-content-table .woocommerce-cart-form__cart-item{
+        display:flex;
+        flex-wrap:wrap;
+    }
+
+    .enquiry-cart-content-table .woocommerce-cart-form__cart-item td{
+        display:block;
+        width:100%;
+    }
+
+   .enquiry-cart-content-table .woocommerce-cart-form__cart-item td:not(.product-remove):not(.product-thumbnail):before {
+    content: attr(data-title) ": ";
+        font-weight: 700;
+        float: left;
+    }
+
+    .enquiry-cart-content-table .woocommerce-cart-form__cart-item td.product-remove{
+        width:50%;
+        text-align:left;
+    }
+    
+    .enquiry-cart-content-table .woocommerce-cart-form__cart-item td.product-thumbnail{
+        width:50%;
+    }
+    
+    .enquiry-cart-content-table .woocommerce-cart-form__cart-item td.product-thumbnail img{
+        margin-right:0;
+    }
+
+    .enquiry-cart-content-table .woocommerce-cart-form__cart-item td.product-name,  .enquiry-cart-content-table .woocommerce-cart-form__cart-item td.product-price, .enquiry-cart-content-table .woocommerce-cart-form__cart-item td.product-quantity{
+        text-align:right;
+    }
+
+    .enquiry-cart-content-table .woocommerce-cart-form__cart-item td.product-quantity input{
+        display:inline-block;
+        width:100px !important;
+    }
+}
+/** end of cart table design */

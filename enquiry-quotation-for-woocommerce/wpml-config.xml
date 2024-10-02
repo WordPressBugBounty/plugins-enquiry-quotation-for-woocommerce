@@ -1,0 +1,8 @@
+<wpml-config>
+    <admin-texts>
+        <key name="pi_eqw_enquiry_loop_button_text"/>
+        <key name="pi_eqw_enquiry_single_button_text"/>
+        <key name="pi_eqw_email_subject"/>
+        <key name="pi_eqw_enquiry_cart"/>
+    </admin-texts>
+</wpml-config>

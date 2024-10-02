@@ -1,0 +1,597 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Language: \n"
+"POT-Creation-Date: 2024-01-03 11:41+0000\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: admin/class-eqw-email.php:43 admin/class-eqw-email.php:51
+msgid "Above product table"
+msgstr ""
+
+#: admin/class-eqw-option.php:46 admin/class-eqw-option.php:67
+msgid "Add to Enquiry"
+msgstr ""
+
+#: admin/class-eqw-option.php:57
+msgid "After add to cart button"
+msgstr ""
+
+#: admin/class-eqw-advance.php:39
+msgid "After Add to enquiry click"
+msgstr ""
+
+#: admin/class-eqw-option.php:36
+msgid "After product title"
+msgstr ""
+
+#: admin/class-eqw-option.php:57
+msgid "After Summary"
+msgstr ""
+
+#: admin/class-eqw-option.php:36
+msgid "At the end of product"
+msgstr ""
+
+#: admin/class-eqw-option.php:36
+msgid "At the start of the product"
+msgstr ""
+
+#: admin/class-eqw-option.php:38 admin/class-eqw-option.php:59
+msgid "Background color"
+msgstr ""
+
+#: admin/class-eqw-option.php:38 admin/class-eqw-option.php:59
+msgid "Background color of the button on the shop / category page"
+msgstr ""
+
+#: admin/class-eqw-option.php:57
+msgid "Before add to cart button"
+msgstr ""
+
+#: admin/class-eqw-option.php:36
+msgid "Before product title"
+msgstr ""
+
+#: admin/class-eqw-option.php:57
+msgid "Before summary"
+msgstr ""
+
+#: admin/class-eqw-email.php:47 admin/class-eqw-email.php:55
+msgid "Below customer detail"
+msgstr ""
+
+#: admin/class-eqw-email.php:45 admin/class-eqw-email.php:53
+msgid "Below product table"
+msgstr ""
+
+#: pisol-enquiry-quotation-woocommerce.php:111
+msgid "Buy PRO Version"
+msgstr ""
+
+#: public/class-pisol-form.php:63
+#, php-format
+msgid "Cant leave %s empty"
+msgstr ""
+
+#: admin/class-eqw-email.php:49
+msgid "Custom message for admin email"
+msgstr ""
+
+#: admin/class-eqw-email.php:41
+msgid "Custom message for customer email"
+msgstr ""
+
+#: admin/class-eqw-enquiry.php:95
+msgid "Date"
+msgstr ""
+
+#: admin/class-eqw-advance.php:27
+msgid "Don't hide"
+msgstr ""
+
+#: admin/class-eqw-cart.php:27
+msgid "Dynamic Cart icon"
+msgstr ""
+
+#: admin/class-eqw-enquiry.php:91 public/partials/pisol-eqw-shortcode.php:25
+msgid "Email"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:27
+msgid "Email Field"
+msgstr ""
+
+#: admin/class-eqw-email.php:26
+msgid "Email id"
+msgstr ""
+
+#: admin/class-eqw-email.php:26
+msgid ""
+"Email id that will receive the enquiry, <strong class=\"text-danger\">In PRO "
+"version you can add multiple email separated with coma like this text@email."
+"com, text2@email.com </strong>"
+msgstr ""
+
+#: admin/class-eqw-cart.php:23
+msgid "Enable cart icon"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:33
+msgid "Enable Terms & Condition"
+msgstr ""
+
+#: admin/class-eqw-email.php:34
+msgid ""
+"Enable this option If product and logo image are not shown in the email or "
+"You dont want image attached in email"
+msgstr ""
+
+#: admin/class-eqw-email.php:34
+msgid ""
+"Enable this option only if you are having issue in seeing image inside the "
+"enquiry email or You dont want image to be send as attachment in the email"
+msgstr ""
+
+#: admin/class-eqw-enquiry.php:89
+msgid "Enq no."
+msgstr ""
+
+#: admin/class-eqw-option.php:30
+msgid "Enquiry button on category/show page"
+msgstr ""
+
+#: admin/class-eqw-option.php:28
+msgid "Enquiry button on shop / category page"
+msgstr ""
+
+#: admin/class-eqw-option.php:49 admin/class-eqw-option.php:51
+msgid "Enquiry button on single product page"
+msgstr ""
+
+#: admin/class-eqw-option.php:36
+msgid "Enquiry button position on show / category page"
+msgstr ""
+
+#: admin/class-eqw-advance.php:33
+msgid ""
+"Enquiry button position on show / category page, If you make some other page "
+"as Enquiry make sure to put the short code <strong>[pisol_enquiry_cart]"
+"</strong> on that page"
+msgstr ""
+
+#: admin/class-eqw-option.php:57
+msgid "Enquiry button position on single product page"
+msgstr ""
+
+#: admin/class-eqw-option.php:46 admin/class-eqw-option.php:67
+msgid "Enquiry button text"
+msgstr ""
+
+#: admin/class-pisol-enquiry-quotation-woocommerce-admin.php:61
+msgid "Enquiry Cart"
+msgstr ""
+
+#: public/partials/email-template-woo.php:300
+msgid "Enquiry no."
+msgstr ""
+
+#: admin/class-eqw-advance.php:42
+msgid "Enquiry popup settings"
+msgstr ""
+
+#: admin/class-eqw-advance.php:39
+msgid "Enquiry popup will get opened"
+msgstr ""
+
+#. Name of the plugin
+msgid "Enquiry Quotation for WooCommerce"
+msgstr ""
+
+#: public/class-pisol-form.php:46
+msgid "Enquiry submitted"
+msgstr ""
+
+#: admin/class-eqw-option.php:71
+msgid "Fall back to old position hook"
+msgstr ""
+
+#: admin/class-eqw-advance.php:27
+msgid "Hide for all"
+msgstr ""
+
+#: admin/class-eqw-advance.php:27
+msgid "Hide for non log-in users"
+msgstr ""
+
+#: admin/class-eqw-advance.php:25
+msgid "Hide if enquiry enabled"
+msgstr ""
+
+#: admin/class-eqw-advance.php:27
+msgid "Hide price"
+msgstr ""
+
+#. Author URI of the plugin
+msgid ""
+"https://www.piwebsolution.com/faq-for-woocommerce-product-enquiry-quotation/"
+msgstr ""
+
+#: admin/class-eqw-option.php:69
+msgid ""
+"If you notice change in enquiry button after upgrading to v2.1.2, then "
+"enable the below option to fall back to old way of position"
+msgstr ""
+
+#: admin/class-eqw-option.php:75
+msgid "Image is shown as loading image"
+msgstr ""
+
+#: admin/class-eqw-cart.php:25
+msgid "Insert icon using Short code [enquiry_cart_icon]"
+msgstr ""
+
+#: admin/class-eqw-email.php:39
+msgid "Logo added in the email"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:25
+msgid "Making enquiry form field as required."
+msgstr ""
+
+#: admin/class-eqw-enquiry.php:94 public/partials/pisol-eqw-shortcode.php:28
+msgid "Message"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:30
+msgid "Message Field"
+msgstr ""
+
+#: admin/class-eqw-enquiry.php:90 public/partials/pisol-eqw-shortcode.php:24
+msgid "Name"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:26
+msgid "Name Field"
+msgstr ""
+
+#: admin/class-eqw-option.php:34
+msgid "On shop / category product page"
+msgstr ""
+
+#: admin/class-eqw-option.php:55
+msgid "On single product page"
+msgstr ""
+
+#: admin/class-eqw-enquiry.php:92 public/partials/pisol-eqw-shortcode.php:26
+msgid "Phone"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:28
+msgid "Phone Field"
+msgstr ""
+
+#. Author of the plugin
+msgid "PI Websolution"
+msgstr ""
+
+#. URI of the plugin
+msgid "piwebsolution.com"
+msgstr ""
+
+#: public/class-pisol-form.php:138
+msgid "Please enter a valid email address"
+msgstr ""
+
+#: public/class-pisol-form.php:130
+msgid "Please enter only digits."
+msgstr ""
+
+#: pisol-enquiry-quotation-woocommerce.php:40
+msgid ""
+"Please Install and Activate WooCommerce plugin, without that this plugin "
+"cant work"
+msgstr ""
+
+#: admin/class-eqw-advance.php:46
+msgid "Popup title"
+msgstr ""
+
+#: admin/class-eqw-advance.php:48
+msgid "Popup Title Background color"
+msgstr ""
+
+#: admin/class-eqw-advance.php:50
+msgid "Popup Title text color"
+msgstr ""
+
+#: admin/class-eqw-option.php:36
+msgid "Position on shop/category page"
+msgstr ""
+
+#: admin/class-eqw-option.php:57
+msgid "Position on single product page"
+msgstr ""
+
+#: admin/class-eqw-option.php:73 admin/class-eqw-option.php:75
+msgid "Processing image"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Product enquiry and quotation plugin for WooCommerce that can save enquiry "
+"and email the enquiry as well"
+msgstr ""
+
+#: admin/class-eqw-advance.php:39
+msgid "Product will be added to enquiry cart only"
+msgstr ""
+
+#: admin/class-eqw-advance.php:35
+msgid "Redirect WooCommerce cart and checkout page to enquiry cart page"
+msgstr ""
+
+#: admin/class-eqw-advance.php:25
+msgid "Remove add to cart button"
+msgstr ""
+
+#: admin/class-eqw-advance.php:29
+msgid "Remove price columns from the enquiry cart and enquiry emails"
+msgstr ""
+
+#: admin/class-eqw-advance.php:31
+msgid ""
+"Remove product specific message columns from the enquiry cart and enquiry "
+"emails"
+msgstr ""
+
+#: admin/class-eqw-advance.php:33
+msgid "Select the page where to show the enquiry cart"
+msgstr ""
+
+#: admin/class-eqw-email.php:36
+msgid "Send enquiry email to customer as well"
+msgstr ""
+
+#: pisol-enquiry-quotation-woocommerce.php:110
+msgid "Settings"
+msgstr ""
+
+#: admin/class-eqw-option.php:32 admin/class-eqw-option.php:53
+msgid "Show button on Variable Product"
+msgstr ""
+
+#: admin/class-eqw-option.php:55
+msgid "Show enquiry option Only when product is out of stock"
+msgstr ""
+
+#: admin/class-eqw-option.php:34
+msgid "Show enquiry option only when product is out of stock"
+msgstr ""
+
+#: admin/class-eqw-email.php:30
+msgid ""
+"Show message as row in the email else it will be shown as a columns in the "
+"product row"
+msgstr ""
+
+#: admin/class-eqw-email.php:30
+msgid "Show product message as row in email"
+msgstr ""
+
+#: admin/class-eqw-advance.php:44
+msgid "Show products added in the inquiry cart in the popup"
+msgstr ""
+
+#: admin/class-eqw-advance.php:44
+msgid "Show products added to the enquiry cart in the popup"
+msgstr ""
+
+#: admin/class-eqw-enquiry.php:93 public/partials/pisol-eqw-shortcode.php:27
+msgid "Subject"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:29
+msgid "Subject Field"
+msgstr ""
+
+#: admin/class-eqw-email.php:28
+msgid "Subject of the email"
+msgstr ""
+
+#: admin/class-eqw-email.php:28
+msgid "subject of the email"
+msgstr ""
+
+#: admin/class-eqw-email.php:38
+msgid "Subject of the email to customer"
+msgstr ""
+
+#: admin/class-eqw-email.php:38
+msgid "Subject of the enquiry email send to customer"
+msgstr ""
+
+#: admin/class-eqw-advance.php:46 public/partials/pisol-eqw-shortcode.php:29
+msgid "Submit Enquiry"
+msgstr ""
+
+#: admin/class-eqw-advance.php:37
+msgid "Success message shown on form submission"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:32
+msgid "Terms & Condition option"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:34
+msgid "Terms and Condition Text"
+msgstr ""
+
+#: admin/class-eqw-option.php:40 admin/class-eqw-option.php:61
+msgid "Text color"
+msgstr ""
+
+#: admin/class-eqw-option.php:40 admin/class-eqw-option.php:61
+msgid "Text color of the button on the shop / category page"
+msgstr ""
+
+#: admin/class-eqw-option.php:46 admin/class-eqw-option.php:67
+msgid "Text shown in the enquiry button"
+msgstr ""
+
+#: public/partials/pisol-eqw-body.php:56
+msgid "There are no product added in the enquiry cart"
+msgstr ""
+
+#: public/class-pisol-form.php:134
+msgid "This field is required."
+msgstr ""
+
+#: admin/class-eqw-email.php:39
+msgid ""
+"This is the image that will be added inside the email copy, sed to you and "
+"the customer"
+msgstr ""
+
+#: admin/class-eqw-advance.php:37
+msgid ""
+"This is the message that is shown on successful submission of the enquiry"
+msgstr ""
+
+#: admin/class-eqw-email.php:43 admin/class-eqw-email.php:51
+msgid "This message will appear above the product table"
+msgstr ""
+
+#: admin/class-eqw-email.php:47 admin/class-eqw-email.php:55
+msgid "This message will appear below the customer detail table"
+msgstr ""
+
+#: admin/class-eqw-email.php:45 admin/class-eqw-email.php:53
+msgid "This message will appear below the product table"
+msgstr ""
+
+#: admin/class-eqw-cart.php:25
+msgid ""
+"This will allow you to insert the icon using shortcode [enquiry_cart_icon], "
+"when you enable this auto insertion will be disabled"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:34
+msgid "This will be the test shown next to the terms and condition text"
+msgstr ""
+
+#: admin/class-eqw-advance.php:27
+msgid ""
+"This will hide the price based on the selections, If price is hidden then "
+"the add to cart button will also be hidden"
+msgstr ""
+
+#: admin/class-eqw-advance.php:35
+msgid ""
+"This will redirect all the traffic on cart and checkout page to enquiry cart "
+"page"
+msgstr ""
+
+#: admin/class-eqw-advance.php:25
+msgid ""
+"This will remove the add to cart button from website<br>Dont Hide<br>Hide "
+"for All Products<br>Hide for product which has enquiry enabled"
+msgstr ""
+
+#: admin/class-eqw-advance.php:31
+msgid ""
+"This will remove the message columns from the cart page and enquiry emails"
+msgstr ""
+
+#: admin/class-eqw-advance.php:29
+msgid ""
+"This will remove the price columns from the cart page and enquiry emails"
+msgstr ""
+
+#: admin/class-eqw-cart.php:23
+msgid ""
+"This will show a dynamically updating cart button on each page in the corner"
+msgstr ""
+
+#: admin/class-eqw-option.php:30
+msgid "This will show enquiry button on loop product like shop, category page"
+msgstr ""
+
+#: admin/class-eqw-option.php:51
+msgid "This will show enquiry button on single product page"
+msgstr ""
+
+#: admin/class-eqw-option.php:32 admin/class-eqw-option.php:53
+msgid "This will show enquiry button on variable product"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:33
+msgid ""
+"This will show the terms and condition selection option on the enquiry form, "
+"user must select this option to submit the enquiry"
+msgstr ""
+
+#: admin/class-eqw-advance.php:48
+msgid "Title background color"
+msgstr ""
+
+#: admin/class-eqw-advance.php:46
+msgid "Title shown above the popup"
+msgstr ""
+
+#: admin/class-eqw-advance.php:50
+msgid "Title text color"
+msgstr ""
+
+#: public/partials/pisol-eqw-body.php:47
+msgid "Update enquiry"
+msgstr ""
+
+#: admin/class-eqw-email.php:32
+msgid "Use WooCommerce email template"
+msgstr ""
+
+#: admin/class-eqw-email.php:32
+msgid ""
+"Use Woocommerce email template all the colors will be as per woocommerce "
+"email template "
+msgstr ""
+
+#: admin/class-eqw-advance.php:39
+msgid "User will be redirected to enquiry cart page once product is added"
+msgstr ""
+
+#: public/class-pisol-enquiry-quotation-woocommerce-public.php:67
+msgid "View Enquiry Cart"
+msgstr ""
+
+#: admin/class-eqw-option.php:71
+msgid ""
+"We have changed the single product page hook in v2.1.2 this is done to "
+"improve compatibility, but if you face any issue like enquiry button not "
+"showing after upgrading to v2.1.2 then enable this option to fall back to "
+"old hook"
+msgstr ""
+
+#: admin/class-eqw-advance.php:39
+msgid ""
+"What happen when user click on add to enquiry (Product will be added to the "
+"enquiry cart in all the 3 cases),<br>\n"
+"            Redirect to cart page<br>Open cart page in popup"
+msgstr ""
+
+#: admin/class-eqw-email.php:36
+msgid "Will send the enquiry email copy to customer as well"
+msgstr ""
+
+#: pisol-enquiry-quotation-woocommerce.php:53
+msgid ""
+"You have the PRO version of Enquiry plugin active, deactivate it then you "
+"can use free version"
+msgstr ""
+
+#: public/class-email.php:28
+msgid "Your enquiry is submitted, your enquiry no is {enquiry_no}"
+msgstr ""
