@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.6.1
-Stable tag: 2.2.33.34
+Stable tag: 2.2.33.36
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -222,6 +222,9 @@ Pro version has a setting using that you can make the enquiry form two column la
 Yes, Go to Advance option tab and there you can insert your webhook url, so when the enquiry is submitted the data will be sent to that webhook url in json format (Zapier, Pabbly Connect, Microsoft Power Automate, Workato, Tray.io, etc)
 
 == Changelog ==
+
+= 2.2.33.36 =
+* Tested for WC 9.3.0
 
 = 2.2.33.34 =
 * bug fix done 
