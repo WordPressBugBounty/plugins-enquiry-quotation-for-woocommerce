@@ -55,6 +55,17 @@ class class_pisol_form{
     }
 
     function required($item){
+        $enable_honey_pot = get_option('pi_eqw_enable_honeypot', 1);
+
+        if(!empty($enable_honey_pot) && $item['type'] == 'honeypot'){
+            if(isset($_POST[$item['name']]) && $_POST[$item['name']] != ""){
+                $this->errors[] = array(
+                    'error'=> sprintf(__('Form submitted','pisol-enquiry-quotation-woocommerce'))
+                );
+                $this->clearSession();
+            }
+        }
+
         if(isset($item['required']) && $item['required'] == 'required'){
             if(isset($_POST[$item['name']]) && $_POST[$item['name']] != ""){
                 return true;
@@ -207,4 +218,10 @@ class class_pisol_form{
         echo '</div>';
         echo '</div>';
     }
+
+    function honeypot($item){
+        $field = '<span style="display:none; visibility:hidden;"><input type="text" name="'.esc_attr($item['name']).'" style="display:none;"/></span>';
+
+        echo $field;
+     }
 }

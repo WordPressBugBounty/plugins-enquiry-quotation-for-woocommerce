@@ -32,6 +32,12 @@ $items = array(
 	array('type'=>'textarea', 'name'=>'pi_message', 'required'=>'required', 'placeholder'=>__('Message','pisol-enquiry-quotation-woocommerce')),
 	array('type'=>'submit', 'name'=>'pi_submit',  'value'=>__('Submit Enquiry','pisol-enquiry-quotation-woocommerce')),
 );
+
+$honey_pot = get_option('pi_eqw_enable_honeypot', 1);
+if(!empty($honey_pot)){
+	$items[] = array('type'=>'honeypot', 'name'=>'name_yenoh');
+}
+
 new class_pisol_form($items); 
 ?>
 </div>

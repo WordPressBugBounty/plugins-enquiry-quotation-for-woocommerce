@@ -33,6 +33,8 @@ class Class_Pi_Eqw_Email{
 
             array('field'=>'pi_enq_add_img_url', 'label'=>__('Enable this option If product and logo image are not shown in the email or You dont want image attached in email','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=>0, 'desc'=>__('Enable this option only if you are having issue in seeing image inside the enquiry email or You dont want image to be send as attachment in the email','pisol-enquiry-quotation-woocommerce')),
 
+            array('field'=>'pi_eqw_enable_honeypot', 'label'=>__('Use honeypot for spam protection','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=> 1, 'desc'=>__('This will add an hidden field which user will not fill but spam bot will fill and so the form will not be submitted','pisol-enquiry-quotation-woocommerce')),
+
             array('field'=>'pi_eqw_email_to_customer', 'label'=>__('Send enquiry email to customer as well','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=>1, 'desc'=>__('Will send the enquiry email copy to customer as well','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
             array('field'=>'pi_eqw_customer_email_subject', 'label'=>__('Subject of the email to customer','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('Your enquiry is submitted'),  'desc'=>__('Subject of the enquiry email send to customer', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
