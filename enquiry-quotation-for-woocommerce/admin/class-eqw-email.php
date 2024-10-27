@@ -35,6 +35,8 @@ class Class_Pi_Eqw_Email{
 
             array('field'=>'pi_eqw_enable_honeypot', 'label'=>__('Use honeypot for spam protection','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=> 1, 'desc'=>__('This will add an hidden field which user will not fill but spam bot will fill and so the form will not be submitted','pisol-enquiry-quotation-woocommerce')),
 
+            array('field'=>'pi_eqw_captcha', 'label'=>__('Use captcha','pisol-enquiry-quotation-woocommerce'),'type'=>'select','default'=> '', 'desc'=>__('Select the type of captcha to add','pisol-enquiry-quotation-woocommerce'), 'value'=> array(''=>'None','captcha'=>__('Captcha','pisol-enquiry-quotation-woocommerce'))),
+
             array('field'=>'pi_eqw_email_to_customer', 'label'=>__('Send enquiry email to customer as well','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=>1, 'desc'=>__('Will send the enquiry email copy to customer as well','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
             array('field'=>'pi_eqw_customer_email_subject', 'label'=>__('Subject of the email to customer','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('Your enquiry is submitted'),  'desc'=>__('Subject of the enquiry email send to customer', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
@@ -76,7 +78,20 @@ class Class_Pi_Eqw_Email{
             $this->delete_settings();
         }
 
-        
+        add_action( 'admin_notices', [$this, 'library_warning'] );
+    }
+
+    function library_warning(){
+        $captcha = get_option('pi_eqw_captcha');
+        if(!\PISOL_ENQ_CaptchaGenerator::image_library_available() && $captcha == 'captcha'){
+            ?>
+            <div class="notice notice-error is-dismissible">
+                <h3>Enquiry form Captcha issue</h3>
+                <p>Captcha requires an image generation module, but neither GD nor Imagick is installed on your server. Please install one of these PHP libraries for Captcha to work, or disable the Captcha setting by visiting the settings page <a href="<?php echo esc_url(admin_url('admin.php?page=pisol-enquiry-quote&tab=email#row_pi_eqw_captcha')); ?>" target="_blank">here</a></p>
+                
+            </div>
+            <?php
+        }
     }
 
     

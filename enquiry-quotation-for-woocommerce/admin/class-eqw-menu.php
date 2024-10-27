@@ -85,7 +85,7 @@ class Pi_Eqw_Menu{
         if(isset($_GET['tab']) &&  $_GET['tab'] == 'form_control') return;
         ?>
         <div class="col-12 col-sm-12 col-md-4 pt-3">
-            <a href="javascript:void(0)" class="btn btn-primary btn-sm mr-2" id="hid-pro-feature">Hide Pro Feature</a>
+            <a href="javascript:void(0)" class="btn btn-primary btn-sm mr-2 mb-2" id="hid-pro-feature">Hide Pro Feature</a>
             <div class="bg-primary  text-center mb-3">
                 <a class="" href="<?php echo esc_url( PI_EQW_BUY_URL ); ?>" target="_blank">
                 <?php new pisol_promotion('pisol_enquiry_installation_date'); ?>

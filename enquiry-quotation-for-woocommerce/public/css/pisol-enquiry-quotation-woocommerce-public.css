@@ -40,6 +40,15 @@
      padding:10px 0;
  }
 
+ .pi-row-flex{
+    display:flex;
+    padding:10px 0;
+ }
+
+ .pi-col-4{
+    width:33%;
+ }
+
  .pi-col-12{
      width:100%;
  }
@@ -223,3 +232,29 @@ label.error{
     }
 }
 /** end of cart table design */
+
+#refresh-captcha{
+    cursor:pointer;
+    display:inline-block;
+    margin-left:10px;
+    width:30px;
+    height:30px;
+}
+
+.captcha-image-container{
+    display:flex;
+    align-items:center;
+}
+
+.library-error{
+    display: block;
+    padding:10px;
+    background:#f00;
+    color:#fff;
+    border-radius: 10px;
+}
+
+#captcha-image{
+    border:1px solid #ccc;
+    margin-left:10px;
+}

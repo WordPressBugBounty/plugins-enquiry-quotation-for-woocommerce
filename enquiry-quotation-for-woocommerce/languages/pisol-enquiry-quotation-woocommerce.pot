@@ -2,17 +2,21 @@
 msgid ""
 msgstr ""
 "Language: \n"
-"POT-Creation-Date: 2024-01-03 11:41+0000\n"
+"POT-Creation-Date: 2024-10-27 01:54+0000\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: admin/class-eqw-email.php:43 admin/class-eqw-email.php:51
+#: admin/class-eqw-email.php:47 admin/class-eqw-email.php:55
 msgid "Above product table"
 msgstr ""
 
 #: admin/class-eqw-option.php:46 admin/class-eqw-option.php:67
 msgid "Add to Enquiry"
+msgstr ""
+
+#: admin/class-eqw-advance.php:106
+msgid "Advance option"
 msgstr ""
 
 #: admin/class-eqw-option.php:57
@@ -59,11 +63,11 @@ msgstr ""
 msgid "Before summary"
 msgstr ""
 
-#: admin/class-eqw-email.php:47 admin/class-eqw-email.php:55
+#: admin/class-eqw-email.php:51 admin/class-eqw-email.php:59
 msgid "Below customer detail"
 msgstr ""
 
-#: admin/class-eqw-email.php:45 admin/class-eqw-email.php:53
+#: admin/class-eqw-email.php:49 admin/class-eqw-email.php:57
 msgid "Below product table"
 msgstr ""
 
@@ -71,16 +75,32 @@ msgstr ""
 msgid "Buy PRO Version"
 msgstr ""
 
-#: public/class-pisol-form.php:63
+#: public/class-pisol-form.php:88
 #, php-format
 msgid "Cant leave %s empty"
 msgstr ""
 
-#: admin/class-eqw-email.php:49
+#: admin/class-eqw-email.php:38
+msgid "Captcha"
+msgstr ""
+
+#: public/class-pisol-form.php:78
+msgid "Captcha cant be left empty"
+msgstr ""
+
+#: public/class-pisol-form.php:73
+msgid "Captcha code does not match"
+msgstr ""
+
+#: includes/class-php-captcha.php:89
+msgid "Change captcha image"
+msgstr ""
+
+#: admin/class-eqw-email.php:53
 msgid "Custom message for admin email"
 msgstr ""
 
-#: admin/class-eqw-email.php:41
+#: admin/class-eqw-email.php:45
 msgid "Custom message for customer email"
 msgstr ""
 
@@ -92,11 +112,15 @@ msgstr ""
 msgid "Don't hide"
 msgstr ""
 
+#: admin/class-eqw-cart.php:73
+msgid "Dynamic Cart (PRO)"
+msgstr ""
+
 #: admin/class-eqw-cart.php:27
 msgid "Dynamic Cart icon"
 msgstr ""
 
-#: admin/class-eqw-enquiry.php:91 public/partials/pisol-eqw-shortcode.php:25
+#: admin/class-eqw-enquiry.php:91 public/partials/pisol-eqw-shortcode.php:29
 msgid "Email"
 msgstr ""
 
@@ -113,6 +137,10 @@ msgid ""
 "Email id that will receive the enquiry, <strong class=\"text-danger\">In PRO "
 "version you can add multiple email separated with coma like this text@email."
 "com, text2@email.com </strong>"
+msgstr ""
+
+#: admin/class-eqw-email.php:101
+msgid "Email setting"
 msgstr ""
 
 #: admin/class-eqw-cart.php:23
@@ -137,6 +165,10 @@ msgstr ""
 
 #: admin/class-eqw-enquiry.php:89
 msgid "Enq no."
+msgstr ""
+
+#: admin/class-eqw-option.php:125
+msgid "Enquiry Button"
 msgstr ""
 
 #: admin/class-eqw-option.php:30
@@ -178,7 +210,7 @@ msgstr ""
 msgid "Enquiry no."
 msgstr ""
 
-#: admin/class-eqw-advance.php:42
+#: admin/class-eqw-advance.php:46
 msgid "Enquiry popup settings"
 msgstr ""
 
@@ -194,8 +226,20 @@ msgstr ""
 msgid "Enquiry submitted"
 msgstr ""
 
+#: includes/class-php-captcha.php:85
+msgid "Enter captcha code"
+msgstr ""
+
 #: admin/class-eqw-option.php:71
 msgid "Fall back to old position hook"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:75
+msgid "Form builder (PRO)"
+msgstr ""
+
+#: public/class-pisol-form.php:63
+msgid "Form submitted"
 msgstr ""
 
 #: admin/class-eqw-advance.php:27
@@ -225,6 +269,12 @@ msgid ""
 "enable the below option to fall back to old way of position"
 msgstr ""
 
+#: includes/class-php-captcha.php:78
+msgid ""
+"Image generation module not installed in your server, make sure to install "
+"GD or Imagick library for PHP"
+msgstr ""
+
 #: admin/class-eqw-option.php:75
 msgid "Image is shown as loading image"
 msgstr ""
@@ -233,7 +283,14 @@ msgstr ""
 msgid "Insert icon using Short code [enquiry_cart_icon]"
 msgstr ""
 
-#: admin/class-eqw-email.php:39
+#: admin/class-eqw-advance.php:44
+msgid ""
+"Insert webhook url where the enquiry data will send send, you can insert "
+"webhook url of zapier or Pabbly or any other platform that support webhook "
+"url"
+msgstr ""
+
+#: admin/class-eqw-email.php:43
 msgid "Logo added in the email"
 msgstr ""
 
@@ -241,7 +298,7 @@ msgstr ""
 msgid "Making enquiry form field as required."
 msgstr ""
 
-#: admin/class-eqw-enquiry.php:94 public/partials/pisol-eqw-shortcode.php:28
+#: admin/class-eqw-enquiry.php:94 public/partials/pisol-eqw-shortcode.php:32
 msgid "Message"
 msgstr ""
 
@@ -249,7 +306,7 @@ msgstr ""
 msgid "Message Field"
 msgstr ""
 
-#: admin/class-eqw-enquiry.php:90 public/partials/pisol-eqw-shortcode.php:24
+#: admin/class-eqw-enquiry.php:90 public/partials/pisol-eqw-shortcode.php:28
 msgid "Name"
 msgstr ""
 
@@ -265,7 +322,7 @@ msgstr ""
 msgid "On single product page"
 msgstr ""
 
-#: admin/class-eqw-enquiry.php:92 public/partials/pisol-eqw-shortcode.php:26
+#: admin/class-eqw-enquiry.php:92 public/partials/pisol-eqw-shortcode.php:30
 msgid "Phone"
 msgstr ""
 
@@ -281,11 +338,11 @@ msgstr ""
 msgid "piwebsolution.com"
 msgstr ""
 
-#: public/class-pisol-form.php:138
+#: public/class-pisol-form.php:163
 msgid "Please enter a valid email address"
 msgstr ""
 
-#: public/class-pisol-form.php:130
+#: public/class-pisol-form.php:155
 msgid "Please enter only digits."
 msgstr ""
 
@@ -295,15 +352,15 @@ msgid ""
 "cant work"
 msgstr ""
 
-#: admin/class-eqw-advance.php:46
+#: admin/class-eqw-advance.php:50
 msgid "Popup title"
 msgstr ""
 
-#: admin/class-eqw-advance.php:48
+#: admin/class-eqw-advance.php:52
 msgid "Popup Title Background color"
 msgstr ""
 
-#: admin/class-eqw-advance.php:50
+#: admin/class-eqw-advance.php:54
 msgid "Popup Title text color"
 msgstr ""
 
@@ -351,7 +408,11 @@ msgstr ""
 msgid "Select the page where to show the enquiry cart"
 msgstr ""
 
-#: admin/class-eqw-email.php:36
+#: admin/class-eqw-email.php:38
+msgid "Select the type of captcha to add"
+msgstr ""
+
+#: admin/class-eqw-email.php:40
 msgid "Send enquiry email to customer as well"
 msgstr ""
 
@@ -381,15 +442,15 @@ msgstr ""
 msgid "Show product message as row in email"
 msgstr ""
 
-#: admin/class-eqw-advance.php:44
+#: admin/class-eqw-advance.php:48
 msgid "Show products added in the inquiry cart in the popup"
 msgstr ""
 
-#: admin/class-eqw-advance.php:44
+#: admin/class-eqw-advance.php:48
 msgid "Show products added to the enquiry cart in the popup"
 msgstr ""
 
-#: admin/class-eqw-enquiry.php:93 public/partials/pisol-eqw-shortcode.php:27
+#: admin/class-eqw-enquiry.php:93 public/partials/pisol-eqw-shortcode.php:31
 msgid "Subject"
 msgstr ""
 
@@ -405,15 +466,15 @@ msgstr ""
 msgid "subject of the email"
 msgstr ""
 
-#: admin/class-eqw-email.php:38
+#: admin/class-eqw-email.php:42
 msgid "Subject of the email to customer"
 msgstr ""
 
-#: admin/class-eqw-email.php:38
+#: admin/class-eqw-email.php:42
 msgid "Subject of the enquiry email send to customer"
 msgstr ""
 
-#: admin/class-eqw-advance.php:46 public/partials/pisol-eqw-shortcode.php:29
+#: admin/class-eqw-advance.php:50 public/partials/pisol-eqw-shortcode.php:45
 msgid "Submit Enquiry"
 msgstr ""
 
@@ -445,11 +506,11 @@ msgstr ""
 msgid "There are no product added in the enquiry cart"
 msgstr ""
 
-#: public/class-pisol-form.php:134
+#: public/class-pisol-form.php:159
 msgid "This field is required."
 msgstr ""
 
-#: admin/class-eqw-email.php:39
+#: admin/class-eqw-email.php:43
 msgid ""
 "This is the image that will be added inside the email copy, sed to you and "
 "the customer"
@@ -460,16 +521,22 @@ msgid ""
 "This is the message that is shown on successful submission of the enquiry"
 msgstr ""
 
-#: admin/class-eqw-email.php:43 admin/class-eqw-email.php:51
+#: admin/class-eqw-email.php:47 admin/class-eqw-email.php:55
 msgid "This message will appear above the product table"
 msgstr ""
 
-#: admin/class-eqw-email.php:47 admin/class-eqw-email.php:55
+#: admin/class-eqw-email.php:51 admin/class-eqw-email.php:59
 msgid "This message will appear below the customer detail table"
 msgstr ""
 
-#: admin/class-eqw-email.php:45 admin/class-eqw-email.php:53
+#: admin/class-eqw-email.php:49 admin/class-eqw-email.php:57
 msgid "This message will appear below the product table"
+msgstr ""
+
+#: admin/class-eqw-email.php:36
+msgid ""
+"This will add an hidden field which user will not fill but spam bot will "
+"fill and so the form will not be submitted"
 msgstr ""
 
 #: admin/class-eqw-cart.php:25
@@ -533,20 +600,28 @@ msgid ""
 "user must select this option to submit the enquiry"
 msgstr ""
 
-#: admin/class-eqw-advance.php:48
+#: admin/class-eqw-advance.php:52
 msgid "Title background color"
 msgstr ""
 
-#: admin/class-eqw-advance.php:46
+#: admin/class-eqw-advance.php:50
 msgid "Title shown above the popup"
 msgstr ""
 
-#: admin/class-eqw-advance.php:50
+#: admin/class-eqw-advance.php:54
 msgid "Title text color"
 msgstr ""
 
 #: public/partials/pisol-eqw-body.php:47
 msgid "Update enquiry"
+msgstr ""
+
+#: admin/class-eqw-email.php:38
+msgid "Use captcha"
+msgstr ""
+
+#: admin/class-eqw-email.php:36
+msgid "Use honeypot for spam protection"
 msgstr ""
 
 #: admin/class-eqw-email.php:32
@@ -575,6 +650,14 @@ msgid ""
 "old hook"
 msgstr ""
 
+#: admin/class-eqw-advance.php:42
+msgid "Webhook Integration"
+msgstr ""
+
+#: admin/class-eqw-advance.php:44
+msgid "Webhook url"
+msgstr ""
+
 #: admin/class-eqw-advance.php:39
 msgid ""
 "What happen when user click on add to enquiry (Product will be added to the "
@@ -582,7 +665,7 @@ msgid ""
 "            Redirect to cart page<br>Open cart page in popup"
 msgstr ""
 
-#: admin/class-eqw-email.php:36
+#: admin/class-eqw-email.php:40
 msgid "Will send the enquiry email copy to customer as well"
 msgstr ""
 

@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.6.1
-Stable tag: 2.2.33.37
+Stable tag: 2.2.33.39
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,8 @@ Using this Product enquiry for WooCommerce plugin customer will be able to send 
 * Option to disable logo in enquiry email
 * Enquiry cart page is auto created during installation of the plugin, but if you want you can change the page, you can show enquiry cart in any page using the short code  **[pisol_enquiry_cart]**, Make sure to select the page in the advance option as enquiry page
 * Pass the enquiry data to webhook so you can use that data in zapier, and other platform that support webhook
+* **Honeypot** for spam protection
+* **Captcha** for spam protection
 
 = PRO =
 * Support **variable products**
@@ -221,7 +223,13 @@ Pro version has a setting using that you can make the enquiry form two column la
 = Can I send the enquiry data to zapier in Free version =
 Yes, Go to Advance option tab and there you can insert your webhook url, so when the enquiry is submitted the data will be sent to that webhook url in json format (Zapier, Pabbly Connect, Microsoft Power Automate, Workato, Tray.io, etc)
 
+= Is there anything for spam protection =
+Protect your enquiry form from spam by using CAPTCHA, which requires users to complete a simple test, or a honeypot, an invisible field that bots will fill but humans will ignore. Both methods help reduce automated submissions, ensuring only real users can submit the form.
+
 == Changelog ==
+
+= 2.2.33.39 =
+* Captcha added for enquiry form
 
 = 2.2.33.37 =
 * Honeypot added

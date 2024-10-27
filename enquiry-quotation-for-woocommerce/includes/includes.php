@@ -3,6 +3,7 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/pisol.class.form
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/pisol.class.promotion.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/review.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/conflict-fixer.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-php-captcha.php';
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-eqw-menu.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-eqw-enquiry.php';

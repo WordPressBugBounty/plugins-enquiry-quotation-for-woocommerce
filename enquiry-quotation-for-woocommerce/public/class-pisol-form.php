@@ -66,6 +66,20 @@ class class_pisol_form{
             }
         }
 
+        if($item['type'] == 'captcha' && PISOL_ENQ_CaptchaGenerator::captcha_enabled()){
+            if(isset($_POST['captcha_input'])){
+                if( !PISOL_ENQ_CaptchaGenerator::validateCaptcha($_POST['captcha_input']) ){
+                    $this->errors[] = array(
+                        'error'=> __('Captcha code does not match','pisol-enquiry-quotation-woocommerce')
+                    );
+                }
+            }else{
+                $this->errors[] = array(
+                    'error'=> __('Captcha cant be left empty','pisol-enquiry-quotation-woocommerce')
+                );
+            }
+        }
+
         if(isset($item['required']) && $item['required'] == 'required'){
             if(isset($_POST[$item['name']]) && $_POST[$item['name']] != ""){
                 return true;
@@ -223,5 +237,10 @@ class class_pisol_form{
         $field = '<span style="display:none; visibility:hidden;"><input type="text" name="'.esc_attr($item['name']).'" style="display:none;"/></span>';
 
         echo $field;
-     }
+    }
+
+    function captcha(){
+        $obj = PISOL_ENQ_CaptchaGenerator::getInstance();
+        echo $obj->addCaptchaField();
+    }
 }
