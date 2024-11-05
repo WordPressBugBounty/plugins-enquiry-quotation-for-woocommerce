@@ -19,13 +19,13 @@ class PISOL_ENQ_CaptchaGenerator{
         return self::$instance;
     }
 
-    public function __construct($width = 200, $height = 50, $captchaLength = 6, $fontPath = 'Arial.ttf')
+    public function __construct($width = 200, $height = 50, $captchaLength = 6, $fontPath = 'ARIAL.TTF')
     {
         
         $this->width = $width;
         $this->height = $height;
         $this->captchaLength = $captchaLength;
-        $this->fontPath = $fontPath;
+        $this->fontPath = __DIR__.'/'.$fontPath;
 
         // Check for GD and Imagick availability
         if (extension_loaded('gd')) {
