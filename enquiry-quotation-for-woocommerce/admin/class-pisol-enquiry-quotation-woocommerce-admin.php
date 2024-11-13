@@ -50,8 +50,6 @@ class Pisol_Enquiry_Quotation_Woocommerce_Admin {
 
 	public function enqueue_scripts() {
 
-		
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/pisol-enquiry-quotation-woocommerce-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
