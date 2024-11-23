@@ -67,14 +67,14 @@ class class_pisol_form{
         }
 
         if($item['type'] == 'captcha' && PISOL_ENQ_CaptchaGenerator::captcha_enabled()){
-            if(isset($_POST['captcha_input'])){
-                if( !PISOL_ENQ_CaptchaGenerator::validateCaptcha($_POST['captcha_input']) ){
-                    $this->errors[] = array(
+            if(isset($_POST['captcha_field']) && !empty($_POST['captcha_field'])){
+                if( !PISOL_ENQ_CaptchaGenerator::validateCaptcha($_POST['captcha_field']) ){
+                    $this->errors['captcha-error'] = array(
                         'error'=> __('Captcha code does not match','pisol-enquiry-quotation-woocommerce')
                     );
                 }
             }else{
-                $this->errors[] = array(
+                $this->errors['captcha-error'] = array(
                     'error'=> __('Captcha cant be left empty','pisol-enquiry-quotation-woocommerce')
                 );
             }
@@ -123,14 +123,14 @@ class class_pisol_form{
     function error(){
         $error_msg = "";
         if(is_array($this->errors) && count($this->errors) > 0){
-            foreach($this->errors as $error){
-                $error_msg .= $error['error'].'<br>';
+            foreach($this->errors as $key => $error){
+                $error_msg .= '<li data-error-id="'.esc_attr($key).'">'.esc_html($error['error']).'</li>';
             }
         }
 
         if($error_msg  != ""){
             echo '<div class="woocommerce-notices-wrapper">';
-            echo '<div class="woocommerce-message">';
+            echo '<div class="woocommerce-error">';
             echo wp_kses_post( $error_msg );
             echo '</div>';
             echo '</div>';
@@ -240,7 +240,6 @@ class class_pisol_form{
     }
 
     function captcha(){
-        $obj = PISOL_ENQ_CaptchaGenerator::getInstance();
-        echo $obj->addCaptchaField();
+        do_action('pi_eqw_add_captcha_field');
     }
 }

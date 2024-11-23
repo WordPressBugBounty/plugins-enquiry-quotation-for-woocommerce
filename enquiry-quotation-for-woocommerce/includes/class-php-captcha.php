@@ -1,143 +1,124 @@
-<?php
+<?php 
 
 class PISOL_ENQ_CaptchaGenerator{
 
-    private $width;
-    private $height;
-    private $captchaLength;
-    private $fontPath;
-    private $captchaCode;
-    private $useGD;
+    static $instance = null;
 
-    public static $instance = null;
+    private $useGD = false;
 
-    public static function getInstance()
-    {
-        if (null === self::$instance) {
+    private $width = 200;
+
+    private $height = 50;
+
+    private $fontPath = '';
+
+    private $captchaLength = 6;
+
+    static function get_instance() {
+        if ( is_null( self::$instance ) ) {
             self::$instance = new self();
         }
         return self::$instance;
     }
 
-    public function __construct($width = 200, $height = 50, $captchaLength = 6, $fontPath = 'ARIAL.TTF')
-    {
-        
-        $this->width = $width;
-        $this->height = $height;
-        $this->captchaLength = $captchaLength;
-        $this->fontPath = __DIR__.'/'.$fontPath;
+    public function __construct() {
 
-        // Check for GD and Imagick availability
+
+        if(! self::captcha_enabled() ) return;
+
         if (extension_loaded('gd')) {
             $this->useGD = 'gd';
         } elseif (extension_loaded('imagick')) {
             $this->useGD = 'imagick';
-        } else {
-            $this->useGD = false;
         }
 
-        // Hook to enqueue scripts
+        if($this->useGD === false) {
+            add_action( 'admin_notices', function(){
+                ?>
+                <div class="error notice">
+                    <p><?php esc_html_e( 'Image generation module not installed in your server, make sure to install GD or Imagick library for PHP to use Captcha for checkout page', 'pi-dcw' ); ?></p>
+                </div>
+                <?php
+            } );
+            return;
+        }
+
+        $this->fontPath = __DIR__.'/ARIAL.TTF';
+
+        $this->captchaLength = $this->get_captcha_length();
+
+        $this->width = $this->captcha_width();
+
+
+        add_action('pi_eqw_add_captcha_field', [$this, 'custom_checkout_captcha_field']);
+
+        add_action('wc_ajax_pi_enq_generate_captcha', [$this, 'send_generated_captcha_image']);
+        add_action('wc_ajax_pi_enq_refresh_captcha', [$this, 'refreshCaptcha']);
+
         add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
-
-        // Register AJAX actions
-        add_action('wc_ajax_generate_captcha', [$this, 'generateCaptcha']);
-        add_action('wc_ajax_refresh_captcha', [$this, 'refreshCaptcha']);
-
+        
     }
 
-    static function image_library_available()
-    {
-        $instance = self::getInstance();
-        return $instance->useGD !== false;
+
+    public function custom_checkout_captcha_field() {
+
+        $placeholder = $this->get_captcha_placeholder();
+        $refresh_title = $this->get_refresh_captcha_title();
+
+        echo '<div id="pi_enq_captcha_container">';
+        echo '<div id="pi_enq_captcha">';
+        echo '<input type="text" name="captcha_field" id="captcha_field" class="input-text" required placeholder="'.esc_attr($placeholder).'">';
+        echo '<div class="captcha_image_container">';
+        echo '<img src="' . esc_url( site_url('?wc-ajax=pi_enq_generate_captcha') ) . '" alt="CAPTCHA" id="captcha_image">';
+        echo '</div>';
+        echo '<a href="#" id="refresh_captcha" title="'.esc_attr($refresh_title).'"><img src="'.esc_url(plugin_dir_url( __FILE__ ).'img/refresh.svg').'" id="captcha_refresh_icon">.</a>';
+        echo '</div>';
+        echo '<label id="captcha_field-error" class="error" for="captcha_field"></label>';
+        echo '</div>';
     }
 
-    public function enqueueScripts()
-    {
-        // Enqueue jQuery (if it's not already loaded)
-        wp_enqueue_script('jquery');
 
-        // Inline script for refreshing CAPTCHA
-        $script = "
-        jQuery(document).ready(function ($) {
-            $(document).on('click','#refresh-captcha', function () {
-                $.get('" .home_url('?wc-ajax=refresh_captcha'). "', function (data) {
-                    $('#captcha-image').attr('src', data); // Update image src with new data URL
-                }).fail(function () {
-                    console.error('Error refreshing CAPTCHA');
-                });
-            });
-        });
-        ";
 
-        wp_add_inline_script('jquery', $script);
-    }
-
-    public function addCaptchaField(){
-        ob_start(); // Start output buffering
-        if(!self::image_library_available()){
-            echo '<p class="library-error">' . esc_html__('Image generation module not installed in your server, make sure to install GD or Imagick library for PHP', 'pisol-enquiry-quotation-woocommerce') . '</p>';
-            error_log('Image generation module not installed in your server, make sure to install GD or Imagick library for PHP');
-            return ob_get_clean();
-        }
-        ?>
-        <div class="pi-row-flex captcha-setup">
-            <div class="pi-col-4">
-                <input type="text" name="captcha_input" required placeholder="<?php esc_html_e('Enter captcha code', 'pisol-enquiry-quotation-woocommerce'); ?>">
-            </div>
-            <div class="pi-col-4 captcha-image-container">
-                <img id="captcha-image" src="<?php echo esc_url( home_url('?wc-ajax=generate_captcha') ); ?>" alt="CAPTCHA">
-                <img src="<?php echo plugin_dir_url( __DIR__ );?>/public/img/refresh.svg" id="refresh-captcha" title="<?php esc_html_e('Change captcha image', 'pisol-enquiry-quotation-woocommerce'); ?>"/>
-            </div>
-        </div>
-        <?php
-        return ob_get_clean(); // Return the buffered content
-    }
-
-    public function generateCaptcha()
-    {
-        // Generates the CAPTCHA image
-        $this->generateCaptchaCode();
-        $this->generateCaptchaImage();
-        exit; // Prevent further execution
+    public function send_generated_captcha_image() {
+        $this->generate_captcha_image();
+        wp_die();
     }
 
     public function refreshCaptcha()
     {
         // Generate and return a new CAPTCHA image in base64 format
         ob_start();
-        $this->generateCaptchaCode();
-        $this->generateCaptchaImage();
+        $this->generate_captcha_image();
         $imageData = ob_get_contents();
         ob_end_clean();
         echo 'data:image/png;base64,' . base64_encode($imageData);
-        exit; // Prevent further execution
-    }
-
-    public function generateCaptchaImage()
-    {
-        if ($this->useGD == 'gd') {
-            return $this->generateCaptchaImageGD($this->captchaCode);
-        } elseif($this->useGD == 'imagick') {
-            return $this->generateCaptchaImageImagick($this->captchaCode);
-        }
+        wp_die(); // Prevent further execution
     }
 
     private function generateCaptchaCode()
     {   
         // we removed capital I and small l as they look similar in Arial font
-        $characters = 'ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789';
-        $this->captchaCode = '';
+        $characters = $this->get_characters();
+        $captchaCode = '';
         for ($i = 0; $i < $this->captchaLength; $i++) {
-            $this->captchaCode .= $characters[rand(0, strlen($characters) - 1)];
+            $captchaCode .= $characters[rand(0, strlen($characters) - 1)];
         }
 
-        if(isset(WC()->session)){
-            WC()->session->set( 'captcha_code', $this->captchaCode );
-        }else{
-            error_log('WC session not found');
-        }
+        return $captchaCode;
+    }
 
-        return $this->captchaCode;
+    private function generate_captcha_image() {
+        header('Content-type: image/png');
+        
+        $captcha_string = $this->generateCaptchaCode();
+        
+        WC()->session->set('captcha_code', $captcha_string);
+
+        if($this->useGD === 'gd') {
+            $this->generateCaptchaImageGD($captcha_string);
+        } elseif($this->useGD === 'imagick') {
+            $this->generateCaptchaImageImagick($captcha_string);
+        }
     }
 
     private function generateCaptchaImageGD($captchaCode)
@@ -219,6 +200,183 @@ class PISOL_ENQ_CaptchaGenerator{
         $image->drawImage($draw);
     }
 
+    public function enqueueScripts()
+    {
+
+        $script = "
+        jQuery(document).ready(function ($) {
+            $('body').on('click','#refresh_captcha', function (e) {
+                e.preventDefault();
+                jQuery('#pi_enq_captcha').addClass('loading');
+                $.get('" .home_url('?wc-ajax=pi_enq_refresh_captcha'). "', function (data) {
+                    $('#captcha_image').attr('src', data); // Update image src with new data URL
+                    jQuery('#pi_enq_captcha').removeClass('loading');
+                    jQuery('#captcha_field').val(''); // Clear the input field
+                }).fail(function () {
+                    console.error('Error refreshing CAPTCHA');
+                    jQuery('#pi_enq_captcha').removeClass('loading');
+                });
+            });
+        });
+        ";
+
+        wp_add_inline_script('jquery', $script);
+
+        // Inline CSS for the loading spinner
+        $color_scheme = '#cccccc';
+        $color_scheme_error = '#ff0000';
+        $css = "
+            :root {
+                --captcha_color: $color_scheme;
+                --captcha_error_color: $color_scheme_error;
+                --captcha_border:5px;
+            }
+
+            #pi_enq_captcha_container{
+                display:block;
+                width:100%;
+                margin-bottom:20px;
+                margin-top:20px;
+            }
+
+            #pi_enq_captcha{
+                display:grid;
+                grid-template-columns: 1fr 200px 50px;
+                border:var(--captcha_border, 5px) solid var(--captcha_color, #ccc);
+                border-radius:6px;
+                max-width:600px;
+            }
+
+            @media (max-width: 600px) {
+                #pi_enq_captcha{
+                    grid-template-columns: 1fr;
+                }
+                
+                #captcha_field{
+                    border-bottom:1px solid var(--captcha_color, #ccc) !important;
+                }
+            }
+
+            body:has([data-error-id='captcha-error']) #pi_enq_captcha{
+                border:var(--captcha_border, 5px) solid var(--captcha_error_color, #ff0000);
+            }
+
+            #pi_enq_captcha.loading{
+                opacity:0.5;
+            }
+
+            .captcha_image_container{
+                padding:3px;
+                text-align:center;
+                border-left:1px solid var(--captcha_color, #ccc);
+                background-color:#ffffff;
+                display:flex;
+                align-items:center;
+            }
+
+            #captcha_image{
+                margin:auto;
+            }
+
+            #captcha_refresh_icon{
+                width:30px;
+            }
+
+            #refresh_captcha{
+                cursor:pointer;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:var(--captcha_color, #ccc);
+                font-size:0px;
+                border-left:1px solid var(--captcha_color, #ccc);
+            }
+
+            body:has([data-error-id='captcha-error']) #refresh_captcha{
+                background:var(--captcha_error_color, #ff0000);
+            }
+
+
+            #captcha_field, #captcha_field:focus-visible, #captcha_field:focus{
+                outline: none;
+                border:none;
+                padding:10px;
+            }
+
+            #pi_enq_captcha_container{
+                grid-column:1/3;
+            }
+
+            #captcha_field-error:empty{
+                display:none;
+            }
+        ";
+        // Add custom CSS to the checkout page use dummy dependency 
+        wp_register_style('pi-enq-captch-custom-inline-css', false);
+        wp_enqueue_style('pi-enq-captch-custom-inline-css');
+        wp_add_inline_style('pi-enq-captch-custom-inline-css', $css);
+    }
+
+    function get_captcha_placeholder() {
+        $placeholder = get_option('pi_eqw_captcha_placeholder', 'Enter the CAPTCHA');
+        return $placeholder;
+    }
+
+    function get_refresh_captcha_title() {
+        return __('Refresh the CAPTCHA','pisol-enquiry-quotation-woocommerce');
+    }
+
+    function get_captcha_length() {
+        $length = get_option('pi_eqw_captcha_length', 6);
+        $length = absint( apply_filters('pi_enq_captcha_length', $length));
+        return $length > 6 || $length < 1 ? 6 : $length;
+    }
+
+    function captcha_width() {
+        $character_length = $this->get_captcha_length();
+        $width = $character_length * 40;
+        return $width;
+    }
+
+    function get_characters() {
+        $type_of_string = get_option('pi_eqw_captcha_characters', 'mix');
+        if($type_of_string === 'mix') {
+            $characters = 'ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789';
+        } 
+
+        if($type_of_string === 'numbers') {
+            $characters = '0123456789';
+        }
+
+        if($type_of_string === 'capital_letter') {
+            $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        }
+
+        if($type_of_string === 'small_letter') {
+            $characters = 'abcdefghijklmnopqrstuvwxyz';
+        }
+
+
+        return apply_filters('pi_enq_captcha_characters', $characters);
+    }
+
+    static function captcha_enabled()
+    {
+        $type = get_option('pi_eqw_captcha', '');
+
+        if ($type == 'captcha') {
+            return true;
+        }
+
+        return false;
+    }
+
+    static function image_library_available()
+    {
+        $instance = self::get_instance();
+        return $instance->useGD !== false;
+    }
+
     static function validateCaptcha($userInput)
     {   
         if(isset(WC()->session)){
@@ -233,19 +391,7 @@ class PISOL_ENQ_CaptchaGenerator{
 
         return false;
     }
-
-    static function captcha_enabled()
-    {
-        $type = get_option('pi_eqw_captcha', '');
-
-        if ($type == 'captcha' && self::image_library_available()) {
-            return true;
-        }
-
-        return false;
-    }
-
-
 }
 
-PISOL_ENQ_CaptchaGenerator::getInstance();
+// Instantiate the CAPTCHA class
+PISOL_ENQ_CaptchaGenerator::get_instance();

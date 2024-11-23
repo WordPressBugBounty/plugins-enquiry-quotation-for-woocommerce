@@ -33,14 +33,23 @@ class Class_Pi_Eqw_Email{
 
             array('field'=>'pi_enq_add_img_url', 'label'=>__('Enable this option If product and logo image are not shown in the email or You dont want image attached in email','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=>0, 'desc'=>__('Enable this option only if you are having issue in seeing image inside the enquiry email or You dont want image to be send as attachment in the email','pisol-enquiry-quotation-woocommerce')),
 
-            array('field'=>'pi_eqw_enable_honeypot', 'label'=>__('Use honeypot for spam protection','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=> 1, 'desc'=>__('This will add an hidden field which user will not fill but spam bot will fill and so the form will not be submitted','pisol-enquiry-quotation-woocommerce')),
-
-            array('field'=>'pi_eqw_captcha', 'label'=>__('Use captcha','pisol-enquiry-quotation-woocommerce'),'type'=>'select','default'=> '', 'desc'=>__('Select the type of captcha to add','pisol-enquiry-quotation-woocommerce'), 'value'=> array(''=>'None','captcha'=>__('Captcha','pisol-enquiry-quotation-woocommerce'))),
 
             array('field'=>'pi_eqw_email_to_customer', 'label'=>__('Send enquiry email to customer as well','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=>1, 'desc'=>__('Will send the enquiry email copy to customer as well','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
             array('field'=>'pi_eqw_customer_email_subject', 'label'=>__('Subject of the email to customer','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('Your enquiry is submitted'),  'desc'=>__('Subject of the enquiry email send to customer', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
             array('field'=>'pi_eqw_company_logo', 'label'=>__('Logo added in the email','pisol-enquiry-quotation-woocommerce'),'type'=>'image', 'desc'=>__('This is the image that will be added inside the email copy, sed to you and the customer', 'pisol-enquiry-quotation-woocommerce'),'pro'=>true),
+
+            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Spam protection",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
+
+            array('field'=>'pi_eqw_enable_honeypot', 'label'=>__('Use honeypot for spam protection','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=> 1, 'desc'=>__('This will add an hidden field which user will not fill but spam bot will fill and so the form will not be submitted','pisol-enquiry-quotation-woocommerce')),
+
+            array('field'=>'pi_eqw_captcha', 'label'=>__('Use captcha','pisol-enquiry-quotation-woocommerce'),'type'=>'select','default'=> '', 'desc'=>__('Select the type of captcha to add','pisol-enquiry-quotation-woocommerce'), 'value'=> array(''=>'None','captcha'=>__('Captcha','pisol-enquiry-quotation-woocommerce'))),
+
+            array('field'=>'pi_eqw_captcha_characters','desc'=>'Type of string used in captcha', 'label'=>__('Select type of string to use in the captcha','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>'mix', 'value'=>array('capital_letter'=>'Capital letter','small_letter'=>'Small letter','numbers'=>'Numbers','mix'=>'Mix')),
+
+            array('field'=>'pi_eqw_captcha_length','desc'=>'', 'label'=>__('Captcha string length','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>'6', 'value'=>array(1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6)),
+
+            array('field'=>'pi_eqw_captcha_placeholder','desc'=>'', 'label'=>__('Captcha field placeholder','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>'Enter the CAPTCHA'),
             
             array('field'=>'title', 'class'=> 'hide-pro bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Custom message for customer email', 'pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
 
