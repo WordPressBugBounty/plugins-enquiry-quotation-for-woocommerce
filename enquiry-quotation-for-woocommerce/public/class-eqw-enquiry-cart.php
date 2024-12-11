@@ -3,12 +3,15 @@
 class class_eqw_enquiry_cart{
 
     function __construct(){
+        add_action('wc_ajax_pi_add_to_enquiry', array($this, 'add_to_enquiry') ); 
         add_action('wp_ajax_pi_add_to_enquiry', array($this, 'add_to_enquiry') ); 
         add_action('wp_ajax_nopriv_pi_add_to_enquiry', array($this, 'add_to_enquiry') );
 
+        add_action('wc_ajax_pi_remove_product', array($this, 'pi_remove_product') ); 
         add_action('wp_ajax_pi_remove_product', array($this, 'pi_remove_product') ); 
         add_action('wp_ajax_nopriv_pi_remove_product', array($this, 'pi_remove_product') );
 
+        add_action('wc_ajax_pi_update_products', array($this, 'pi_update_products') ); 
         add_action('wp_ajax_pi_update_products', array($this, 'pi_update_products') ); 
         add_action('wp_ajax_nopriv_pi_update_products', array($this, 'pi_update_products') );
 

@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.7.0
-Stable tag: 2.2.33.43
+Stable tag: 2.2.33.44
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -227,6 +227,9 @@ Yes, Go to Advance option tab and there you can insert your webhook url, so when
 Protect your enquiry form from spam by using CAPTCHA, which requires users to complete a simple test, or a honeypot, an invisible field that bots will fill but humans will ignore. Both methods help reduce automated submissions, ensuring only real users can submit the form.
 
 == Changelog ==
+
+= 2.2.33.44 =
+* ajax request moved from admin-ajax to wc-ajax 
 
 = 2.2.33.43 =
 * Tested for WC 9.4.0

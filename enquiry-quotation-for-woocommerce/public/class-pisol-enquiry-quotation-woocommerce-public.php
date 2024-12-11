@@ -61,6 +61,7 @@ class Pisol_Enquiry_Quotation_Woocommerce_Public {
 
 		wp_localize_script( $this->plugin_name, 'pi_ajax',
 			array( 
+				'wc_ajax_url' => WC_AJAX::get_endpoint( '%%endpoint%%' ),
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'loading'=> plugin_dir_url( __FILE__ ).'img/loading.svg',
 				'cart_page'=>$cart_page,

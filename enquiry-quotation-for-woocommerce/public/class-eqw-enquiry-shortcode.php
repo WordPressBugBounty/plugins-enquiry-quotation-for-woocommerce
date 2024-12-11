@@ -11,6 +11,7 @@ class class_eqw_enquiry_shortcode{
         add_shortcode('enquiry_cart',array($this, 'enquiry_cart_template'));
         add_action('wp_ajax_get_cart_on_load', array($this,'cartOnFirstLoad'));
         add_action('wp_ajax_nopriv_get_cart_on_load', array($this,'cartOnFirstLoad'));
+        add_action('wc_ajax_get_cart_on_load', array($this,'cartOnFirstLoad'));
     }
 
     function enquiry_cart_template(){

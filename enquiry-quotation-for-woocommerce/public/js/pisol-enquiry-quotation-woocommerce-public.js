@@ -127,7 +127,8 @@
 
 				if (add_to_enquiry.alertIfVariationNotSelected()) {
 					add_to_enquiry.addingToCart(button);
-					jQuery.post(pi_ajax.ajax_url, add_to_enquiry.data, function (response) {
+					var action = 'pi_add_to_enquiry';
+					jQuery.post(pi_ajax.wc_ajax_url.toString().replace('%%endpoint%%', action), add_to_enquiry.data, function (response) {
 						add_to_enquiry.addedToCart(button);
 					});
 				}
@@ -135,21 +136,26 @@
 
 			removeProduct: function (hash) {
 				add_to_enquiry.showLoading();
-				jQuery.post(pi_ajax.ajax_url, { action: 'pi_remove_product', hash: hash }, function (response) {
+				var action = 'pi_remove_product';
+				jQuery.post(pi_ajax.wc_ajax_url.toString().replace('%%endpoint%%', action), { hash: hash }, function (response) {
 					add_to_enquiry.dataLoaded(response);
 				});
 			},
 
 			updateProduct: function (products) {
 				add_to_enquiry.showLoading();
-				jQuery.post(pi_ajax.ajax_url, { action: 'pi_update_products', products: products }, function (response) {
+				var action = 'pi_update_products';
+				jQuery.post(pi_ajax.wc_ajax_url.toString().replace('%%endpoint%%', action), {  products: products }, function (response) {
 					add_to_enquiry.dataLoaded(response);
 				});
 			},
 
 			initialLoad: function () {
+				if(jQuery("#pi-enquiry-container").length <= 0) return;
+
 				add_to_enquiry.showLoading();
-				jQuery.post(pi_ajax.ajax_url, { action: 'get_cart_on_load' }, function (response) {
+				var action = 'get_cart_on_load';
+				jQuery.post(pi_ajax.wc_ajax_url.toString().replace('%%endpoint%%', action) ,{}, function (response) {
 					add_to_enquiry.dataLoaded(response);
 				});
 			},
