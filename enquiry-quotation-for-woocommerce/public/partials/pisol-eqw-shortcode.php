@@ -13,7 +13,7 @@ $table_style = apply_filters('pisol_eqw_table_style', 'enquiry-cart-content-tabl
 				<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
 				<?php endif; ?>
 				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
-				<th class="product-message"><?php esc_html_e( 'Message', 'woocommerce' ); ?></th>
+				<th class="product-message"><?php esc_html_e( 'Message', 'pisol-enquiry-quotation-woocommerce' ); ?></th>
 			</tr>
 		</thead>
         <tbody id="pi-enquiry-list-row">

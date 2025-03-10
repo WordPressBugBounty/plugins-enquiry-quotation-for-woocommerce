@@ -18,9 +18,6 @@ class class_eqw_product{
         
         $this->loop_product_enquiry_position = 'woocommerce_after_shop_loop_item';
 
-        $this->add_to_enquiry_text_loop = get_option('pi_eqw_enquiry_loop_button_text','Add to Enquiry');
-        $this->add_to_enquiry_text_single = get_option('pi_eqw_enquiry_single_button_text','Add to Enquiry');
-
         $this->trouble_shoot_position = get_option('pi_eqw_trouble_shoot_position',0);
 
         if($this->trouble_shoot_position){
@@ -85,6 +82,8 @@ class class_eqw_product{
         if(!$this->showButtonOnSinglePage($product)) return;
 
         $style = self::styleProductPage();
+
+        $this->add_to_enquiry_text_single = get_option('pi_eqw_enquiry_single_button_text','Add to Enquiry');
         
         if($product->is_type('variable') ){
             echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr($product->get_id()).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
@@ -101,6 +100,8 @@ class class_eqw_product{
                 if(!$this->showButtonOnSinglePage($product)) return;
 
                 $style = self::styleProductPage();
+
+                $this->add_to_enquiry_text_single = get_option('pi_eqw_enquiry_single_button_text','Add to Enquiry');
                 
                 if($product->is_type('variable') ){
                     echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr( $product->get_id() ).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
@@ -117,6 +118,8 @@ class class_eqw_product{
         if(!$this->showButtonOnLoopPage($product)) return;
 
         $style = self::styleLoopPage();
+
+        $this->add_to_enquiry_text_loop = get_option('pi_eqw_enquiry_loop_button_text','Add to Enquiry');
 
         if($product->is_type('variable') ){
             echo '<div style="margin-bottom:10px; text-align:center; width:100%;">

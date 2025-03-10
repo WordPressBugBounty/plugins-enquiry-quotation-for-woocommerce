@@ -2,12 +2,12 @@
 msgid ""
 msgstr ""
 "Language: \n"
-"POT-Creation-Date: 2024-10-27 01:54+0000\n"
+"POT-Creation-Date: 2025-03-10 02:05+0000\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: admin/class-eqw-email.php:47 admin/class-eqw-email.php:55
+#: admin/class-eqw-email.php:56 admin/class-eqw-email.php:64
 msgid "Above product table"
 msgstr ""
 
@@ -63,11 +63,11 @@ msgstr ""
 msgid "Before summary"
 msgstr ""
 
-#: admin/class-eqw-email.php:51 admin/class-eqw-email.php:59
+#: admin/class-eqw-email.php:60 admin/class-eqw-email.php:68
 msgid "Below customer detail"
 msgstr ""
 
-#: admin/class-eqw-email.php:49 admin/class-eqw-email.php:57
+#: admin/class-eqw-email.php:58 admin/class-eqw-email.php:66
 msgid "Below product table"
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Cant leave %s empty"
 msgstr ""
 
-#: admin/class-eqw-email.php:38
+#: admin/class-eqw-email.php:46
 msgid "Captcha"
 msgstr ""
 
@@ -92,15 +92,19 @@ msgstr ""
 msgid "Captcha code does not match"
 msgstr ""
 
-#: includes/class-php-captcha.php:89
-msgid "Change captcha image"
+#: admin/class-eqw-email.php:52
+msgid "Captcha field placeholder"
 msgstr ""
 
-#: admin/class-eqw-email.php:53
+#: admin/class-eqw-email.php:50
+msgid "Captcha string length"
+msgstr ""
+
+#: admin/class-eqw-email.php:62
 msgid "Custom message for admin email"
 msgstr ""
 
-#: admin/class-eqw-email.php:45
+#: admin/class-eqw-email.php:54
 msgid "Custom message for customer email"
 msgstr ""
 
@@ -139,7 +143,7 @@ msgid ""
 "com, text2@email.com </strong>"
 msgstr ""
 
-#: admin/class-eqw-email.php:101
+#: admin/class-eqw-email.php:123
 msgid "Email setting"
 msgstr ""
 
@@ -202,7 +206,7 @@ msgstr ""
 msgid "Enquiry button text"
 msgstr ""
 
-#: admin/class-pisol-enquiry-quotation-woocommerce-admin.php:61
+#: admin/class-pisol-enquiry-quotation-woocommerce-admin.php:59
 msgid "Enquiry Cart"
 msgstr ""
 
@@ -224,10 +228,6 @@ msgstr ""
 
 #: public/class-pisol-form.php:46
 msgid "Enquiry submitted"
-msgstr ""
-
-#: includes/class-php-captcha.php:85
-msgid "Enter captcha code"
 msgstr ""
 
 #: admin/class-eqw-option.php:71
@@ -269,12 +269,6 @@ msgid ""
 "enable the below option to fall back to old way of position"
 msgstr ""
 
-#: includes/class-php-captcha.php:78
-msgid ""
-"Image generation module not installed in your server, make sure to install "
-"GD or Imagick library for PHP"
-msgstr ""
-
 #: admin/class-eqw-option.php:75
 msgid "Image is shown as loading image"
 msgstr ""
@@ -290,7 +284,7 @@ msgid ""
 "url"
 msgstr ""
 
-#: admin/class-eqw-email.php:43
+#: admin/class-eqw-email.php:40
 msgid "Logo added in the email"
 msgstr ""
 
@@ -298,7 +292,8 @@ msgstr ""
 msgid "Making enquiry form field as required."
 msgstr ""
 
-#: admin/class-eqw-enquiry.php:94 public/partials/pisol-eqw-shortcode.php:32
+#: admin/class-eqw-enquiry.php:94 public/partials/pisol-eqw-shortcode.php:16
+#: public/partials/pisol-eqw-shortcode.php:32
 msgid "Message"
 msgstr ""
 
@@ -390,6 +385,10 @@ msgstr ""
 msgid "Redirect WooCommerce cart and checkout page to enquiry cart page"
 msgstr ""
 
+#: includes/class-php-captcha.php:326
+msgid "Refresh the CAPTCHA"
+msgstr ""
+
 #: admin/class-eqw-advance.php:25
 msgid "Remove add to cart button"
 msgstr ""
@@ -408,11 +407,15 @@ msgstr ""
 msgid "Select the page where to show the enquiry cart"
 msgstr ""
 
-#: admin/class-eqw-email.php:38
+#: admin/class-eqw-email.php:46
 msgid "Select the type of captcha to add"
 msgstr ""
 
-#: admin/class-eqw-email.php:40
+#: admin/class-eqw-email.php:48
+msgid "Select type of string to use in the captcha"
+msgstr ""
+
+#: admin/class-eqw-email.php:37
 msgid "Send enquiry email to customer as well"
 msgstr ""
 
@@ -450,6 +453,10 @@ msgstr ""
 msgid "Show products added to the enquiry cart in the popup"
 msgstr ""
 
+#: admin/class-eqw-email.php:42
+msgid "Spam protection"
+msgstr ""
+
 #: admin/class-eqw-enquiry.php:93 public/partials/pisol-eqw-shortcode.php:31
 msgid "Subject"
 msgstr ""
@@ -466,11 +473,11 @@ msgstr ""
 msgid "subject of the email"
 msgstr ""
 
-#: admin/class-eqw-email.php:42
+#: admin/class-eqw-email.php:39
 msgid "Subject of the email to customer"
 msgstr ""
 
-#: admin/class-eqw-email.php:42
+#: admin/class-eqw-email.php:39
 msgid "Subject of the enquiry email send to customer"
 msgstr ""
 
@@ -510,7 +517,7 @@ msgstr ""
 msgid "This field is required."
 msgstr ""
 
-#: admin/class-eqw-email.php:43
+#: admin/class-eqw-email.php:40
 msgid ""
 "This is the image that will be added inside the email copy, sed to you and "
 "the customer"
@@ -521,19 +528,19 @@ msgid ""
 "This is the message that is shown on successful submission of the enquiry"
 msgstr ""
 
-#: admin/class-eqw-email.php:47 admin/class-eqw-email.php:55
+#: admin/class-eqw-email.php:56 admin/class-eqw-email.php:64
 msgid "This message will appear above the product table"
 msgstr ""
 
-#: admin/class-eqw-email.php:51 admin/class-eqw-email.php:59
+#: admin/class-eqw-email.php:60 admin/class-eqw-email.php:68
 msgid "This message will appear below the customer detail table"
 msgstr ""
 
-#: admin/class-eqw-email.php:49 admin/class-eqw-email.php:57
+#: admin/class-eqw-email.php:58 admin/class-eqw-email.php:66
 msgid "This message will appear below the product table"
 msgstr ""
 
-#: admin/class-eqw-email.php:36
+#: admin/class-eqw-email.php:44
 msgid ""
 "This will add an hidden field which user will not fill but spam bot will "
 "fill and so the form will not be submitted"
@@ -616,11 +623,11 @@ msgstr ""
 msgid "Update enquiry"
 msgstr ""
 
-#: admin/class-eqw-email.php:38
+#: admin/class-eqw-email.php:46
 msgid "Use captcha"
 msgstr ""
 
-#: admin/class-eqw-email.php:36
+#: admin/class-eqw-email.php:44
 msgid "Use honeypot for spam protection"
 msgstr ""
 
@@ -638,7 +645,7 @@ msgstr ""
 msgid "User will be redirected to enquiry cart page once product is added"
 msgstr ""
 
-#: public/class-pisol-enquiry-quotation-woocommerce-public.php:67
+#: public/class-pisol-enquiry-quotation-woocommerce-public.php:68
 msgid "View Enquiry Cart"
 msgstr ""
 
@@ -665,7 +672,7 @@ msgid ""
 "            Redirect to cart page<br>Open cart page in popup"
 msgstr ""
 
-#: admin/class-eqw-email.php:40
+#: admin/class-eqw-email.php:37
 msgid "Will send the enquiry email copy to customer as well"
 msgstr ""
 
