@@ -18,6 +18,22 @@ class Class_Pi_Eqw_Cart{
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;
 
+        add_action('init', array($this,'init'));
+        
+        $this->active_tab = (isset($_GET['tab'])) ? sanitize_text_field($_GET['tab']) : 'default';
+
+        if($this->this_tab == $this->active_tab){
+            add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
+        }
+
+        add_action($this->plugin_name.'_tab', array($this,'tab'),4);
+
+        if(PI_EQW_DELETE_SETTING){
+            $this->delete_settings();
+        }
+    }
+
+    function init(){
         $this->settings = array(
             
             array('field'=>'pi_eqw_enable_cart', 'label'=>__('Enable cart icon','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('This will show a dynamically updating cart button on each page in the corner','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
@@ -26,22 +42,7 @@ class Class_Pi_Eqw_Cart{
 
             array('field'=>'pisol_eqw_cart_img', 'type'=>'image','label'=>__('Dynamic Cart icon','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Dynamic Cart icon','pisol-enquiry-quotation-woocommerce'),'pro'=>true),
         );
-        
-        $this->active_tab = (isset($_GET['tab'])) ? sanitize_text_field($_GET['tab']) : 'default';
-
-        if($this->this_tab == $this->active_tab){
-            add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
-        }
-
-
-        add_action($this->plugin_name.'_tab', array($this,'tab'),4);
-
-       
         $this->register_settings();
-
-        if(PI_EQW_DELETE_SETTING){
-            $this->delete_settings();
-        }
     }
 
     function pages(){

@@ -20,6 +20,23 @@ class Class_Pi_Eqw_Advance{
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;
 
+        add_action('init', array($this,'init'));
+        
+        $this->tab = sanitize_text_field(filter_input( INPUT_GET, 'tab'));
+        $this->active_tab = $this->tab != "" ? $this->tab : 'default';
+
+        if($this->this_tab == $this->active_tab){
+            add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
+        }
+
+        add_action($this->plugin_name.'_tab', array($this,'tab'),1);
+
+        if(PI_EQW_DELETE_SETTING){
+            $this->delete_settings();
+        }
+    }
+
+    function init(){
         $this->settings = array(
             
             array('field'=>'pi_eqw_remove_add_to_cart2', 'label'=>__('Remove add to cart button','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>'hide-if-enquiry',   'desc'=>__('This will remove the add to cart button from website<br>Dont Hide<br>Hide for All Products<br>Hide for product which has enquiry enabled','pisol-enquiry-quotation-woocommerce'), 'value'=>array('hide-if-enquiry'=>__('Hide if enquiry enabled','pisol-enquiry-quotation-woocommerce')), 'pro'=>true),
@@ -54,23 +71,7 @@ class Class_Pi_Eqw_Advance{
             array('field'=>'pi_eqw_popup_title_text_color', 'type'=>'color', 'default'=>'#FFFFFF','label'=>__('Popup Title text color','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Title text color','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
         );
-        
-        $this->tab = sanitize_text_field(filter_input( INPUT_GET, 'tab'));
-        $this->active_tab = $this->tab != "" ? $this->tab : 'default';
-
-        if($this->this_tab == $this->active_tab){
-            add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
-        }
-
-
-        add_action($this->plugin_name.'_tab', array($this,'tab'),1);
-
-       
         $this->register_settings();
-
-        if(PI_EQW_DELETE_SETTING){
-            $this->delete_settings();
-        }
     }
 
     function pages(){

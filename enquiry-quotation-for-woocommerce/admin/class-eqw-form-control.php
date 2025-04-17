@@ -20,6 +20,25 @@ class Class_Pi_Eqw_Form_Control{
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;
 
+        add_action('init', array($this,'init'));
+        
+        $this->tab = sanitize_text_field(filter_input( INPUT_GET, 'tab'));
+        $this->active_tab = $this->tab != "" ? $this->tab : 'default';
+
+        if($this->this_tab == $this->active_tab){
+            add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
+        }
+
+        add_action($this->plugin_name.'_tab', array($this,'tab'),3);
+
+        if(PI_EQW_DELETE_SETTING){
+            $this->delete_settings();
+        }
+
+        
+    }
+
+    function init(){
         $this->settings = array(
             
             array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Making enquiry form field as required.','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
@@ -35,24 +54,7 @@ class Class_Pi_Eqw_Form_Control{
             
         );
         
-        $this->tab = sanitize_text_field(filter_input( INPUT_GET, 'tab'));
-        $this->active_tab = $this->tab != "" ? $this->tab : 'default';
-
-        if($this->this_tab == $this->active_tab){
-            add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
-        }
-
-
-        add_action($this->plugin_name.'_tab', array($this,'tab'),3);
-
-       
         $this->register_settings();
-
-        if(PI_EQW_DELETE_SETTING){
-            $this->delete_settings();
-        }
-
-        
     }
 
     

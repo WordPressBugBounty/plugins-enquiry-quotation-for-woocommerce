@@ -20,8 +20,26 @@ class Class_Pi_Eqw_Email{
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;
 
+        add_action('init', array($this,'init'));
+        
+        $this->tab = sanitize_text_field(filter_input( INPUT_GET, 'tab'));
+        $this->active_tab = $this->tab != "" ? $this->tab : 'default';
+
+        if($this->this_tab == $this->active_tab){
+            add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
+        }
+
+        add_action($this->plugin_name.'_tab', array($this,'tab'),3);
+
+        if(PI_EQW_DELETE_SETTING){
+            $this->delete_settings();
+        }
+
+        add_action( 'admin_notices', [$this, 'library_warning'] );
+    }
+
+    function init(){
         $this->settings = array(
-            
             
             array('field'=>'pi_eqw_email', 'label'=>__('Email id','pisol-enquiry-quotation-woocommerce'),'type'=>'text',   'desc'=>__('Email id that will receive the enquiry, <strong class="text-danger">In PRO version you can add multiple email separated with coma like this text@email.com, text2@email.com </strong>','pisol-enquiry-quotation-woocommerce'),'default'=> get_option('admin_email')),
 
@@ -69,25 +87,7 @@ class Class_Pi_Eqw_Email{
             
             
         );
-        
-        $this->tab = sanitize_text_field(filter_input( INPUT_GET, 'tab'));
-        $this->active_tab = $this->tab != "" ? $this->tab : 'default';
-
-        if($this->this_tab == $this->active_tab){
-            add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
-        }
-
-
-        add_action($this->plugin_name.'_tab', array($this,'tab'),3);
-
-       
         $this->register_settings();
-
-        if(PI_EQW_DELETE_SETTING){
-            $this->delete_settings();
-        }
-
-        add_action( 'admin_notices', [$this, 'library_warning'] );
     }
 
     function library_warning(){
