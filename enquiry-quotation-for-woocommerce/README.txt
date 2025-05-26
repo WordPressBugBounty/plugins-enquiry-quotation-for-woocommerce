@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.8.0
-Stable tag: 2.2.34.6
+Stable tag: 2.2.34.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,7 @@ Using this Product enquiry for WooCommerce plugin customer will be able to send 
 * Simple product E.g: **https://www.yourwebsite.com/?add-to-enquiry=product_id**  
 * Variable product E.g: **https://www.yourwebsite.com/?add-to-enquiry=product_id&variation_id=var_id** (replace product_id, and var_id by the respective ids)
 * Two columns layout for enquiry form
+* Get WooCommerce Product enquiry in **Telegram** as well as email
 
 Pro version gives you the option to show the enquiry form as **WooCommerce product enquiry form popup**. Showing the enquiry form as a popup allows the customer to place enquiry from the product page
 
@@ -85,6 +86,7 @@ Pro version gives you the option to show the enquiry form as **WooCommerce produ
 * Easy Woocommerce request a quote
 * Woocommerce product catalog mode
 * woocommerce product catalog plugin
+* Get WooCommerce product enquiry in telegram
 
 == Screenshots ==
 1. Show add to Enquiry button on the Shop page or category page
@@ -226,7 +228,13 @@ Yes, Go to Advance option tab and there you can insert your webhook url, so when
 = Is there anything for spam protection =
 Protect your enquiry form from spam by using CAPTCHA, which requires users to complete a simple test, or a honeypot, an invisible field that bots will fill but humans will ignore. Both methods help reduce automated submissions, ensuring only real users can submit the form.
 
+= Get WooCommerce Product Enquiry in Telegram =
+Yes, in the pro version you can get the enquiry in telegram as well, you will have to set your telegram bot token and chat id in the plugin setting page, once you do that all the enquiry will be sent to your telegram account as well
+
 == Changelog ==
+
+= 2.2.34.7 =
+* new telegram alert feature in pro version
 
 = 2.2.34.6 =
 * Tested for WC 9.8.5

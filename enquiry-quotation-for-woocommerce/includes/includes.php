@@ -14,6 +14,7 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-eqw-email.php
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-eqw-form-control.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-eqw-cart.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/plugins.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-telegram-options.php';
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-eqw-product.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-eqw-advance.php';

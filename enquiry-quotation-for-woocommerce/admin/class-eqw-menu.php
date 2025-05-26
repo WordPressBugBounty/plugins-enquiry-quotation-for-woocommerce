@@ -130,6 +130,7 @@ class Pi_Eqw_Menu{
                         <li class="border-top  h6 ">Remove <span class="font-weight-bold ">product specific message</span> column from enquiry cart</li>
                         <li class="border-top  h6 ">Open <span class="font-weight-bold ">enquiry cart in a popup</span>, so user can submit enquiry right from the product page</li>
                         <li class="border-top  h6 ">Customer can see submitted enquiries in <span class="font-weight-bold ">My enquiry section</span> (under my account of WooCommerce)</li>
+                        <li class="border-top  h6 ">Get WooCommerce Product enquiry in <span class="font-weight-bold ">Telegram</span></li>
                     </ul>
                     <a class="btn btn-primary mb-3" href="<?php echo esc_url( PI_EQW_BUY_URL ); ?>" target="_blank">Click to Buy Now</a>
                 </div>
