@@ -2,8 +2,8 @@
 Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
-Tested up to: 6.8.1
-Stable tag: 2.2.34.9
+Tested up to: 6.8
+Stable tag: 2.2.34.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -233,6 +233,9 @@ Yes, in the pro version you can get the enquiry in telegram as well, you will ha
 
 == Changelog ==
 
+= 2.2.34.10 =
+* Simple Analytics added to Product enquiry for WooCommerce plugin
+
 = 2.2.34.9 =
 * Product enquiry for WooCommerce plugin Tested for WC 9.9.3
 
@@ -333,3 +336,15 @@ Yes, in the pro version you can get the enquiry in telegram as well, you will ha
 
 = 2.2.7 =
 * Content changes
+
+== Privacy ==
+
+If you choose to opt in from the plugin settings, or submit optional feedback during deactivation, this plugin may collect basic technical information, including:
+
+- Plugin version  
+- WordPress version  
+- WooCommerce version  
+- Site url
+- Deactivation reason (if submitted)
+
+This data is used solely to improve plugin quality, compatibility, and features. No personal or user-specific data is collected without consent.
