@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 2.2.34.10
+Stable tag: 2.2.34.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,10 +92,22 @@ Pro version gives you the option to show the enquiry form as **WooCommerce produ
 1. Show add to Enquiry button on the Shop page or category page
 2. Show enquiry button on single product page
 3. Add Enquiry cart on a page using short code [pisol_enquiry_cart] (this page is auto created and configured during installation)
-4. This is how the saved enquiry in website
-6. This is a copy of the email that you will receive
-12. Insert cart icon using short code [enquiry_cart_icon]
-
+4. This is how the saved enquiry is shown in backend
+5. Woocommerce product enquiry form popup
+6. This is a copy of the enquiry email that you will receive
+7. Setting to control the enquiry button on the product loop page and single product page
+8. Woocommerce product catalog mode
+9. Advance option allows you to hide the product price and remove add to cart button 
+10. Email related setting, like enquiry email subject, from email id, and name
+11. You can disable enquiry option for specific product
+12. Pro option of dynamic cart, shows a small cart icon clicking on it will show the product in the enquiry cart
+13. you can see the dynamic cart icon in the bottom right corner with the product count
+14. Pro version allows you to add extra field in the enquiry form like Text, Textarea, Dropdown, Radio input field
+15. Product enquiry for WooCommerce
+16. Pro version allows you to control enquiry button from category level and hide add to cart from category level
+17. customer can see their old enquiry in My Account section
+18. Product enquiry for WooCommerce plugin setting page
+19. Enquiry shown in the my account section to customer (pro)
 
 == Frequently Asked Questions ==
 
@@ -232,6 +244,10 @@ Protect your enquiry form from spam by using CAPTCHA, which requires users to co
 Yes, in the pro version you can get the enquiry in telegram as well, you will have to set your telegram bot token and chat id in the plugin setting page, once you do that all the enquiry will be sent to your telegram account as well
 
 == Changelog ==
+
+= 2.2.34.11 =
+* UI change in the Product enquiry for WooCommerce plugin setting page
+* Product enquiry Tested for WC 9.9.5
 
 = 2.2.34.10 =
 * Simple Analytics added to Product enquiry for WooCommerce plugin

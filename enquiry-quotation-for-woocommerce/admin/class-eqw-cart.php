@@ -35,6 +35,8 @@ class Class_Pi_Eqw_Cart{
 
     function init(){
         $this->settings = array(
+
+            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Dynamic cart', 'type'=>'setting_category'),
             
             array('field'=>'pi_eqw_enable_cart', 'label'=>__('Enable cart icon','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('This will show a dynamically updating cart button on each page in the corner','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
@@ -74,7 +76,7 @@ class Class_Pi_Eqw_Cart{
         $this->tab_name = __('Dynamic Cart (PRO)','pisol-enquiry-quotation-woocommerce');
         ?>
         <a class="hide-pro px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab ) ); ?>">
-        <?php echo esc_html( $this->tab_name); ?>
+            <span class="dashicons dashicons-cart"></span> <?php echo esc_html( $this->tab_name); ?>
         </a>
         <?php
     }
@@ -89,7 +91,7 @@ class Class_Pi_Eqw_Cart{
                 new pisol_class_form_eqw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="mt-3 btn btn-primary btn-sm" value="Save Option" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php echo esc_attr__('Save Option', 'pisol-enquiry-quotation-woocommerce'); ?>" />
         </form>
        <?php
     }

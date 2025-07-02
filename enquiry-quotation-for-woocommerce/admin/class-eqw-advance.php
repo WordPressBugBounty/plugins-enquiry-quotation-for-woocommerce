@@ -38,6 +38,8 @@ class Class_Pi_Eqw_Advance{
 
     function init(){
         $this->settings = array(
+
+            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Advance option', 'type'=>'setting_category'),
             
             array('field'=>'pi_eqw_remove_add_to_cart2', 'label'=>__('Remove add to cart button','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>'hide-if-enquiry',   'desc'=>__('This will remove the add to cart button from website<br>Dont Hide<br>Hide for All Products<br>Hide for product which has enquiry enabled','pisol-enquiry-quotation-woocommerce'), 'value'=>array('hide-if-enquiry'=>__('Hide if enquiry enabled','pisol-enquiry-quotation-woocommerce')), 'pro'=>true),
 
@@ -56,11 +58,11 @@ class Class_Pi_Eqw_Advance{
             array('field'=>'pi_eqw_redirect_to_form', 'label'=>__('After Add to enquiry click','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>0, 'value'=>array('0'=> __('Product will be added to enquiry cart only','pisol-enquiry-quotation-woocommerce'), 1 =>__('User will be redirected to enquiry cart page once product is added','pisol-enquiry-quotation-woocommerce'), 'popup'=>__('Enquiry popup will get opened','pisol-enquiry-quotation-woocommerce')),  'desc'=>__('What happen when user click on add to enquiry (Product will be added to the enquiry cart in all the 3 cases),<br>
             Redirect to cart page<br>Open cart page in popup','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
-            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Webhook Integration",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
+            array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Webhook Integration",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
 
             array('field'=>'pi_eqw_webhook_url', 'label'=>__('Webhook url','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>'',   'desc'=>__('Insert webhook url where the enquiry data will send send, you can insert webhook url of zapier or Pabbly or any other platform that support webhook url','pisol-enquiry-quotation-woocommerce')),
 
-            array('field'=>'title', 'class'=> 'hide-pro bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Enquiry popup settings','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category', 'pro'=>true),
+            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Enquiry popup settings','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category', 'pro'=>true),
 
             array('field'=>'pi_eqw_show_products_in_cart_in_popup', 'label'=>__('Show products added to the enquiry cart in the popup','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('Show products added in the inquiry cart in the popup','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
@@ -107,7 +109,7 @@ class Class_Pi_Eqw_Advance{
         $this->tab_name = __('Advance option','pisol-enquiry-quotation-woocommerce');
         ?>
         <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ) ); ?>">
-            <?php echo esc_html( $this->tab_name); ?> 
+           <span class="dashicons dashicons-admin-tools"></span> <?php echo esc_html( $this->tab_name); ?> 
         </a>
         <?php
     }
@@ -122,7 +124,7 @@ class Class_Pi_Eqw_Advance{
                 new pisol_class_form_eqw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="mt-3 btn btn-primary btn-sm" value="Save Option" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php echo esc_attr__('Save Option', 'pisol-enquiry-quotation-woocommerce'); ?>" />
         </form>
        <?php
     }

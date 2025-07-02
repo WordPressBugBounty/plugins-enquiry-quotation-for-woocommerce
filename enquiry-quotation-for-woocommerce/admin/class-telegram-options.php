@@ -34,7 +34,7 @@ class Class_Pi_Eqw_Telegram_Options {
 
     function init() {
         $this->settings = array(
-            array('field'=>'title', 'class'=> 'hide-pro bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Receive Enquiry detail on your Telegram channel or group', 'type'=>'setting_category'),
+            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Receive Enquiry detail on your Telegram channel or group', 'type'=>'setting_category'),
             array(
                 'field' => 'pi_eqw_telegram_bot_token',
                 'label' => __('Telegram bot token', 'pisol-enquiry-quotation-woocommerce'),
@@ -70,7 +70,7 @@ class Class_Pi_Eqw_Telegram_Options {
     function tab() {
         ?>
         <a class="hide-pro px-3 text-light d-flex align-items-center border-left border-right <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url('admin.php?page=' . sanitize_text_field($_GET['page']) . '&tab=' . $this->this_tab); ?>">
-            <?php echo esc_html($this->tab_name); ?>
+            <span class="dashicons dashicons-megaphone"></span> <?php echo esc_html($this->tab_name); ?>
         </a>
         <?php
     }
@@ -84,7 +84,7 @@ class Class_Pi_Eqw_Telegram_Options {
                 new \pisol_class_form_eqw($setting, $this->setting_key);
             }
             ?>
-            <input type="submit" class="mt-3 btn btn-primary btn-md" value="<?php echo esc_attr__('Save Option', 'pisol-enquiry-quotation-woocommerce'); ?>" />
+            <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php echo esc_attr__('Save Option', 'pisol-enquiry-quotation-woocommerce'); ?>" />
         </form>
         <?php
     }

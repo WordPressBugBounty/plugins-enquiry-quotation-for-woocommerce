@@ -32,8 +32,6 @@
 	jQuery(function ($) {
 		hideWhenEnabled('#row_pi_eqw_loop_show_on_out_of_stock', '#pi_eqw_enquiry_loop');
 		hideWhenEnabled('#row_pi_eqw_single_show_on_out_of_stock', '#pi_eqw_enquiry_single');
-
-		hideProFeature();
 		
 		if(typeof jQuery.fn.selectWoo === 'function'){
 			jQuery("#pi_eqw_show_enquiry_button_to_role2").selectWoo();

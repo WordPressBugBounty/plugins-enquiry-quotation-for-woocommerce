@@ -53,11 +53,17 @@ class Pi_Eqw_Menu{
                     <div class="col-12">
                         <div class='bg-dark'>
                         <div class="pisol-row">
-                            <div class="col-12 col-sm-2 py-2">
-                                    <a href="https://www.piwebsolution.com/" target="_blank"><img class="img-fluid ml-2" src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>img/pi-web-solution.png"></a>
+                            <div class="col-12 col-sm-2 py-2 d-flex align-items-center justify-content-center">
+                                    <a href="https://www.piwebsolution.com/" target="_blank"><img  id="pi-logo" class="img-fluid ml-2" src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>img/pi-web-solution.png"></a>
                             </div>
                             <div class="col-12 col-sm-10 d-flex pisol-top-menu">
-                                <?php do_action($this->plugin_name.'_tab'); ?>
+                                <nav id="pisol-navbar" class="navbar navbar-expand-lg navbar-light mr-0 ml-auto">
+                                    <div>
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <?php do_action($this->plugin_name.'_tab'); ?>
+                                        </ul>
+                                    </div>
+                                </nav>
                                 <!--<a class=" px-3 text-light d-flex align-items-center  border-left border-right  bg-info " href="https://www.piwebsolution.com/documentation-for-live-sales-notifications-for-woocommerce-plugin/">
                                     Documentation
                                 </a>-->
@@ -68,7 +74,7 @@ class Pi_Eqw_Menu{
             </div>
             <div class="pisol-row">
                 <div class="col-12">
-                <div class="bg-light border pl-3 pr-3 pb-3 pt-0">
+                <div class="bg-light border pl-3 pr-3 pt-0">
                     <div class="pisol-row">
                         <div class="col">
                         <?php do_action($this->plugin_name.'_tab_content'); ?>
@@ -86,54 +92,45 @@ class Pi_Eqw_Menu{
     function promotion(){
         if(isset($_GET['tab']) &&  $_GET['tab'] == 'form_control') return;
         ?>
-        <div class="col-12 col-sm-12 col-md-4 pt-3">
-            <a href="javascript:void(0)" class="btn btn-primary btn-sm mr-2 mb-2" id="hid-pro-feature">Hide Pro Feature</a>
-            <div class="bg-primary  text-center mb-3">
+        <div class="col-12 col-sm-12 col-md-4 pt-3 border-left">
+            <div class="pi-shadow px-3 py-3 rounded">
+                <h2 id="pi-banner-tagline" class="mb-0 mt-3" style="color:#ccc !important;">
+                        <span class="d-block mb-4">⭐️⭐️⭐️⭐️⭐️</span>
+                        <span class="d-block mb-2">🚀 Trusted by <span style="color:#fff;">2,000+</span> WooCommerce Stores</span>
+                        <span class="d-block mb-2">Rated <span style="color:#fff;">4.9/5</span> – Users love it</span>
+                </h2>
+                <div class="inside">
+                    <ul class="text-left pisol-pro-feature-list mb-3 mt-3">
+                        <li class="h6 font-weight-bold"><b>🔧 Advanced Controls</b></li>
+                        <li class="h6">✓ Disable enquiry by product category</li>
+                        <li class="h6">✓ Show enquiry only when product is out of stock</li>
+                        <li class="h6">✓ Change button position on product pages</li>
+                        <li class="h6">✓ Remove Add to Cart to get only enquiries</li>
+                    </ul>
+                    <ul class="text-left pisol-pro-feature-list mb-3">
+                        <li class="h6 font-weight-bold mt-3"><b>💬 Smart Communication</b></li>
+                        <li class="h6">✓ Custom messages in customer/admin emails</li>
+                        <li class="h6">✓ Support multiple admin emails</li>
+                        <li class="h6">✓ Accept terms before submitting enquiry</li>
+                        <li class="h6">✓ Fully customize enquiry fields & labels</li>
+                    </ul>
+                    <ul class="text-left pisol-pro-feature-list mb-3">
+                        <li class="h6 font-weight-bold mt-3"><b>🛒 Enquiry Cart Boost</b></li>
+                        <li class="h6">✓ Dynamic enquiry cart with popup support</li>
+                        <li class="h6">✓ Shortcode to show enquiry cart</li>
+                        <li class="h6">✓ Show submitted enquiries in My Account</li>
+                        <li class="h6">✓ Get instant alerts in Telegram</li>
+                    </ul>
+                    <h4 class="pi-bottom-banner">💰 Just <?php echo esc_html(PI_EQW_PRICE); ?></h4>
+                    <h4 class="pi-bottom-banner">🔥 Unlock all features and grow your sales!</h4>
+                    <a class="btn btn-primary btn-lg mb-3" href="<?php echo esc_url( PI_EQW_BUY_URL ); ?>" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
+                </div>
+            </div>
+
+            <div class="bg-primary  text-center my-3">
                 <a class="" href="<?php echo esc_url( PI_EQW_BUY_URL ); ?>" target="_blank">
                 <?php new pisol_promotion('pisol_enquiry_installation_date'); ?>
                 </a>
-            </div>
-
-            <div class="text-center mb-3 pi-shadow ">
-                <div class="pisol-row justify-content-center">
-                    <div class="col-md-7">
-                        <div class="p-2  text-center">
-                            <img class="img-fluid" src="<?php echo esc_url(plugin_dir_url( __FILE__ )); ?>img/bg.svg">
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center py-2">
-                    <a class="btn btn-success btn-sm text-uppercase mb-2 " href="<?php echo esc_url(PI_EQW_BUY_URL); ?>&utm_ref=top_link" target="_blank">Buy Now !!</a>
-                    <a class="btn btn-sm mb-2 btn-secondary text-uppercase" href="https://websitemaintenanceservice.in/enquiry_demo/" target="_blank">Try Demo</a>
-                </div>
-                <h2 id="pi-banner-tagline" class="mb-0">Get Pro for <?php echo esc_html(PI_EQW_PRICE); ?> Only</h2>
-                <div class="inside">
-                    <ul class="text-left pisol-pro-feature-list">
-                        <li class="border-top  h6 "><span class="font-weight-bold ">Disable/Enable</span> enquiry for specific product category</li>
-                        <li class="border-top  h6 ">Support <span class="font-weight-bold ">variable products</span></li>
-                        <li class="border-top  h6 ">Show enquiry option only when the product is <span class="font-weight-bold ">out of stock</span></li>
-                        <li class="border-top  h6 "><span class="font-weight-bold ">Change the position</span> of the enquiry button on the product loop page and single product page</li>
-                        <li class="border-top  h6 "><span class="font-weight-bold ">Remove add to cart button</span> so you only receive enquiries</li>
-                        <li class="border-top  h6 "><span class="font-weight-bold ">Remove add to cart button</span> for products with enquiry enabled</li>
-                        <li class="border-top  h6 ">Add <span class="font-weight-bold ">multiple email id</span> to admin email list</li>
-                        <li class="border-top  h6 ">Adding custom message in <span class="font-weight-bold ">customer email</span></li>
-                        <li class="border-top  h6 ">Adding custom message in <span class="font-weight-bold ">admin email</span></li>
-                        <li class="border-top  h6 ">Modify the <span class="font-weight-bold ">success message</span> on form submission</li>
-                        <li class="border-top  h6 ">Making a form field as <span class="font-weight-bold ">Non required field</span></li>
-                        <li class="border-top  h6 ">Show a <span class="font-weight-bold ">dynamic cart</span> (that show the product count added in the enquiry cart and link to enquiry cart page)</li>
-                        <li class="border-top  h6 ">Insert inquiry cart on page using short code <span class="font-weight-bold ">[enquiry_cart_icon]</span></li>
-                        <li class="border-top  h6 "><span class="font-weight-bold ">Remove price column</span> from the enquiry cart and enquiry email </li>
-                        <li class="border-top  h6 ">Ask user to <span class="font-weight-bold ">accept terms and condition</span> before submitting the enquiry </li>
-                        <li class="border-top  h6 "><span class="font-weight-bold ">Disable the field</span> that you don't want in the enquiry form</li>
-                        <li class="border-top  h6 "><span class="font-weight-bold ">Change form field label</span> from within the plugin setting</li>
-                        <li class="border-top  h6 "><span class="font-weight-bold ">Change sequence</span> of the field in the enquiry form</li>
-                        <li class="border-top  h6 ">Remove <span class="font-weight-bold ">product specific message</span> column from enquiry cart</li>
-                        <li class="border-top  h6 ">Open <span class="font-weight-bold ">enquiry cart in a popup</span>, so user can submit enquiry right from the product page</li>
-                        <li class="border-top  h6 ">Customer can see submitted enquiries in <span class="font-weight-bold ">My enquiry section</span> (under my account of WooCommerce)</li>
-                        <li class="border-top  h6 ">Get WooCommerce Product enquiry in <span class="font-weight-bold ">Telegram</span></li>
-                    </ul>
-                    <a class="btn btn-primary mb-3" href="<?php echo esc_url( PI_EQW_BUY_URL ); ?>" target="_blank">Click to Buy Now</a>
-                </div>
             </div>
 
         </div>

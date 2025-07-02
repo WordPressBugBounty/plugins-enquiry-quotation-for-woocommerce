@@ -41,14 +41,14 @@ class Class_Pi_Eqw_Form_Control{
     function init(){
         $this->settings = array(
             
-            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Making enquiry form field as required.','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
+            array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Making enquiry form field as required.','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
             array('field'=>'pi_eqw_name_required','type'=>'switch','label'=>__('Name Field','pisol-enquiry-quotation-woocommerce'),'default'=>1,'pro'=>true),
             array('field'=>'pi_eqw_email_required','type'=>'switch','label'=>__('Email Field','pisol-enquiry-quotation-woocommerce'),'default'=>1,'pro'=>true),
             array('field'=>'pi_eqw_phone_required','type'=>'switch','label'=>__('Phone Field','pisol-enquiry-quotation-woocommerce'),'default'=>1,'pro'=>true),
             array('field'=>'pi_eqw_subject_required','type'=>'switch','label'=>__('Subject Field','pisol-enquiry-quotation-woocommerce'),'default'=>1,'pro'=>true),
             array('field'=>'pi_eqw_message_required','type'=>'switch','label'=>__('Message Field','pisol-enquiry-quotation-woocommerce'),'default'=>1,'pro'=>true),
 
-            array('field'=>'title2', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Terms & Condition option','pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
+            array('field'=>'title2', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Terms & Condition option','pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
             array('field'=>'pi_eqw_enable_tandc','type'=>'switch','label'=>__('Enable Terms & Condition','pisol-enquiry-quotation-woocommerce'),'default'=>0, 'desc'=>__('This will show the terms and condition selection option on the enquiry form, user must select this option to submit the enquiry','pisol-enquiry-quotation-woocommerce'),'pro'=>true),
             array('field'=>'pi_eqw_tandc_label','type'=>'textarea','label'=>__('Terms and Condition Text','pisol-enquiry-quotation-woocommerce'),'default'=>"We accept Terms & Conditions", 'desc'=>__('This will be the test shown next to the terms and condition text','pisol-enquiry-quotation-woocommerce'),'pro'=>true),
             
@@ -77,7 +77,7 @@ class Class_Pi_Eqw_Form_Control{
         $this->tab_name = __('Form builder (PRO)','pisol-enquiry-quotation-woocommerce');
         ?>
         <a class="hide-pro px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ) ); ?>">
-        <?php echo esc_html( $this->tab_name); ?>
+            <span class="dashicons dashicons-feedback"></span> <?php echo esc_html( $this->tab_name); ?>
         </a>
         <?php
     }

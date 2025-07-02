@@ -74,3 +74,178 @@
 .pi-bold{
     font-weight:bold;
 }
+
+/* top menu */
+
+#pisol-navbar .navbar-nav{
+    background:transparent !important;
+    display:flex;
+    gap:10px;
+}
+
+#pisol-navbar a{
+    background:#fff !important;
+    color:var(--dark) !important;
+    border-radius:60px !important;
+    font-weight:400;
+    transition: all 0.3s ease;
+	padding:10px 5px;
+    text-align: center;
+}
+
+#pisol-navbar a .dashicons{
+    margin-right:4px;
+}
+
+#bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar a.bg-primary, 
+#bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar a:hover,
+#bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar a.bg-secondary:hover{
+    background:#fff !important;
+    color:var(--primary) !important;
+    text-decoration:none;
+}
+
+#bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar a.bg-secondary{
+    background:#fff !important;
+    color:var(--dark) !important;
+    text-decoration:none;
+}
+
+@media(max-width:1600px){
+    #bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar a{
+        letter-spacing:inherit;
+        padding:9px 5px !important;
+        font-size:0.7rem !important;
+    }
+}
+
+@media(max-width:1400px){
+    #bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar .navbar-nav{
+        gap:7px !important;
+    }
+
+    #bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar a{
+        flex-direction: column;
+        gap:5px;
+        padding:9px 7px !important;
+    }
+}
+
+@media(max-width:1200px){
+   #bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar .navbar-nav{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        grid-gap:10px;
+        & a{
+            width:100%;
+			justify-content: center;
+        }
+    }
+}
+
+@media(max-width:750px){
+    #bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar .navbar-nav{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    #bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper #pisol-navbar{
+        margin:auto !important;
+    }
+}
+
+@media(max-width:576px){
+    #pisol-navbar{
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+    
+    #pisol-navbar .container-fluid{
+        width:100% !important;
+    }
+
+    #pi-logo{
+        width:90%;
+    }
+}
+
+/* end top menu */
+
+/* for */
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-25 {
+  opacity: 0.25 !important;
+}
+
+.opacity-50 {
+  opacity: 0.5 !important;
+}
+
+.opacity-75 {
+  opacity: 0.75 !important;
+}
+
+.opacity-100 {
+  opacity: 1 !important;
+}
+
+.pisol-form-element-row small{
+	color:#1a4562;
+	opacity:0.7;
+	margin-top:10px;
+	display:block;
+}
+
+ .select2-container--default .select2-selection--multiple .select2-selection__choice{
+     background:var(--dark) !important;
+     opacity:0.75;
+     color:#fff;
+     padding:5px !important;
+     border:0px !important;
+ }
+
+ .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+    color:#fff !important;
+ }
+
+/* end form */
+
+/* side banner */
+.pi-shadow{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	position:relative;
+	background: linear-gradient(135deg, #1a4562 0%, #2c6a89 50%, #163f59 100%) !important;
+	z-index:1;
+}
+
+.pi-shadow li, .pi-shadow h6, .pi-shadow h4{
+	color:#fff !important;
+}
+
+#bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper .pisol-pro-feature-list li{
+    color:#fff !important;
+}
+
+.pi-shadow hr{
+	border-color:#1a4562 !important;
+}
+
+#bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper h2#pi-banner-tagline{
+	color:#fff !important;
+	font-size:1.1rem !important;
+	text-align:center;
+}
+
+#bootstrap-wrapper.pisol-setting-wrapper.pisol-container-wrapper h4.pi-bottom-banner{
+	font-size: 18px;
+	margin-bottom:15px;
+	text-align: center;
+    color:#fff !important;
+}
+
+.plugin-card .column-name h3{
+    font-size:1.2rem !important;
+}

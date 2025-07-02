@@ -40,6 +40,8 @@ class Class_Pi_Eqw_Email{
 
     function init(){
         $this->settings = array(
+
+            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Email settings', 'type'=>'setting_category'),
             
             array('field'=>'pi_eqw_email', 'label'=>__('Email id','pisol-enquiry-quotation-woocommerce'),'type'=>'text',   'desc'=>__('Email id that will receive the enquiry, <strong class="text-danger">In PRO version you can add multiple email separated with coma like this text@email.com, text2@email.com </strong>','pisol-enquiry-quotation-woocommerce'),'default'=> get_option('admin_email')),
 
@@ -57,7 +59,7 @@ class Class_Pi_Eqw_Email{
             array('field'=>'pi_eqw_customer_email_subject', 'label'=>__('Subject of the email to customer','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('Your enquiry is submitted'),  'desc'=>__('Subject of the enquiry email send to customer', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
             array('field'=>'pi_eqw_company_logo', 'label'=>__('Logo added in the email','pisol-enquiry-quotation-woocommerce'),'type'=>'image', 'desc'=>__('This is the image that will be added inside the email copy, sed to you and the customer', 'pisol-enquiry-quotation-woocommerce'),'pro'=>true),
 
-            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Spam protection",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
+            array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Spam protection",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
 
             array('field'=>'pi_eqw_enable_honeypot', 'label'=>__('Use honeypot for spam protection','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=> 1, 'desc'=>__('This will add an hidden field which user will not fill but spam bot will fill and so the form will not be submitted','pisol-enquiry-quotation-woocommerce')),
 
@@ -69,7 +71,7 @@ class Class_Pi_Eqw_Email{
 
             array('field'=>'pi_eqw_captcha_placeholder','desc'=>'', 'label'=>__('Captcha field placeholder','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>'Enter the CAPTCHA'),
             
-            array('field'=>'title', 'class'=> 'hide-pro bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Custom message for customer email', 'pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
+            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Custom message for customer email', 'pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
 
             array('field'=>'pi_eqw_customer_email_above_product_table', 'label'=>__('Above product table','pisol-enquiry-quotation-woocommerce'),'type'=>'textarea', 'default'=>"",   'desc'=>__('This message will appear above the product table','pisol-enquiry-quotation-woocommerce'),'pro'=>true),
             
@@ -77,7 +79,7 @@ class Class_Pi_Eqw_Email{
 
             array('field'=>'pi_eqw_customer_email_below_customer_detail', 'label'=>__('Below customer detail','pisol-enquiry-quotation-woocommerce'),'type'=>'textarea', 'default'=>"",   'desc'=>__('This message will appear below the customer detail table','pisol-enquiry-quotation-woocommerce'),'pro'=>true),
 
-            array('field'=>'title', 'class'=> 'hide-pro bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Custom message for admin email', 'pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
+            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Custom message for admin email', 'pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
 
             array('field'=>'pi_eqw_admin_email_above_product_table', 'label'=>__('Above product table','pisol-enquiry-quotation-woocommerce'),'type'=>'textarea', 'default'=>"",   'desc'=>__('This message will appear above the product table','pisol-enquiry-quotation-woocommerce'),'pro'=>true),
             
@@ -123,7 +125,7 @@ class Class_Pi_Eqw_Email{
         $this->tab_name = __('Email setting','pisol-enquiry-quotation-woocommerce');
         ?>
         <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ) ); ?>">
-        <?php echo esc_html( $this->tab_name); ?>
+            <span class="dashicons dashicons-email-alt"></span> <?php echo esc_html( $this->tab_name); ?>
         </a>
         <?php
     }
@@ -137,7 +139,7 @@ class Class_Pi_Eqw_Email{
                 new pisol_class_form_eqw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="mt-3 btn btn-primary btn-sm" value="Save Option" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php echo esc_attr__('Save Option', 'pisol-enquiry-quotation-woocommerce'); ?>" />
         </form>
        <?php
     }
