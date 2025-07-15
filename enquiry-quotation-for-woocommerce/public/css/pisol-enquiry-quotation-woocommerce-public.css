@@ -258,3 +258,147 @@ label.error{
     border:1px solid #ccc;
     margin-left:10px;
 }
+
+.added-to-enq-cart:before{
+    content:"\2713";
+    color:inherit;
+    margin-right:10px;
+}
+
+#pi-eqw-cart {
+    position: fixed;
+    z-index: 100000000;
+    width: 40px;
+    height: 40px;
+}
+
+#pi-eqw-cart.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+#pi-eqw-cart .pi-count {
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#pi-eqw-cart.pi_icon_relative {
+    position: relative;
+    display: inline-block;
+    bottom: auto;
+    right: auto;
+}
+
+/** mini cart */
+#pi-eqw-mini-cart{
+    display:none;
+    width:400px;
+    position: fixed;
+    background:#fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border-radius:6px;
+    overflow:hidden;
+    z-index:1000000000;
+    font-size:18px;
+}
+
+#pi-eqw-mini-cart.bottom-right{
+    bottom:20px;
+    right:20px;
+}
+
+#pi-eqw-mini-cart.bottom-left{
+    bottom:20px;
+    left:20px;
+}
+
+#pi-eqw-mini-cart.top-left{
+    top:20px;
+    left:20px;
+}
+
+#pi-eqw-mini-cart.top-right{
+    top:20px;
+    right:20px;
+}
+
+#pi-eqw-mini-cart header{
+    padding:10px;
+    background:#eee;
+}
+
+#pi-eqw-mini-cart content{
+    padding:10px;
+}
+
+.pi-mini-cart-item{
+    display:grid;
+    grid-template-columns: 60px 2fr 20px;
+    grid-gap:20px;
+    margin-bottom:20px;
+    align-items:center
+}
+
+.pi-mini-cart-item .thumbnail img{
+    width:60px;
+}
+
+.pi-mini-cart-item .name-qty{
+    margin-bottom:10px;
+}
+
+.pi-mini-cart-item .remove{
+    width:20px;
+}
+
+.close-mini-cart{
+    cursor:pointer;
+    float:right;
+    margin-right:10px;
+    font-size:22px;
+}
+
+#pi-eqw-mini-cart content{
+    position:relative;
+}
+
+#pi-eqw-mini-cart content.processing:after{
+    content:"";
+    display:block;
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    background: rgba(200,200,200,0.5);
+}
+
+#pi-eqw-mini-cart footer{
+    text-align:center;
+    padding:10px;
+}
+
+#pi-eqw-mini-cart footer .button{
+    padding:10px 20px;
+}
+
+.pi-remove-product{
+    text-decoration: none;
+}
+
+@media(max-width:768px){
+    #pi-eqw-mini-cart{
+        width:100%;
+        left:0px;
+        bottom:0px;
+    }
+}
+/* mini cart end */

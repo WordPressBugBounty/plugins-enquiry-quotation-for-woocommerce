@@ -10,7 +10,7 @@ class pisol_enq_other_plugins{
 
     private $this_tab = 'pisol_enq_other_plugins';
 
-    private $tab_name = "Related Plugins";
+    private $tab_name = "Plugins";
 
     private $setting_key = 'pisol_corw_other_plugins';
 

@@ -27,3 +27,4 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/pisol-eqw
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-pisol-form.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-eqw-save-enquiry.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-webhook.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-enq-dynamic-cart.php';

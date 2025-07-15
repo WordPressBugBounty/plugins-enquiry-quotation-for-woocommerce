@@ -130,8 +130,13 @@
 					var action = 'pi_add_to_enquiry';
 					jQuery.post(pi_ajax.wc_ajax_url.toString().replace('%%endpoint%%', action), add_to_enquiry.data, function (response) {
 						add_to_enquiry.addedToCart(button);
+						add_to_enquiry.updateCart();
 					});
 				}
+			},
+
+			updateCart: function () {
+				jQuery(document).trigger("pisol_update_enquiry");
 			},
 
 			removeProduct: function (hash) {
@@ -139,6 +144,7 @@
 				var action = 'pi_remove_product';
 				jQuery.post(pi_ajax.wc_ajax_url.toString().replace('%%endpoint%%', action), { hash: hash }, function (response) {
 					add_to_enquiry.dataLoaded(response);
+					add_to_enquiry.updateCart();
 				});
 			},
 

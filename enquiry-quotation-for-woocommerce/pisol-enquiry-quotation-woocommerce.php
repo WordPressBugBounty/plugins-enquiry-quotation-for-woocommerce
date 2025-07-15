@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              piwebsolution.com
- * @since             2.2.34.11
+ * @since             2.2.34.12
  * @package           Pisol_Enquiry_Quotation_Woocommerce
  *
  * @wordpress-plugin
  * Plugin Name:       Enquiry Quotation for WooCommerce
  * Plugin URI:        piwebsolution.com
  * Description:       Product enquiry and quotation plugin for WooCommerce that can save enquiry and email the enquiry as well
- * Version:           2.2.34.11
+ * Version:           2.2.34.12
  * Author:            PI Websolution
  * Author URI:        https://www.piwebsolution.com/faq-for-woocommerce-product-enquiry-quotation/
  * License:           GPL-2.0+
@@ -70,10 +70,10 @@ add_action( 'before_woocommerce_init', function() {
 
 /**
  * Currently plugin version.
- * Start at version 2.2.34.11 and use SemVer - https://semver.org
+ * Start at version 2.2.34.12 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PISOL_ENQUIRY_QUOTATION_WOOCOMMERCE_VERSION', '2.2.34.11' );
+define( 'PISOL_ENQUIRY_QUOTATION_WOOCOMMERCE_VERSION', '2.2.34.12' );
 define( 'PI_EQW_PRICE', '$25' );
 define( 'PI_EQW_BUY_URL', 'https://www.piwebsolution.com/cart/?add-to-cart=1734&variation_id=1735&utm_campaign=enquiry-cart&utm_source=website&utm_medium=direct-buy' );
 define( 'PI_EQW_DELETE_SETTING', false);

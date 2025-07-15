@@ -7,7 +7,7 @@ class Class_Pi_Eqw_Telegram_Options {
     private $settings = array();
     private $active_tab;
     private $this_tab = 'telegram';
-    private $tab_name = 'Telegram alert (PRO)';
+    private $tab_name = 'Telegram (PRO)';
     private $setting_key = 'pi_eqw_telegram_setting';
     private static $instance = null;
 

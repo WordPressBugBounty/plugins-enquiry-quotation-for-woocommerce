@@ -2,72 +2,81 @@
 msgid ""
 msgstr ""
 "Language: \n"
-"POT-Creation-Date: 2025-03-10 02:05+0000\n"
+"POT-Creation-Date: 2025-07-15 06:27+0000\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: admin/class-eqw-email.php:56 admin/class-eqw-email.php:64
+#: admin/class-eqw-email.php:76 admin/class-eqw-email.php:84
 msgid "Above product table"
 msgstr ""
 
-#: admin/class-eqw-option.php:46 admin/class-eqw-option.php:67
+#: admin/class-telegram-options.php:50
+msgid ""
+"Add the channel or group id in which bot can send message, make sure the bot "
+"is assigned as a user to the group and if it is channel then bot should be "
+"assigned as an admin to the channel <br> <a href=\"https://www.piwebsolution."
+"com/create-a-telegram-bot-using-botfather-and-get-the-api-token/#get-channel-"
+"id\" target=\"_blank\">How to get channel id where bot will send message</a>"
+msgstr ""
+
+#: admin/class-eqw-option.php:59 admin/class-eqw-option.php:80
 msgid "Add to Enquiry"
 msgstr ""
 
-#: admin/class-eqw-advance.php:106
-msgid "Advance option"
+#: admin/class-eqw-advance.php:109
+msgid "Advance"
 msgstr ""
 
-#: admin/class-eqw-option.php:57
+#: admin/class-eqw-option.php:70
 msgid "After add to cart button"
 msgstr ""
 
-#: admin/class-eqw-advance.php:39
+#: admin/class-eqw-advance.php:58
 msgid "After Add to enquiry click"
 msgstr ""
 
-#: admin/class-eqw-option.php:36
+#: admin/class-eqw-option.php:49
 msgid "After product title"
 msgstr ""
 
-#: admin/class-eqw-option.php:57
+#: admin/class-eqw-option.php:70
 msgid "After Summary"
 msgstr ""
 
-#: admin/class-eqw-option.php:36
+#: admin/class-eqw-option.php:49
 msgid "At the end of product"
 msgstr ""
 
-#: admin/class-eqw-option.php:36
+#: admin/class-eqw-option.php:49
 msgid "At the start of the product"
 msgstr ""
 
-#: admin/class-eqw-option.php:38 admin/class-eqw-option.php:59
+#: admin/class-eqw-option.php:51 admin/class-eqw-option.php:72
 msgid "Background color"
 msgstr ""
 
-#: admin/class-eqw-option.php:38 admin/class-eqw-option.php:59
+#: admin/class-eqw-option.php:51 admin/class-eqw-option.php:72
 msgid "Background color of the button on the shop / category page"
 msgstr ""
 
-#: admin/class-eqw-option.php:57
+#: admin/class-eqw-option.php:70
 msgid "Before add to cart button"
 msgstr ""
 
-#: admin/class-eqw-option.php:36
+#: admin/class-eqw-option.php:49
 msgid "Before product title"
 msgstr ""
 
-#: admin/class-eqw-option.php:57
+#: admin/class-eqw-option.php:70
 msgid "Before summary"
 msgstr ""
 
-#: admin/class-eqw-email.php:60 admin/class-eqw-email.php:68
+#: admin/class-eqw-email.php:80 admin/class-eqw-email.php:88
 msgid "Below customer detail"
 msgstr ""
 
-#: admin/class-eqw-email.php:58 admin/class-eqw-email.php:66
+#: admin/class-eqw-email.php:78 admin/class-eqw-email.php:86
 msgid "Below product table"
 msgstr ""
 
@@ -80,7 +89,7 @@ msgstr ""
 msgid "Cant leave %s empty"
 msgstr ""
 
-#: admin/class-eqw-email.php:46
+#: admin/class-eqw-email.php:66
 msgid "Captcha"
 msgstr ""
 
@@ -92,19 +101,19 @@ msgstr ""
 msgid "Captcha code does not match"
 msgstr ""
 
-#: admin/class-eqw-email.php:52
+#: admin/class-eqw-email.php:72
 msgid "Captcha field placeholder"
 msgstr ""
 
-#: admin/class-eqw-email.php:50
+#: admin/class-eqw-email.php:70
 msgid "Captcha string length"
 msgstr ""
 
-#: admin/class-eqw-email.php:62
+#: admin/class-eqw-email.php:82
 msgid "Custom message for admin email"
 msgstr ""
 
-#: admin/class-eqw-email.php:54
+#: admin/class-eqw-email.php:74
 msgid "Custom message for customer email"
 msgstr ""
 
@@ -112,56 +121,49 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: admin/class-eqw-advance.php:27
+#: admin/class-eqw-advance.php:46
 msgid "Don't hide"
 msgstr ""
 
-#: admin/class-eqw-cart.php:73
-msgid "Dynamic Cart (PRO)"
-msgstr ""
-
-#: admin/class-eqw-cart.php:27
+#: admin/class-eqw-cart.php:45
 msgid "Dynamic Cart icon"
 msgstr ""
 
-#: admin/class-eqw-enquiry.php:91 public/partials/pisol-eqw-shortcode.php:29
+#: admin/class-eqw-email.php:125 admin/class-eqw-enquiry.php:91
+#: public/partials/pisol-eqw-shortcode.php:29
 msgid "Email"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:27
+#: admin/class-eqw-form-control.php:46
 msgid "Email Field"
 msgstr ""
 
-#: admin/class-eqw-email.php:26
+#: admin/class-eqw-email.php:46
 msgid "Email id"
 msgstr ""
 
-#: admin/class-eqw-email.php:26
+#: admin/class-eqw-email.php:46
 msgid ""
 "Email id that will receive the enquiry, <strong class=\"text-danger\">In PRO "
 "version you can add multiple email separated with coma like this text@email."
 "com, text2@email.com </strong>"
 msgstr ""
 
-#: admin/class-eqw-email.php:123
-msgid "Email setting"
+#: admin/class-eqw-cart.php:41
+msgid "Enable cart"
 msgstr ""
 
-#: admin/class-eqw-cart.php:23
-msgid "Enable cart icon"
-msgstr ""
-
-#: admin/class-eqw-form-control.php:33
+#: admin/class-eqw-form-control.php:52
 msgid "Enable Terms & Condition"
 msgstr ""
 
-#: admin/class-eqw-email.php:34
+#: admin/class-eqw-email.php:54
 msgid ""
 "Enable this option If product and logo image are not shown in the email or "
 "You dont want image attached in email"
 msgstr ""
 
-#: admin/class-eqw-email.php:34
+#: admin/class-eqw-email.php:54
 msgid ""
 "Enable this option only if you are having issue in seeing image inside the "
 "enquiry email or You dont want image to be send as attachment in the email"
@@ -171,54 +173,59 @@ msgstr ""
 msgid "Enq no."
 msgstr ""
 
-#: admin/class-eqw-option.php:125
+#: admin/class-eqw-option.php:126
 msgid "Enquiry Button"
 msgstr ""
 
-#: admin/class-eqw-option.php:30
+#: admin/class-eqw-option.php:43
 msgid "Enquiry button on category/show page"
 msgstr ""
 
-#: admin/class-eqw-option.php:28
+#: admin/class-eqw-option.php:41
 msgid "Enquiry button on shop / category page"
 msgstr ""
 
-#: admin/class-eqw-option.php:49 admin/class-eqw-option.php:51
+#: admin/class-eqw-option.php:62 admin/class-eqw-option.php:64
 msgid "Enquiry button on single product page"
 msgstr ""
 
-#: admin/class-eqw-option.php:36
+#: admin/class-eqw-option.php:49
 msgid "Enquiry button position on show / category page"
 msgstr ""
 
-#: admin/class-eqw-advance.php:33
+#: admin/class-eqw-advance.php:52
 msgid ""
 "Enquiry button position on show / category page, If you make some other page "
 "as Enquiry make sure to put the short code <strong>[pisol_enquiry_cart]"
 "</strong> on that page"
 msgstr ""
 
-#: admin/class-eqw-option.php:57
+#: admin/class-eqw-option.php:70
 msgid "Enquiry button position on single product page"
 msgstr ""
 
-#: admin/class-eqw-option.php:46 admin/class-eqw-option.php:67
+#: admin/class-eqw-option.php:59 admin/class-eqw-option.php:80
 msgid "Enquiry button text"
 msgstr ""
 
 #: admin/class-pisol-enquiry-quotation-woocommerce-admin.php:59
+#: public/class-enq-dynamic-cart.php:116
 msgid "Enquiry Cart"
+msgstr ""
+
+#: admin/class-eqw-cart.php:76
+msgid "Enquiry Mini-Cart"
 msgstr ""
 
 #: public/partials/email-template-woo.php:300
 msgid "Enquiry no."
 msgstr ""
 
-#: admin/class-eqw-advance.php:46
+#: admin/class-eqw-advance.php:65
 msgid "Enquiry popup settings"
 msgstr ""
 
-#: admin/class-eqw-advance.php:39
+#: admin/class-eqw-advance.php:58
 msgid "Enquiry popup will get opened"
 msgstr ""
 
@@ -230,31 +237,38 @@ msgstr ""
 msgid "Enquiry submitted"
 msgstr ""
 
-#: admin/class-eqw-option.php:71
+#: admin/class-telegram-options.php:42
+msgid ""
+"Enter your Telegram bot token here. <br> <a href=\"https://www.piwebsolution."
+"com/create-a-telegram-bot-using-botfather-and-get-the-api-token/\" "
+"target=\"_blank\">How to create bot and get token</a>"
+msgstr ""
+
+#: admin/class-eqw-option.php:84
 msgid "Fall back to old position hook"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:75
-msgid "Form builder (PRO)"
+#: admin/class-eqw-form-control.php:77
+msgid "Form (PRO)"
 msgstr ""
 
 #: public/class-pisol-form.php:63
 msgid "Form submitted"
 msgstr ""
 
-#: admin/class-eqw-advance.php:27
+#: admin/class-eqw-advance.php:46
 msgid "Hide for all"
 msgstr ""
 
-#: admin/class-eqw-advance.php:27
+#: admin/class-eqw-advance.php:46
 msgid "Hide for non log-in users"
 msgstr ""
 
-#: admin/class-eqw-advance.php:25
+#: admin/class-eqw-advance.php:44
 msgid "Hide if enquiry enabled"
 msgstr ""
 
-#: admin/class-eqw-advance.php:27
+#: admin/class-eqw-advance.php:46
 msgid "Hide price"
 msgstr ""
 
@@ -263,32 +277,32 @@ msgid ""
 "https://www.piwebsolution.com/faq-for-woocommerce-product-enquiry-quotation/"
 msgstr ""
 
-#: admin/class-eqw-option.php:69
+#: admin/class-eqw-option.php:82
 msgid ""
 "If you notice change in enquiry button after upgrading to v2.1.2, then "
 "enable the below option to fall back to old way of position"
 msgstr ""
 
-#: admin/class-eqw-option.php:75
+#: admin/class-eqw-option.php:88
 msgid "Image is shown as loading image"
 msgstr ""
 
-#: admin/class-eqw-cart.php:25
+#: admin/class-eqw-cart.php:43
 msgid "Insert icon using Short code [enquiry_cart_icon]"
 msgstr ""
 
-#: admin/class-eqw-advance.php:44
+#: admin/class-eqw-advance.php:63
 msgid ""
 "Insert webhook url where the enquiry data will send send, you can insert "
 "webhook url of zapier or Pabbly or any other platform that support webhook "
 "url"
 msgstr ""
 
-#: admin/class-eqw-email.php:40
+#: admin/class-eqw-email.php:60
 msgid "Logo added in the email"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:25
+#: admin/class-eqw-form-control.php:44
 msgid "Making enquiry form field as required."
 msgstr ""
 
@@ -297,7 +311,7 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:30
+#: admin/class-eqw-form-control.php:49
 msgid "Message Field"
 msgstr ""
 
@@ -305,15 +319,19 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:26
+#: admin/class-eqw-form-control.php:45
 msgid "Name Field"
 msgstr ""
 
-#: admin/class-eqw-option.php:34
+#: public/partials/pisol-eqw-mini-cart.php:3
+msgid "No products in enquiry cart"
+msgstr ""
+
+#: admin/class-eqw-option.php:47
 msgid "On shop / category product page"
 msgstr ""
 
-#: admin/class-eqw-option.php:55
+#: admin/class-eqw-option.php:68
 msgid "On single product page"
 msgstr ""
 
@@ -321,7 +339,7 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:28
+#: admin/class-eqw-form-control.php:47
 msgid "Phone Field"
 msgstr ""
 
@@ -347,27 +365,27 @@ msgid ""
 "cant work"
 msgstr ""
 
-#: admin/class-eqw-advance.php:50
+#: admin/class-eqw-advance.php:69
 msgid "Popup title"
 msgstr ""
 
-#: admin/class-eqw-advance.php:52
+#: admin/class-eqw-advance.php:71
 msgid "Popup Title Background color"
 msgstr ""
 
-#: admin/class-eqw-advance.php:54
+#: admin/class-eqw-advance.php:73
 msgid "Popup Title text color"
 msgstr ""
 
-#: admin/class-eqw-option.php:36
+#: admin/class-eqw-option.php:49
 msgid "Position on shop/category page"
 msgstr ""
 
-#: admin/class-eqw-option.php:57
+#: admin/class-eqw-option.php:70
 msgid "Position on single product page"
 msgstr ""
 
-#: admin/class-eqw-option.php:73 admin/class-eqw-option.php:75
+#: admin/class-eqw-option.php:86 admin/class-eqw-option.php:88
 msgid "Processing image"
 msgstr ""
 
@@ -377,11 +395,11 @@ msgid ""
 "and email the enquiry as well"
 msgstr ""
 
-#: admin/class-eqw-advance.php:39
+#: admin/class-eqw-advance.php:58
 msgid "Product will be added to enquiry cart only"
 msgstr ""
 
-#: admin/class-eqw-advance.php:35
+#: admin/class-eqw-advance.php:54
 msgid "Redirect WooCommerce cart and checkout page to enquiry cart page"
 msgstr ""
 
@@ -389,33 +407,43 @@ msgstr ""
 msgid "Refresh the CAPTCHA"
 msgstr ""
 
-#: admin/class-eqw-advance.php:25
+#: admin/class-eqw-advance.php:44
 msgid "Remove add to cart button"
 msgstr ""
 
-#: admin/class-eqw-advance.php:29
+#: admin/class-eqw-advance.php:48
 msgid "Remove price columns from the enquiry cart and enquiry emails"
 msgstr ""
 
-#: admin/class-eqw-advance.php:31
+#: admin/class-eqw-advance.php:50
 msgid ""
 "Remove product specific message columns from the enquiry cart and enquiry "
 "emails"
 msgstr ""
 
-#: admin/class-eqw-advance.php:33
+#: public/partials/pisol-eqw-mini-cart.php:15
+msgid "Remove this item"
+msgstr ""
+
+#: admin/class-eqw-advance.php:127 admin/class-eqw-cart.php:94
+#: admin/class-eqw-email.php:142 admin/class-eqw-option.php:144
+#: admin/class-telegram-options.php:87
+msgid "Save Option"
+msgstr ""
+
+#: admin/class-eqw-advance.php:52
 msgid "Select the page where to show the enquiry cart"
 msgstr ""
 
-#: admin/class-eqw-email.php:46
+#: admin/class-eqw-email.php:66
 msgid "Select the type of captcha to add"
 msgstr ""
 
-#: admin/class-eqw-email.php:48
+#: admin/class-eqw-email.php:68
 msgid "Select type of string to use in the captcha"
 msgstr ""
 
-#: admin/class-eqw-email.php:37
+#: admin/class-eqw-email.php:57
 msgid "Send enquiry email to customer as well"
 msgstr ""
 
@@ -423,37 +451,37 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: admin/class-eqw-option.php:32 admin/class-eqw-option.php:53
+#: admin/class-eqw-option.php:45 admin/class-eqw-option.php:66
 msgid "Show button on Variable Product"
 msgstr ""
 
-#: admin/class-eqw-option.php:55
+#: admin/class-eqw-option.php:68
 msgid "Show enquiry option Only when product is out of stock"
 msgstr ""
 
-#: admin/class-eqw-option.php:34
+#: admin/class-eqw-option.php:47
 msgid "Show enquiry option only when product is out of stock"
 msgstr ""
 
-#: admin/class-eqw-email.php:30
+#: admin/class-eqw-email.php:50
 msgid ""
 "Show message as row in the email else it will be shown as a columns in the "
 "product row"
 msgstr ""
 
-#: admin/class-eqw-email.php:30
+#: admin/class-eqw-email.php:50
 msgid "Show product message as row in email"
 msgstr ""
 
-#: admin/class-eqw-advance.php:48
+#: admin/class-eqw-advance.php:67
 msgid "Show products added in the inquiry cart in the popup"
 msgstr ""
 
-#: admin/class-eqw-advance.php:48
+#: admin/class-eqw-advance.php:67
 msgid "Show products added to the enquiry cart in the popup"
 msgstr ""
 
-#: admin/class-eqw-email.php:42
+#: admin/class-eqw-email.php:62
 msgid "Spam protection"
 msgstr ""
 
@@ -461,51 +489,63 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:29
+#: admin/class-eqw-form-control.php:48
 msgid "Subject Field"
 msgstr ""
 
-#: admin/class-eqw-email.php:28
+#: admin/class-eqw-email.php:48
 msgid "Subject of the email"
 msgstr ""
 
-#: admin/class-eqw-email.php:28
+#: admin/class-eqw-email.php:48
 msgid "subject of the email"
 msgstr ""
 
-#: admin/class-eqw-email.php:39
+#: admin/class-eqw-email.php:59
 msgid "Subject of the email to customer"
 msgstr ""
 
-#: admin/class-eqw-email.php:39
+#: admin/class-eqw-email.php:59
 msgid "Subject of the enquiry email send to customer"
 msgstr ""
 
-#: admin/class-eqw-advance.php:50 public/partials/pisol-eqw-shortcode.php:45
+#: admin/class-eqw-advance.php:69 public/partials/pisol-eqw-shortcode.php:45
 msgid "Submit Enquiry"
 msgstr ""
 
-#: admin/class-eqw-advance.php:37
+#: public/partials/pisol-eqw-mini-cart.php:28
+msgid "Submit enquiry"
+msgstr ""
+
+#: admin/class-eqw-advance.php:56
 msgid "Success message shown on form submission"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:32
+#: admin/class-telegram-options.php:40
+msgid "Telegram bot token"
+msgstr ""
+
+#: admin/class-telegram-options.php:48
+msgid "Telegram Channel or Group ids"
+msgstr ""
+
+#: admin/class-eqw-form-control.php:51
 msgid "Terms & Condition option"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:34
+#: admin/class-eqw-form-control.php:53
 msgid "Terms and Condition Text"
 msgstr ""
 
-#: admin/class-eqw-option.php:40 admin/class-eqw-option.php:61
+#: admin/class-eqw-option.php:53 admin/class-eqw-option.php:74
 msgid "Text color"
 msgstr ""
 
-#: admin/class-eqw-option.php:40 admin/class-eqw-option.php:61
+#: admin/class-eqw-option.php:53 admin/class-eqw-option.php:74
 msgid "Text color of the button on the shop / category page"
 msgstr ""
 
-#: admin/class-eqw-option.php:46 admin/class-eqw-option.php:67
+#: admin/class-eqw-option.php:59 admin/class-eqw-option.php:80
 msgid "Text shown in the enquiry button"
 msgstr ""
 
@@ -517,105 +557,105 @@ msgstr ""
 msgid "This field is required."
 msgstr ""
 
-#: admin/class-eqw-email.php:40
+#: admin/class-eqw-email.php:60
 msgid ""
 "This is the image that will be added inside the email copy, sed to you and "
 "the customer"
 msgstr ""
 
-#: admin/class-eqw-advance.php:37
+#: admin/class-eqw-advance.php:56
 msgid ""
 "This is the message that is shown on successful submission of the enquiry"
 msgstr ""
 
-#: admin/class-eqw-email.php:56 admin/class-eqw-email.php:64
+#: admin/class-eqw-email.php:76 admin/class-eqw-email.php:84
 msgid "This message will appear above the product table"
 msgstr ""
 
-#: admin/class-eqw-email.php:60 admin/class-eqw-email.php:68
+#: admin/class-eqw-email.php:80 admin/class-eqw-email.php:88
 msgid "This message will appear below the customer detail table"
 msgstr ""
 
-#: admin/class-eqw-email.php:58 admin/class-eqw-email.php:66
+#: admin/class-eqw-email.php:78 admin/class-eqw-email.php:86
 msgid "This message will appear below the product table"
 msgstr ""
 
-#: admin/class-eqw-email.php:44
+#: admin/class-eqw-email.php:64
 msgid ""
 "This will add an hidden field which user will not fill but spam bot will "
 "fill and so the form will not be submitted"
 msgstr ""
 
-#: admin/class-eqw-cart.php:25
+#: admin/class-eqw-cart.php:43
 msgid ""
 "This will allow you to insert the icon using shortcode [enquiry_cart_icon], "
 "when you enable this auto insertion will be disabled"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:34
+#: admin/class-eqw-form-control.php:53
 msgid "This will be the test shown next to the terms and condition text"
 msgstr ""
 
-#: admin/class-eqw-advance.php:27
+#: admin/class-eqw-advance.php:46
 msgid ""
 "This will hide the price based on the selections, If price is hidden then "
 "the add to cart button will also be hidden"
 msgstr ""
 
-#: admin/class-eqw-advance.php:35
+#: admin/class-eqw-advance.php:54
 msgid ""
 "This will redirect all the traffic on cart and checkout page to enquiry cart "
 "page"
 msgstr ""
 
-#: admin/class-eqw-advance.php:25
+#: admin/class-eqw-advance.php:44
 msgid ""
 "This will remove the add to cart button from website<br>Dont Hide<br>Hide "
 "for All Products<br>Hide for product which has enquiry enabled"
 msgstr ""
 
-#: admin/class-eqw-advance.php:31
+#: admin/class-eqw-advance.php:50
 msgid ""
 "This will remove the message columns from the cart page and enquiry emails"
 msgstr ""
 
-#: admin/class-eqw-advance.php:29
+#: admin/class-eqw-advance.php:48
 msgid ""
 "This will remove the price columns from the cart page and enquiry emails"
 msgstr ""
 
-#: admin/class-eqw-cart.php:23
+#: admin/class-eqw-cart.php:41
 msgid ""
 "This will show a dynamically updating cart button on each page in the corner"
 msgstr ""
 
-#: admin/class-eqw-option.php:30
+#: admin/class-eqw-option.php:43
 msgid "This will show enquiry button on loop product like shop, category page"
 msgstr ""
 
-#: admin/class-eqw-option.php:51
+#: admin/class-eqw-option.php:64
 msgid "This will show enquiry button on single product page"
 msgstr ""
 
-#: admin/class-eqw-option.php:32 admin/class-eqw-option.php:53
+#: admin/class-eqw-option.php:45 admin/class-eqw-option.php:66
 msgid "This will show enquiry button on variable product"
 msgstr ""
 
-#: admin/class-eqw-form-control.php:33
+#: admin/class-eqw-form-control.php:52
 msgid ""
 "This will show the terms and condition selection option on the enquiry form, "
 "user must select this option to submit the enquiry"
 msgstr ""
 
-#: admin/class-eqw-advance.php:52
+#: admin/class-eqw-advance.php:71
 msgid "Title background color"
 msgstr ""
 
-#: admin/class-eqw-advance.php:50
+#: admin/class-eqw-advance.php:69
 msgid "Title shown above the popup"
 msgstr ""
 
-#: admin/class-eqw-advance.php:54
+#: admin/class-eqw-advance.php:73
 msgid "Title text color"
 msgstr ""
 
@@ -623,25 +663,25 @@ msgstr ""
 msgid "Update enquiry"
 msgstr ""
 
-#: admin/class-eqw-email.php:46
+#: admin/class-eqw-email.php:66
 msgid "Use captcha"
 msgstr ""
 
-#: admin/class-eqw-email.php:44
+#: admin/class-eqw-email.php:64
 msgid "Use honeypot for spam protection"
 msgstr ""
 
-#: admin/class-eqw-email.php:32
+#: admin/class-eqw-email.php:52
 msgid "Use WooCommerce email template"
 msgstr ""
 
-#: admin/class-eqw-email.php:32
+#: admin/class-eqw-email.php:52
 msgid ""
 "Use Woocommerce email template all the colors will be as per woocommerce "
 "email template "
 msgstr ""
 
-#: admin/class-eqw-advance.php:39
+#: admin/class-eqw-advance.php:58
 msgid "User will be redirected to enquiry cart page once product is added"
 msgstr ""
 
@@ -649,7 +689,7 @@ msgstr ""
 msgid "View Enquiry Cart"
 msgstr ""
 
-#: admin/class-eqw-option.php:71
+#: admin/class-eqw-option.php:84
 msgid ""
 "We have changed the single product page hook in v2.1.2 this is done to "
 "improve compatibility, but if you face any issue like enquiry button not "
@@ -657,22 +697,22 @@ msgid ""
 "old hook"
 msgstr ""
 
-#: admin/class-eqw-advance.php:42
+#: admin/class-eqw-advance.php:61
 msgid "Webhook Integration"
 msgstr ""
 
-#: admin/class-eqw-advance.php:44
+#: admin/class-eqw-advance.php:63
 msgid "Webhook url"
 msgstr ""
 
-#: admin/class-eqw-advance.php:39
+#: admin/class-eqw-advance.php:58
 msgid ""
 "What happen when user click on add to enquiry (Product will be added to the "
 "enquiry cart in all the 3 cases),<br>\n"
 "            Redirect to cart page<br>Open cart page in popup"
 msgstr ""
 
-#: admin/class-eqw-email.php:37
+#: admin/class-eqw-email.php:57
 msgid "Will send the enquiry email copy to customer as well"
 msgstr ""
 

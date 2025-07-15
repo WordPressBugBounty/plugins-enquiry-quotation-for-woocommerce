@@ -29,10 +29,6 @@ class Class_Pi_Eqw_Option{
         }
 
         add_action($this->plugin_name.'_tab', array($this,'tab'),1);
-
-        if(PI_EQW_DELETE_SETTING){
-            $this->delete_settings();
-        }
     }
 
     function init(){
@@ -44,7 +40,7 @@ class Class_Pi_Eqw_Option{
             
             array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Enquiry button on shop / category page','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
 
-            array('field'=>'pi_eqw_enquiry_loop', 'label'=>__('Enquiry button on category/show page', 'pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will show enquiry button on loop product like shop, category page', 'pisol-enquiry-quotation-woocommerce')),
+            array('field'=>'pi_eqw_enquiry_loop', 'label'=>__('Enquiry button on category/show page', 'pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('This will show enquiry button on loop product like shop, category page', 'pisol-enquiry-quotation-woocommerce')),
 
             array('field'=>'pi_eqw_enquiry_loop_pro', 'label'=>__('Show button on Variable Product', 'pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will show enquiry button on variable product', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
@@ -56,7 +52,7 @@ class Class_Pi_Eqw_Option{
 
             array('field'=>'pi_eqw_enquiry_loop_text_color', 'type'=>'color', 'default'=>'#ffffff','label'=>__('Text color','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Text color of the button on the shop / category page','pisol-enquiry-quotation-woocommerce')),
 
-            array('field'=>'pisol_eqw_loop_button_size','desc'=>'Enquiry button width on product page (PX), if left blank it will be 100% width ', 'label'=>__('Enquiry button width on product page'),'type'=>'number', 'default'=>'', 'min'=>100, 'placeholder'=>'px'),
+            array('field'=>'pisol_eqw_loop_button_size','desc'=>'Enquiry button width on product page (PX), if left blank it will be 100% width ', 'label'=>__('Enquiry button width on product page'),'type'=>'number', 'default'=>'220', 'min'=>100, 'placeholder'=>'px'),
 
             array('field'=>'pisol_eqw_loop_button_font_size','desc'=>'Enquiry button font size (PX)', 'label'=>__('Enquiry button font size on product page'),'type'=>'number', 'default'=>'16', 'placeholder'=>'px', 'min'=>12),
 
@@ -77,7 +73,7 @@ class Class_Pi_Eqw_Option{
 
             array('field'=>'pi_eqw_enquiry_single_text_color', 'type'=>'color', 'default'=>'#ffffff','label'=>__('Text color','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Text color of the button on the shop / category page','pisol-enquiry-quotation-woocommerce')),
 
-            array('field'=>'pisol_eqw_button_size','desc'=>'Enquiry button width on product page (PX), if left blank it will be 100% width ', 'label'=>__('Enquiry button width on product page'),'type'=>'number', 'default'=>'200', 'min'=>100, 'placeholder'=>'px'),
+            array('field'=>'pisol_eqw_button_size','desc'=>'Enquiry button width on product page (PX), if left blank it will be 100% width ', 'label'=>__('Enquiry button width on product page'),'type'=>'number', 'default'=>'220', 'min'=>100, 'placeholder'=>'px'),
 
             array('field'=>'pisol_eqw_button_font_size','desc'=>'Enquiry button font size (PX)', 'label'=>__('Enquiry button font size on product page'),'type'=>'number', 'default'=>'16', 'placeholder'=>'px', 'min'=>12),
 
@@ -94,6 +90,10 @@ class Class_Pi_Eqw_Option{
 
         );
         $this->register_settings();
+
+        if(PI_EQW_DELETE_SETTING){
+            $this->delete_settings();
+        }
     }
 
     function allUserRoles(){

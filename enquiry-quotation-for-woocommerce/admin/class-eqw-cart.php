@@ -10,7 +10,7 @@ class Class_Pi_Eqw_Cart{
 
     private $this_tab = 'cart';
 
-    private $tab_name = "Dynamic Cart (PRO)";
+    private $tab_name = "Enquiry Cart";
 
     private $setting_key = 'pi_eqw_cart_setting';
     public $tab;
@@ -26,7 +26,7 @@ class Class_Pi_Eqw_Cart{
             add_action($this->plugin_name.'_tab_content', array($this,'tab_content'));
         }
 
-        add_action($this->plugin_name.'_tab', array($this,'tab'),4);
+        add_action($this->plugin_name.'_tab', array($this,'tab'),1);
 
         if(PI_EQW_DELETE_SETTING){
             $this->delete_settings();
@@ -36,9 +36,9 @@ class Class_Pi_Eqw_Cart{
     function init(){
         $this->settings = array(
 
-            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Dynamic cart', 'type'=>'setting_category'),
+            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Enquiry cart', 'type'=>'setting_category'),
             
-            array('field'=>'pi_eqw_enable_cart', 'label'=>__('Enable cart icon','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('This will show a dynamically updating cart button on each page in the corner','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
+            array('field'=>'pi_eqw_enable_cart', 'label'=>__('Enable cart','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('This will show a dynamically updating cart button on each page in the corner','pisol-enquiry-quotation-woocommerce')),
 
             array('field'=>'pi_eqw_use_shortcode', 'label'=>__('Insert icon using Short code [enquiry_cart_icon]','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will allow you to insert the icon using shortcode [enquiry_cart_icon], when you enable this auto insertion will be disabled','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
@@ -73,7 +73,7 @@ class Class_Pi_Eqw_Cart{
     }
 
     function tab(){
-        $this->tab_name = __('Dynamic Cart (PRO)','pisol-enquiry-quotation-woocommerce');
+        $this->tab_name = __('Enquiry Mini-Cart','pisol-enquiry-quotation-woocommerce');
         ?>
         <a class="hide-pro px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab ) ); ?>">
             <span class="dashicons dashicons-cart"></span> <?php echo esc_html( $this->tab_name); ?>

@@ -31,7 +31,7 @@ class class_eqw_product{
     }
 
     static function styleProductPage(){
-        $button_width_single = get_option('pisol_eqw_button_size', '200');
+        $button_width_single = get_option('pisol_eqw_button_size', '220');
         $button_font_single = get_option('pisol_eqw_button_font_size', '16');
 
         if(!empty($button_width_single)){
@@ -52,7 +52,7 @@ class class_eqw_product{
     }
 
     static function styleLoopPage(){
-        $button_width_loop = get_option('pisol_eqw_loop_button_size', '');
+        $button_width_loop = get_option('pisol_eqw_loop_button_size', '220');
         $button_font_loop = get_option('pisol_eqw_loop_button_font_size', '16');
 
         if(!empty($button_width_loop)){
@@ -86,9 +86,9 @@ class class_eqw_product{
         $this->add_to_enquiry_text_single = get_option('pi_eqw_enquiry_single_button_text','Add to Enquiry');
         
         if($product->is_type('variable') ){
-            echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr($product->get_id()).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
+            echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single pi-enq-product-'.esc_attr($product->get_id()).'" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr($product->get_id()).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
         }else{
-            echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr($product->get_id()).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
+            echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single pi-enq-product-'.esc_attr($product->get_id()).'" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr($product->get_id()).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
         }
     }
 
@@ -104,9 +104,9 @@ class class_eqw_product{
                 $this->add_to_enquiry_text_single = get_option('pi_eqw_enquiry_single_button_text','Add to Enquiry');
                 
                 if($product->is_type('variable') ){
-                    echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr( $product->get_id() ).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
+                    echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single pi-enq-product-'.esc_attr($product->get_id()).'" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr( $product->get_id() ).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
                 }else{
-                    echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr( $product->get_id() ).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
+                    echo '<button class="button pi-custom-button add-to-enquiry add-to-enquiry-single pi-enq-product-'.esc_attr($product->get_id()).'" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr( $product->get_id() ).'" style="'.esc_attr( $style ).'">' . esc_html($this->add_to_enquiry_text_single). '</button>';
                 }
             }
         }
@@ -123,11 +123,11 @@ class class_eqw_product{
 
         if($product->is_type('variable') ){
             echo '<div style="margin-bottom:10px; text-align:center; width:100%;">
-            <a class="button pi-custom-button add-to-enquiry-loop" href="'.esc_url( $product->get_permalink() ).'" style="'.esc_attr( $style ).'">'.esc_html($this->add_to_enquiry_text_loop).'</a>
+            <a class="button pi-custom-button add-to-enquiry-loop pi-enq-product-'.esc_attr($product->get_id()).'" href="'.esc_url( $product->get_permalink() ).'" style="'.esc_attr( $style ).'">'.esc_html($this->add_to_enquiry_text_loop).'</a>
             </div>';
         }else{
             echo '<div style="margin-bottom:10px; text-align:center; width:100%;">
-            <a class="button pi-custom-button add-to-enquiry add-to-enquiry-loop" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr( $product->get_id() ).'"  style="'.esc_attr( $style ).'">'.esc_html($this->add_to_enquiry_text_loop).'</a>
+            <a class="button pi-custom-button add-to-enquiry add-to-enquiry-loop pi-enq-product-'.esc_attr($product->get_id()).'" href="javascript:void(0)" data-action="pi_add_to_enquiry" data-id="'.esc_attr( $product->get_id() ).'"  style="'.esc_attr( $style ).'">'.esc_html($this->add_to_enquiry_text_loop).'</a>
             </div>';
         }
     }
@@ -152,7 +152,7 @@ class class_eqw_product{
          * but still you can enable it for single product from product overwrite
          * enable it for out of stocks
          */
-        $pi_eqw_enquiry_loop = get_option('pi_eqw_enquiry_loop',0);
+        $pi_eqw_enquiry_loop = get_option('pi_eqw_enquiry_loop',1);
         if($pi_eqw_enquiry_loop != 1) return false;
 
         return true;

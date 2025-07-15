@@ -37,6 +37,7 @@ class class_eqw_enquiry_cart{
             $variation = absint($_POST['variation_id']);
             $variation_detail = $this->sanitizeVariationDetail($_POST['variation_detail']);
             $products = $this->addProductToEnquirySession($id, $quantity, $variation, $variation_detail);
+            wp_send_json($products);
         }
         die;
     }
@@ -165,8 +166,7 @@ class class_eqw_enquiry_cart{
              * this will increment it by one, 
              * as we are not entering the new quantity variable
              */
-            $this->changeQuantityInEnquirySession($hash, $new_product['quantity']);
-            return;
+            return $this->changeQuantityInEnquirySession($hash, $new_product['quantity']);
 
         }else{
             
@@ -249,8 +249,7 @@ class class_eqw_enquiry_cart{
         $products = self::getProductsInEnquirySession();
 
         if($new_quantity === 0){
-            $this->removeProductFromEnquirySession($hash);
-            return;
+            return $this->removeProductFromEnquirySession($hash);
         }
 
         if(is_array($products) && count($products) > 0){
@@ -261,7 +260,7 @@ class class_eqw_enquiry_cart{
                     }
         }
 
-        $this->addProductsToEnquirySession($products);
+        return $this->addProductsToEnquirySession($products);
 
     }
 
