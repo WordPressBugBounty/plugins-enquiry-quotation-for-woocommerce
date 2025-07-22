@@ -49,7 +49,7 @@ class pisol_enq_dynamic_cart{
     function addIcon($relative = ""){
         $position = '';
         if(empty($relative)){
-            $position = 'bottom-right';
+            $position =  get_option('pi_eqw_cart_position', 'bottom-right');
         }
         echo '<a href="'.$this->cart_page_url.'" id="pi-eqw-cart" class="'.$relative.' '.$position.'"><img src="'.$this->icon.'"><span class="pi-count"></span></a>';
     }

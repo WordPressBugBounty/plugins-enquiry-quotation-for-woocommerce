@@ -277,6 +277,21 @@ label.error{
     right: 20px;
 }
 
+#pi-eqw-cart.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+#pi-eqw-cart.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+#pi-eqw-cart.top-right {
+    top: 20px;
+    right: 20px;
+}
+
 #pi-eqw-cart .pi-count {
     position: absolute;
     top: -6px;
