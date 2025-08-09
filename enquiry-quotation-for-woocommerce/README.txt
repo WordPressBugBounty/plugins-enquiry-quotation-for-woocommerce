@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 2.2.34.13
+Stable tag: 2.2.34.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ Product enquiry for WooCommerce and Quote request plugin that can save enquiry a
 
 == Description ==
 
-[Try Pro version front and backend demo](https://websitemaintenanceservice.in/enquiry_demo/)
+[Try Pro version front and backend demo](https://websitemaintenanceservice.in/enquiry_demo/) | [Documentation](https://www.piwebsolution.com/user-documentation-product-enquiry-for-woocommerce/)
 
 The **Product Enquiry for WooCommerce plugin** adds an enquiry button to product. Using this customer can send you an enquiry or request a quote for a product.
 
@@ -244,6 +244,9 @@ Protect your enquiry form from spam by using CAPTCHA, which requires users to co
 Yes, in the pro version you can get the enquiry in telegram as well, you will have to set your telegram bot token and chat id in the plugin setting page, once you do that all the enquiry will be sent to your telegram account as well
 
 == Changelog ==
+
+= 2.2.34.14 =
+* deactivation added
 
 = 2.2.34.13 =
 * option given to change the position of the mini enquiry cart icon
