@@ -49,7 +49,7 @@ class Class_Pi_Eqw_Advance{
 
             array('field'=>'pi_eqw_hide_message_in_cart_1', 'label'=>__('Remove product specific message columns from the enquiry cart and enquiry emails','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will remove the message columns from the cart page and enquiry emails','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
             
-            array('field'=>'pi_eqw_enquiry_cart', 'label'=>__('Select the page where to show the enquiry cart','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>0, 'value'=>$this->pages(),  'desc'=>__('Enquiry button position on show / category page, If you make some other page as Enquiry make sure to put the short code <strong>[pisol_enquiry_cart]</strong> on that page','pisol-enquiry-quotation-woocommerce')),
+            array('field'=>'pi_eqw_enquiry_cart', 'label'=>__('Select the page where to show the enquiry cart','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>0, 'value'=>$this->pages(),  'desc'=>__('Enquiry button position on shop / category page, If you make some other page as Enquiry make sure to put the short code <strong>[pisol_enquiry_cart]</strong> on that page','pisol-enquiry-quotation-woocommerce')),
 
             array('field'=>'pi_eqw_redirect_to_enquiry_cart', 'label'=>__('Redirect WooCommerce cart and checkout page to enquiry cart page','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will redirect all the traffic on cart and checkout page to enquiry cart page','pisol-enquiry-quotation-woocommerce')),
 
@@ -60,7 +60,7 @@ class Class_Pi_Eqw_Advance{
 
             array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Webhook Integration",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
 
-            array('field'=>'pi_eqw_webhook_url', 'label'=>__('Webhook url','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>'',   'desc'=>__('Insert webhook url where the enquiry data will send send, you can insert webhook url of zapier or Pabbly or any other platform that support webhook url','pisol-enquiry-quotation-woocommerce')),
+            array('field'=>'pi_eqw_webhook_url', 'label'=>__('Webhook url','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>'',   'desc'=>__('Insert webhook url where the enquiry data will send, you can insert webhook url of zapier or Pabbly or any other platform that support webhook url','pisol-enquiry-quotation-woocommerce')),
 
             array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Enquiry popup settings','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category', 'pro'=>true),
 

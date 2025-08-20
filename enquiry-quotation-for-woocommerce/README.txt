@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 2.2.34.14
+Stable tag: 2.2.34.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,7 +31,7 @@ Using this Product enquiry for WooCommerce plugin customer will be able to send 
 * Have different background and text color for the button on product loop page and single product page 
 * Option to disable logo in enquiry email
 * Enquiry cart page is auto created during installation of the plugin, but if you want you can change the page, you can show enquiry cart in any page using the short code  **[pisol_enquiry_cart]**, Make sure to select the page in the advance option as enquiry page
-* Pass the enquiry data to webhook so you can use that data in zapier, and other platform that support webhook
+* Pass the enquiry data to webhook so you can use that data in Zapier, and other platform that support webhook
 * **Honeypot** for spam protection
 * **Captcha** for spam protection
 
@@ -59,7 +59,7 @@ Using this Product enquiry for WooCommerce plugin customer will be able to send 
 * **Change sequence** of the field in the enquiry form 
 * Disable/Enable enquiry for specific **product category**
 * Enable enquiry button for specific **role of users** only
-* **Disable add to cart** for specific product or for specif category of product
+* **Disable add to cart** for specific product or for specific category of product
 * **Disable message box** next to the product in the enquiry cart
 * **Custom thankyou page redirect** after submission of enquiry
 * **Show enquiry no.** in the enquiry email send to the customer or admin by putting the short code {enquiry_no}
@@ -127,13 +127,13 @@ Yes there is option for that, once you enable that option enquiry button will be
 Free version does not support variation product, you have that option in the pro version
 
 = I want to add multiple email for the enquiry receiver =
-Yes, you can add multiple email id separated by coma, in the pro version
+Yes, you can add multiple email id separated by comma, in the pro version
 
 = I want to check old enquiries =
 All the enquiry that you get are saved in your site under the enquiry, so you can check all the old enquiries 
 
 = I want to add more email id in the enquiry receiver =
-In pro version you can add more then one email id to receive the enquiry 
+In pro version you can add more than one email id to receive the enquiry 
 
 = Want to send a copy of the enquiry to the customer =
 In the pro version a copy of the email is send to the customer as well, and you have option to disable it
@@ -220,7 +220,7 @@ In the Pro version you can add Image upload option in the enquiry form
 Yes you can do that in the pro version, E.g: https://www.yourwebsite.com/?add-to-enquiry=product_id 
 
 = Can I create add to enquiry url for the Variable product =
-Yes in the pro version you can crate that, E.g: https://www.yourwebsite.com/?add-to-enquiry=product_id&variation_id=var_id (replace product_id, and var_id by the respective ids)
+Yes in the pro version you can create that, E.g: https://www.yourwebsite.com/?add-to-enquiry=product_id&variation_id=var_id (replace product_id, and var_id by the respective ids)
 
 = Image are not showing in the enquiry email =
 Go to Email setting Tab in our plugin and then enable this option "Enable this option If product and logo image are not shown in the email or You dont want image attached in email"
@@ -234,7 +234,7 @@ Yes the Free version and PRO version both are HPOS compatible
 = Two columns layout for enquiry form =
 Pro version has a setting using that you can make the enquiry form two column layout. In the free version you can achieve that using css code 
 
-= Can I send the enquiry data to zapier in Free version =
+= Can I send the enquiry data to Zapier in Free version =
 Yes, Go to Advance option tab and there you can insert your webhook url, so when the enquiry is submitted the data will be sent to that webhook url in json format (Zapier, Pabbly Connect, Microsoft Power Automate, Workato, Tray.io, etc)
 
 = Is there anything for spam protection =
@@ -273,7 +273,7 @@ Yes, in the pro version you can get the enquiry in telegram as well, you will ha
 
 = 2.2.34.4 =
 * Tested for WC 9.8.0
-* translation worning fixed
+* translation warning fixed
 * Tested for WP 6.8.0
 
 = 2.2.34.3 =
