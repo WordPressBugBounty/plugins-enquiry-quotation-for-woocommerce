@@ -143,25 +143,6 @@ class Pi_Eqw_Menu{
     }
 
     function support(){
-        $timezone = new DateTimeZone('Asia/Kolkata');
-        $now      = new DateTime('now', $timezone);
-        $day      = (int) $now->format('N'); // 1 (Mon) → 7 (Sun)
-        $hour     = (int) $now->format('G'); // 0 → 23  
-
-        $within_hours = false;
-
-        // Mon–Fri: 7 AM – 6 PM
-        if ( $day >= 1 && $day <= 5 && ( $hour < 7 || $hour >= 17 ) ) {
-            $within_hours = true;
-        }
-
-        // Sat–Sun: 7 AM – 4 PM
-        if ( $day >= 6 && $day <= 7 && $hour >= 7 && $hour < 14 ) {
-            $within_hours = true;
-        }
-
-        if( !$within_hours ) return;
-
         $website_url = home_url();
         $plugin_name = $this->plugin_name;
         ?>
