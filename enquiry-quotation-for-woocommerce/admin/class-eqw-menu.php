@@ -54,7 +54,7 @@ class Pi_Eqw_Menu{
                         <div class='bg-dark'>
                         <div class="pisol-row">
                             <div class="col-12 col-sm-2 py-2 d-flex align-items-center justify-content-center">
-                                    <a href="https://www.piwebsolution.com/" target="_blank"><img  id="pi-logo" class="img-fluid ml-2" src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>img/pi-web-solution.png"></a>
+                                    <a href="https://www.piwebsolution.com/" target="_blank"><img  id="pi-logo" class="img-fluid ml-2" src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>img/pi-web-solution.svg"></a>
                             </div>
                             <div class="col-12 col-sm-10 d-flex pisol-top-menu">
                                 <nav id="pisol-navbar" class="navbar navbar-expand-lg navbar-light mr-0 ml-auto">

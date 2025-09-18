@@ -18,19 +18,31 @@ class class_eqw_enquiry_cart{
         /**
          * This is needed as wc session is not created for non-loged in users
          */
-        add_action( 'woocommerce_init',  array($this, 'startSession') );
+        //add_action( 'woocommerce_init',  array($this, 'startSession') );
     }
 
     function startSession(){
-        //self::deleteProductsFromEnquirySession();
-        if(isset(WC()->session)){
-            if ( !is_admin() && !WC()->session->has_session() ) {
-                WC()->session->set_customer_session_cookie( true );
-            }
+        if ( ! isset( WC()->session ) ) {
+            return;
+        }
+
+        // Skip only real wp-admin screens, not AJAX
+        if ( is_admin() && !( defined('DOING_AJAX') && DOING_AJAX ) ) {
+            return;
+        }
+
+        if ( ! WC()->session->has_session() ) {
+            WC()->session->set_customer_session_cookie( true ); // safer than true
         }
     } 
 
     function add_to_enquiry(){
+         /**
+         * calling here means we will not keep creating session for all users
+         * only when add to enquiry is called we will create session
+         */
+        $this->startSession();
+
         if(isset($_POST['id']) && isset($_POST['variation_id'])){
             $id = absint($_POST['id']);
             $quantity = (int)(isset($_POST['quantity']) ? $_POST['quantity'] : 1);
