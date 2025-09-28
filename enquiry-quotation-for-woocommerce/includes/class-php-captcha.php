@@ -91,7 +91,9 @@ class PISOL_ENQ_CaptchaGenerator{
         $this->generate_captcha_image();
         $imageData = ob_get_contents();
         ob_end_clean();
-        echo 'data:image/png;base64,' . base64_encode($imageData);
+        $data = 'data:image/png;base64,' . base64_encode($imageData);
+        // Escape the data URI before outputting to prevent XSS
+        echo esc_attr($data);
         wp_die(); // Prevent further execution
     }
 
@@ -162,9 +164,12 @@ class PISOL_ENQ_CaptchaGenerator{
         $this->addCaptchaText($image, $captchaCode);
         $image->swirlImage(20);
 
-        header('Content-Type: image/png');
+        // Output binary image data safely. Use getImageBlob() to get raw
+        // image data and avoid casting the Imagick object which PHPCS flags.
         $image->setImageFormat('png');
-        echo $image;
+        header('Content-Type: image/png');
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- binary image blob
+        echo $image->getImageBlob();
 
         $image->clear();
         $image->destroy();

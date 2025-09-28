@@ -19,7 +19,10 @@
 <table class="pisol-form-detail-container" cellspacing="0" width="100%" border="0">
 			<tr>
 				<td>
-					<?php echo pisol_email_form_detail($this->items); ?>
+					<?php 
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized in pisol_email_form_detail()
+						echo pisol_email_form_detail($this->items); 
+					?>
 				</td>
 			</tr>
 </table>

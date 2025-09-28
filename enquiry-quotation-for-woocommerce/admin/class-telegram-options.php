@@ -69,10 +69,10 @@ class Class_Pi_Eqw_Telegram_Options {
 
     function tab() {
         ?>
-        <a class="hide-pro px-3 text-light d-flex align-items-center border-left border-right <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url('admin.php?page=' . sanitize_text_field($_GET['page']) . '&tab=' . $this->this_tab); ?>">
+        <a class="hide-pro px-3 text-light d-flex align-items-center border-left border-right <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page=' . sanitize_text_field( $_GET['page'] ) . '&tab=' . $this->this_tab ) ); ?>">
             <span class="dashicons dashicons-megaphone"></span> <?php echo esc_html($this->tab_name); ?>
         </a>
-        <a class="px-3 text-light d-flex align-items-center border-left border-right bg-secondary" href="https://www.piwebsolution.com/user-documentation-product-enquiry-for-woocommerce/" target="_blank">
+        <a class="px-3 text-light d-flex align-items-center border-left border-right bg-secondary" href="<?php echo esc_url( 'https://www.piwebsolution.com/user-documentation-product-enquiry-for-woocommerce/' ); ?>" target="_blank" rel="noopener noreferrer">
            <span class="dashicons dashicons-book"></span> Documentation
         </a>
         <?php

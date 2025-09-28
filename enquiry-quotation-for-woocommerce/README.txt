@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 2.2.34.20
+Stable tag: 2.2.34.21
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,7 +61,7 @@ Using this Product enquiry for WooCommerce plugin customer will be able to send 
 * Enable enquiry button for specific **role of users** only
 * **Disable add to cart** for specific product or for specific category of product
 * **Disable message box** next to the product in the enquiry cart
-* **Custom thankyou page redirect** after submission of enquiry
+* **Custom thank you page redirect** after submission of enquiry
 * **Show enquiry no.** in the enquiry email send to the customer or admin by putting the short code {enquiry_no}
 * Show WooCommerce Product enquiry form in a **popup**
 * Option to Show product enquiry **form in a popup** as soon as product is added in the enquiry
@@ -74,6 +74,7 @@ Using this Product enquiry for WooCommerce plugin customer will be able to send 
 * Variable product E.g: **https://www.yourwebsite.com/?add-to-enquiry=product_id&variation_id=var_id** (replace product_id, and var_id by the respective ids)
 * Two columns layout for enquiry form
 * Get WooCommerce Product enquiry in **Telegram** as well as email
+* Customers can submit the products in their WooCommerce cart as an enquiry instead of placing an order.
 
 Pro version gives you the option to show the enquiry form as **WooCommerce product enquiry form popup**. Showing the enquiry form as a popup allows the customer to place enquiry from the product page
 
@@ -235,7 +236,7 @@ Yes the Free version and PRO version both are HPOS compatible
 Pro version has a setting using that you can make the enquiry form two column layout. In the free version you can achieve that using css code 
 
 = Can I send the enquiry data to Zapier in Free version =
-Yes, Go to Advance option tab and there you can insert your webhook url, so when the enquiry is submitted the data will be sent to that webhook url in json format (Zapier, Pabbly Connect, Microsoft Power Automate, Workato, Tray.io, etc)
+Yes, Go to Advance option tab and there you can insert your webhook URL, so when the enquiry is submitted the data will be sent to that webhook URL in JSON format (Zapier, Pabbly Connect, Microsoft Power Automate, Workato, Tray.io, etc)
 
 = Is there anything for spam protection =
 Protect your enquiry form from spam by using CAPTCHA, which requires users to complete a simple test, or a honeypot, an invisible field that bots will fill but humans will ignore. Both methods help reduce automated submissions, ensuring only real users can submit the form.
@@ -337,7 +338,7 @@ Yes, in the pro version you can get the enquiry in telegram as well, you will ha
 * webhook support added
 
 = 2.2.33.13 =
-* Css conflict with nasencore plugin in backend fixed
+* CSS conflict with nasencore plugin in backend fixed
 
 = 2.2.33.12 =
 * Tag added for WC 8.5.2
@@ -370,7 +371,7 @@ If you choose to opt in from the plugin settings, or submit optional feedback du
 - Plugin version  
 - WordPress version  
 - WooCommerce version  
-- Site url
+- Site URL
 - Deactivation reason (if submitted)
 
 This data is used solely to improve plugin quality, compatibility, and features. No personal or user-specific data is collected without consent.

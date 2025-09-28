@@ -39,6 +39,13 @@ class Pi_Eqw_Analytics{
 
         add_action('admin_post_' . $this->enable_tracking_action, array($this, 'handle_tracker_action'));
 
+        add_filter('safe_style_css', array($this, 'allow_display_style'));
+
+    }
+
+    function allow_display_style($styles) {
+        $styles[] = 'display';
+        return $styles;
     }
 
     public function show_tracker_notice() {
@@ -47,27 +54,30 @@ class Pi_Eqw_Analytics{
             return; 
         }
 
-        $notice = '<div class="notice notice-error is-dismissible">';
-        $notice .= '<h4>Help to Improve ' . esc_html($this->plugin_name) . ' plugin</h4>';
-        $notice .= '<p>'.__("Hi, your support can make a big difference!", 'conditional-discount-rule-woocommerce').'</p>';
-        $notice .= '<p>'.__("We collect only technical data — including the plugin version, WordPress version, WooCommerce version, and site url — solely to improve compatibility and enhance plugin features.", 'conditional-discount-rule-woocommerce').'</p>';
+        $notice = sprintf(
+            '<div class="notice notice-error is-dismissible"><h4>%s</h4><p>%s</p><p>%s</p>',
+            sprintf( esc_html__( 'Help to Improve %s plugin', 'pisol-enquiry-quotation-woocommerce' ), esc_html( $this->plugin_name ) ),
+            esc_html__( 'Hi, your support can make a big difference!', 'pisol-enquiry-quotation-woocommerce' ),
+            esc_html__( 'We collect only technical data — including the plugin version, WordPress version, WooCommerce version, and site url — solely to improve compatibility and enhance plugin features.', 'pisol-enquiry-quotation-woocommerce' )
+        );
 
         $notice .= '<p style="display: flex; justify-content: space-between; margin-top: 10px;">';
 
         $notice .= sprintf(
             '<a href="%s" class="button">%s</a>',
             esc_url(admin_url('admin-post.php?enable=0&action=' . $this->enable_tracking_action)),
-            __('I Don\'t Help', 'conditional-discount-rule-woocommerce')
+            esc_html__('I Don\'t Help', 'pisol-enquiry-quotation-woocommerce')
         );
         $notice .= sprintf(
             '<a href="%s" class="button button-primary" style="margin-right:20px; padding-left:30px; padding-right:30px;">%s</a>',
             esc_url(admin_url('admin-post.php?enable=1&action=' . $this->enable_tracking_action)),
-            __('I Will Help', 'conditional-discount-rule-woocommerce')
+            esc_html__('I Will Help', 'pisol-enquiry-quotation-woocommerce')
         );
         
         $notice .= '</p>';
         $notice .= '</div>';
-        echo $notice;
+        // Use wp_kses_post to allow safe HTML in the assembled notice
+        echo wp_kses_post($notice);
         
     }
 
@@ -213,7 +223,7 @@ class Pi_Eqw_Analytics{
 
     public function handle_deactivation_form() {
         if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'pi_deactivate_nonce_' . $this->plugin_slug)) {
-            wp_die(__('Security check failed', 'conditional-discount-rule-woocommerce'));
+            wp_die( esc_html__('Security check failed', 'pisol-enquiry-quotation-woocommerce') );
         }
 
         $plugin_slug = sanitize_text_field($_POST['plugin_slug'] ?? '');
@@ -232,7 +242,7 @@ class Pi_Eqw_Analytics{
             if (is_super_admin()) {
                 deactivate_plugins($this->plugin_path, false, true); // network-wide
             } else {
-                wp_die(__('You do not have permission to deactivate a network plugin.', 'conditional-discount-rule-woocommerce'));
+                wp_die( esc_html__('You do not have permission to deactivate a network plugin.', 'pisol-enquiry-quotation-woocommerce') );
             }
         } else {
             deactivate_plugins($this->plugin_path); // normal

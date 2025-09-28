@@ -34,7 +34,7 @@ function pisol_email_table_row($products){
             ?>
         <tr class="woocommerce-cart-form__cart-item" id="<?php echo esc_attr( $key ); ?>">
             <td>
-                <img alt="" width="70" height="70" border="0" src="<?php echo ( $image_id ); ?>" style="max-width:70px; width:70px; height:auto;">
+                <img alt="" width="70" height="70" border="0" src="<?php echo esc_attr( $image_id ); ?>" style="max-width:70px; width:70px; height:auto;">
             </td>
             <td class="product-name"  style="padding:6px 6px;" nowrap>
                 <?php printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), esc_html( $product_obj->get_name() ) ); 

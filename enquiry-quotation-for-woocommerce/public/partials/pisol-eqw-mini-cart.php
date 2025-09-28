@@ -1,18 +1,23 @@
 
 <?php if(empty($products)): ?>
-    <p><?php _e('No products in enquiry cart','pisol-enquiry-quotation-woocommerce'); ?></p>
+    <p><?php esc_html_e('No products in enquiry cart','pisol-enquiry-quotation-woocommerce'); ?></p>
 <?php else: ?>
         <?php foreach($products as $key => $product): ?>
             <div class="pi-mini-cart-item">
                 <div class="thumbnail">
-                    <?php echo $product['thumbnail']; ?>
+                    <?php echo wp_kses_post( $product['thumbnail'] ); ?>
                 </div>
                 <div class="details">
-                    <div class="name-qty"><span class="name"><a href="<?php echo esc_url($product['permalink']); ?>" target="_blank"><?php echo $product['name']; ?></a></span> &times; <span class="quantity"><?php echo $product['quantity']; ?></span></div>
-                    <div class="price"><?php echo wc_price($product['price']); ?></div>
+                    <div class="name-qty"><span class="name"><a href="<?php echo esc_url($product['permalink']); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $product['name'] ); ?></a></span> &times; <span class="quantity"><?php echo esc_html( $product['quantity'] ); ?></span></div>
+                    <div class="price"><?php echo wp_kses( wc_price( $product['price'] ), array(
+                        'span' => array(
+                            'class' => array(),
+                        ),
+                        'bdi'  => array(),
+                    ) ); ?></div>
                 </div>
                 <div class="remove">
-                    <a href="javascript:void(0)" data-id="<?php echo esc_attr($key); ?>" class="remove pi-remove-product" title="<?php _e('Remove this item','pisol-enquiry-quotation-woocommerce'); ?>"><img src="<?php echo plugin_dir_url( __DIR__ ).'img/remove.svg'; ?>" alt="remove" class="remove"></a>
+                    <a href="javascript:void(0)" data-id="<?php echo esc_attr($key); ?>" class="remove pi-remove-product" title="<?php esc_attr_e('Remove this item','pisol-enquiry-quotation-woocommerce'); ?>"><img src="<?php echo esc_url( plugin_dir_url( __DIR__ ) . 'img/remove.svg' ); ?>" alt="<?php esc_attr_e( 'Remove', 'pisol-enquiry-quotation-woocommerce' ); ?>" class="remove"></a>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -25,7 +30,7 @@
 		}
         echo '<footer>';
         if($cart_page){
-            echo '<a href="'.$cart_page.'" class="button">'.__('Submit enquiry','pisol-enquiry-quotation-woocommerce').'</a>';
+            printf('<a href="%1$s" class="button">%2$s</a>', esc_url($cart_page), esc_html__('Submit enquiry','pisol-enquiry-quotation-woocommerce'));
         }
         echo '</footer>';
         ?>

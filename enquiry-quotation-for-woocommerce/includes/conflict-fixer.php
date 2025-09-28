@@ -31,6 +31,7 @@ function remove_conflict_causing_scripts(){
 function make_safe_serialize($value, $object_id, $meta_key, $single){
     global $wpdb;
     if($meta_key == 'pi_products_info'){
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Needed direct query for serialized meta value
         $pi_products_info = $wpdb->get_var( $wpdb->prepare(
             "SELECT meta_value 
              FROM {$wpdb->postmeta} 

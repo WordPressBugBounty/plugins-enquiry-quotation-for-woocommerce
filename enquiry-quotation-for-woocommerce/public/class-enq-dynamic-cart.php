@@ -51,7 +51,12 @@ class pisol_enq_dynamic_cart{
         if(empty($relative)){
             $position =  get_option('pi_eqw_cart_position', 'bottom-right');
         }
-        echo '<a href="'.$this->cart_page_url.'" id="pi-eqw-cart" class="'.$relative.' '.$position.'"><img src="'.$this->icon.'"><span class="pi-count"></span></a>';
+        // Prepare and escape attributes
+
+        // Output safely
+        echo '<a href="' .esc_url( $this->cart_page_url ) . '" id="pi-eqw-cart" class="' . esc_attr( trim( $relative . ' ' . $position ) ) . '">'
+            . '<img src="' . esc_url( $this->icon ) . '" alt="' . esc_attr__( 'Cart', 'pisol-enquiry-quotation-woocommerce' ) . '">'
+            . '<span class="pi-count"></span></a>';
     }
 
     function getCartJson(){
@@ -112,8 +117,8 @@ class pisol_enq_dynamic_cart{
 
     function addMiniCart(){
         $position = get_option('pi_eqw_cart_position', 'bottom-right');
-        echo '<div id="pi-eqw-mini-cart" class="'.esc_attr($position).'">';
-        echo '<header>'.__('Enquiry Cart','pisol-enquiry-quotation-woocommerce').'  <span class="close-mini-cart">&times;</span></header>';
+        echo '<div id="pi-eqw-mini-cart" class="' . esc_attr( $position ) . '">';
+        echo '<header>' . esc_html__( 'Enquiry Cart', 'pisol-enquiry-quotation-woocommerce' ) . '  <span class="close-mini-cart">&times;</span></header>';
         echo '<content>';
         echo 'Loading....';
         echo '</content>';

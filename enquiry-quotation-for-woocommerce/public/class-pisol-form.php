@@ -224,11 +224,13 @@ class class_pisol_form{
         $id = isset($item['name']) ? 'field-container-'.$item['name'] : "";
         echo '<div class="pi-row '.esc_attr($class_name).'" id="'.esc_attr($id).'">';
         echo '<div class="pi-col-12">';
+        $allowed_html = $this->get_allowed_form_html();
         if($item['type'] == 'submit'){
-            printf($field, 'pi-btn pi-btn-primary pi-submit-enq-button');
+            $formatted_field = sprintf($field, 'pi-btn pi-btn-primary pi-submit-enq-button');
         }else{
-            printf($field, 'pi-form-control');
+            $formatted_field = sprintf($field, 'pi-form-control');
         }
+        echo wp_kses($formatted_field, $allowed_html);
         echo '</div>';
         echo '</div>';
     }
@@ -236,10 +238,43 @@ class class_pisol_form{
     function honeypot($item){
         $field = '<span style="display:none; visibility:hidden;"><input type="text" name="'.esc_attr($item['name']).'" style="display:none;"/></span>';
 
-        echo $field;
+        echo wp_kses($field, $this->get_allowed_form_html());
     }
 
     function captcha(){
         do_action('pi_eqw_add_captcha_field');
+    }
+
+    private function get_allowed_form_html(){
+        return array(
+            'input' => array(
+                'type' => true,
+                'name' => true,
+                'value' => true,
+                'class' => true,
+                'placeholder' => true,
+                'required' => true,
+                'id' => true,
+                'style' => true,
+                'data-msg-digits' => true,
+                'data-msg-required' => true,
+                'data-msg-email' => true,
+                'data-rule-digits' => true,
+                'autocomplete' => true,
+            ),
+            'textarea' => array(
+                'name' => true,
+                'class' => true,
+                'placeholder' => true,
+                'required' => true,
+                'id' => true,
+                'rows' => true,
+                'cols' => true,
+                'data-msg-required' => true,
+            ),
+            'span' => array(
+                'style' => true,
+            ),
+        );
     }
 }
