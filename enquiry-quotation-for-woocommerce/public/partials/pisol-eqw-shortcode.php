@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 //old style 'shop_table shop_table_responsive cart woocommerce-cart-form__contents' 
 $table_style = apply_filters('pisol_eqw_table_style', 'enquiry-cart-content-table');
 ?>

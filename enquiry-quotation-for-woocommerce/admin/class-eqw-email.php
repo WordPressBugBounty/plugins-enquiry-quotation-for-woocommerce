@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Class_Pi_Eqw_Email{
 
@@ -45,7 +46,7 @@ class Class_Pi_Eqw_Email{
             
             array('field'=>'pi_eqw_email', 'label'=>__('Email id','pisol-enquiry-quotation-woocommerce'),'type'=>'text',   'desc'=>__('Email id that will receive the enquiry, <strong class="text-danger">In PRO version you can add multiple email separated with comma like this text@email.com, text2@email.com </strong>','pisol-enquiry-quotation-woocommerce'),'default'=> get_option('admin_email')),
 
-            array('field'=>'pi_eqw_email_subject', 'label'=>__('Subject of the email','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('New enquiry received'),  'desc'=>__('subject of the email', 'pisol-enquiry-quotation-woocommerce')),
+            array('field'=>'pi_eqw_email_subject', 'label'=>__('Subject of the email','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('New enquiry received', 'pisol-enquiry-quotation-woocommerce'),  'desc'=>__('subject of the email', 'pisol-enquiry-quotation-woocommerce')),
 
             array('field'=>'pi_eqw_show_message_as_row', 'label'=>__('Show product message as row in email','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=> 1, 'desc'=>__('Show message as row in the email else it will be shown as a columns in the product row','pisol-enquiry-quotation-woocommerce')),
 
@@ -56,7 +57,7 @@ class Class_Pi_Eqw_Email{
 
             array('field'=>'pi_eqw_email_to_customer', 'label'=>__('Send enquiry email to customer as well','pisol-enquiry-quotation-woocommerce'),'type'=>'switch','default'=>1, 'desc'=>__('Will send the enquiry email copy to customer as well','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
-            array('field'=>'pi_eqw_customer_email_subject', 'label'=>__('Subject of the email to customer','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('Your enquiry is submitted'),  'desc'=>__('Subject of the enquiry email send to customer', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
+            array('field'=>'pi_eqw_customer_email_subject', 'label'=>__('Subject of the email to customer','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('Your enquiry is submitted', 'pisol-enquiry-quotation-woocommerce'),  'desc'=>__('Subject of the enquiry email send to customer', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
             array('field'=>'pi_eqw_company_logo', 'label'=>__('Logo added in the email','pisol-enquiry-quotation-woocommerce'),'type'=>'image', 'desc'=>__('This is the image that will be added inside the email copy, sent to you and the customer', 'pisol-enquiry-quotation-woocommerce'),'pro'=>true),
 
             array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Spam protection",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),

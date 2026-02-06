@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Pisol_Enquiry_Quotation_Woocommerce_Activator {
 
@@ -11,7 +12,7 @@ class Pisol_Enquiry_Quotation_Woocommerce_Activator {
 		$page_saved = get_option('pi_eqw_enquiry_cart',0);
 		if($page_saved == 0 || $page_saved == ""){
 			$page  = array( 
-					'post_title'     => __('Enquiry Cart'),
+					'post_title'     => __('Enquiry Cart', 'pisol-enquiry-quotation-woocommerce'),
 					'post_type'      => 'page',
 					'post_content'   => '[pisol_enquiry_cart]',
 					'post_status'    => 'publish',

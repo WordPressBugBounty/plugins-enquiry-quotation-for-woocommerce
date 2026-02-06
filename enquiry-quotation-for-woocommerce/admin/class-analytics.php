@@ -56,6 +56,7 @@ class Pi_Eqw_Analytics{
 
         $notice = sprintf(
             '<div class="notice notice-error is-dismissible"><h4>%s</h4><p>%s</p><p>%s</p>',
+            // translators: %s is the plugin name
             sprintf( esc_html__( 'Help to Improve %s plugin', 'pisol-enquiry-quotation-woocommerce' ), esc_html( $this->plugin_name ) ),
             esc_html__( 'Hi, your support can make a big difference!', 'pisol-enquiry-quotation-woocommerce' ),
             esc_html__( 'We collect only technical data — including the plugin version, WordPress version, WooCommerce version, and site url — solely to improve compatibility and enhance plugin features.', 'pisol-enquiry-quotation-woocommerce' )

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class class_eqw_save_enquiry{
 
@@ -19,7 +20,7 @@ class class_eqw_save_enquiry{
     }
 
     function getOrderTitle(){
-        $this->title = isset($_POST['pi_name']) ? sanitize_text_field($_POST['pi_name']) : __('Order');
+        $this->title = isset($_POST['pi_name']) ? sanitize_text_field($_POST['pi_name']) : __('Order', 'pisol-enquiry-quotation-woocommerce');
         return $this->title;
     }
 
@@ -108,7 +109,7 @@ class class_eqw_save_enquiry{
         $product_permalink = $product_obj->get_permalink();
         $image_id = $product_obj->get_image_id();
         $img = wp_get_attachment_thumb_url($image_id);
-        $price = strip_tags(wc_price(class_eqw_enquiry_shortcode::get_price_simple_variation($product_obj, $product['variation'])));
+        $price = wp_strip_all_tags(wc_price(class_eqw_enquiry_shortcode::get_price_simple_variation($product_obj, $product['variation'])));
         $variation_id = ($product['variation'] != false ? (int)$product['variation'] : false);
         $variation_detail = $this->variation_detail($product_obj, $product['variation_detail']);
         $return = array(
@@ -119,7 +120,7 @@ class class_eqw_save_enquiry{
             'variation'=> $variation_id,
             'variation_detail'=> $variation_detail,
             'quantity' => $product['quantity'],
-            'message' => strip_tags($product['message'])
+            'message' => wp_strip_all_tags($product['message'])
         );
         return ($return);
     }

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class class_pisol_form{
 
@@ -22,6 +23,7 @@ class class_pisol_form{
     function form_page(){
        if(!empty($_POST) && count($_POST) > 0 ){
             $this->validation();
+            $this->empty_cart_check();
             $this->error();
             if($this->submit_form()){
                  $this->success_msg();
@@ -51,6 +53,15 @@ class class_pisol_form{
     function validation(){
         foreach($this->items as $item){
             $this->required($item);
+        }
+    }
+
+    function empty_cart_check(){
+        $product_count = class_eqw_enquiry_cart::getProductsInEnquirySession();
+        if(empty($product_count) && apply_filters('pi_eqw_validate_enquiry_cart_empty', true) ){
+            $this->errors[] = array(
+                'error'=> sprintf(__('No products in enquiry cart. Please add products to enquiry cart before submitting the enquiry.','pisol-enquiry-quotation-woocommerce'))
+            );
         }
     }
 
@@ -85,6 +96,7 @@ class class_pisol_form{
                 return true;
             }else{
                 $this->errors[] = array(
+                    // translators: %s is the field name
                     'error'=> sprintf(__('Cant leave %s empty','pisol-enquiry-quotation-woocommerce'), $item['placeholder'])
                 );
             }

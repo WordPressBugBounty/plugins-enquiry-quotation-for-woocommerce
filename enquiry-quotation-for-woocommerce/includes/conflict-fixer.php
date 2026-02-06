@@ -1,6 +1,7 @@
 <?php 
 
 namespace PISOL\EQW\ADMIN;
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class ConflictFixer{
 

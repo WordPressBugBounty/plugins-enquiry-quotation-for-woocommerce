@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Pi_Eqw_Enquiry{
 
@@ -27,9 +28,9 @@ class Pi_Eqw_Enquiry{
         register_post_type( $this->enquiry_type,
           array(
             'labels' => array(
-              'name' => __( 'Enquiries' ),
-              'singular_name' => __( 'Enquiry' ),
-              'add_new_item' =>__('Enquiry')
+              'name' => __( 'Enquiries', 'pisol-enquiry-quotation-woocommerce' ),
+              'singular_name' => __( 'Enquiry', 'pisol-enquiry-quotation-woocommerce' ),
+              'add_new_item' =>__('Enquiry', 'pisol-enquiry-quotation-woocommerce')
             ),
             'public' => false,
             'exclude_from_search' => true,
@@ -59,7 +60,7 @@ class Pi_Eqw_Enquiry{
     function user_detail(){
       add_meta_box(
         'pisol_enquiry_detail',
-        __( 'Enquiry Detail'),
+        __( 'Enquiry Detail', 'pisol-enquiry-quotation-woocommerce' ),
         array($this,'enquiry_detail'),
         $this->enquiry_type
       );

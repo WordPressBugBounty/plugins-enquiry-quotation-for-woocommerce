@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Class_Pi_Eqw_Cart{
 
@@ -40,7 +41,7 @@ class Class_Pi_Eqw_Cart{
             
             array('field'=>'pi_eqw_enable_cart', 'label'=>__('Enable cart','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('This will show a dynamically updating cart button on each page in the corner','pisol-enquiry-quotation-woocommerce')),
 
-            array('field'=>'pi_eqw_cart_position', 'label'=>__('Cart Position'), 'type'=>'select', 'value'=>array('top-left' =>__('Top Left','pisol-enquiry-quotation-woocommerce'), 'top-right'=>__('Top Right','pisol-enquiry-quotation-woocommerce'),  'bottom-left'=>__('Bottom Left','pisol-enquiry-quotation-woocommerce'), 'bottom-right'=>__('Bottom Right','pisol-enquiry-quotation-woocommerce')), 'default'=>'bottom-right','desc'=>__('Position of the cart icon when it is auto inserted, this position will not be used when you insert it using short code','pisol-enquiry-quotation-woocommerce')), 
+            array('field'=>'pi_eqw_cart_position', 'label'=>__('Cart Position', 'pisol-enquiry-quotation-woocommerce'), 'type'=>'select', 'value'=>array('top-left' =>__('Top Left','pisol-enquiry-quotation-woocommerce'), 'top-right'=>__('Top Right','pisol-enquiry-quotation-woocommerce'),  'bottom-left'=>__('Bottom Left','pisol-enquiry-quotation-woocommerce'), 'bottom-right'=>__('Bottom Right','pisol-enquiry-quotation-woocommerce')), 'default'=>'bottom-right','desc'=>__('Position of the cart icon when it is auto inserted, this position will not be used when you insert it using short code','pisol-enquiry-quotation-woocommerce')), 
 
             array('field'=>'pi_eqw_use_shortcode', 'label'=>__('Insert icon using Short code [enquiry_cart_icon]','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will allow you to insert the icon using shortcode [enquiry_cart_icon], when you enable this auto insertion will be disabled','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 

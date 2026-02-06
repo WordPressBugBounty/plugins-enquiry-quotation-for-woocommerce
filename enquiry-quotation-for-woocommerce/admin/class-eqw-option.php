@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Class_Pi_Eqw_Option{
 
@@ -36,7 +37,7 @@ class Class_Pi_Eqw_Option{
 
             array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Enable enquiry for specific roles of users only', 'type'=>'setting_category'),
 
-            array('field'=>'pi_eqw_show_enquiry_button_to_role2', 'type'=>'multiselect', 'default'=>array('guest'),'label'=>__('Show enquiry button for user with role'),'desc'=>__('select roles to whom the enquiry button will be shown'), 'value'=>$this->allUserRoles(), 'pro'=>true),
+            array('field'=>'pi_eqw_show_enquiry_button_to_role2', 'type'=>'multiselect', 'default'=>array('guest'),'label'=>__('Show enquiry button for user with role', 'pisol-enquiry-quotation-woocommerce'),'desc'=>__('select roles to whom the enquiry button will be shown', 'pisol-enquiry-quotation-woocommerce'), 'value'=>$this->allUserRoles(), 'pro'=>true),
             
             array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Enquiry button on shop / category page','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
 
@@ -52,9 +53,9 @@ class Class_Pi_Eqw_Option{
 
             array('field'=>'pi_eqw_enquiry_loop_text_color', 'type'=>'color', 'default'=>'#ffffff','label'=>__('Text color','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Text color of the button on the shop / category page','pisol-enquiry-quotation-woocommerce')),
 
-            array('field'=>'pisol_eqw_loop_button_size','desc'=>'Enquiry button width on product page (PX), if left blank it will be 100% width ', 'label'=>__('Enquiry button width on product page'),'type'=>'number', 'default'=>'220', 'min'=>100, 'placeholder'=>'px'),
+            array('field'=>'pisol_eqw_loop_button_size','desc'=>'Enquiry button width on product page (PX), if left blank it will be 100% width ', 'label'=>__('Enquiry button width on product page', 'pisol-enquiry-quotation-woocommerce'),'type'=>'number', 'default'=>'220', 'min'=>100, 'placeholder'=>'px'),
 
-            array('field'=>'pisol_eqw_loop_button_font_size','desc'=>'Enquiry button font size (PX)', 'label'=>__('Enquiry button font size on product page'),'type'=>'number', 'default'=>'16', 'placeholder'=>'px', 'min'=>12),
+            array('field'=>'pisol_eqw_loop_button_font_size','desc'=>'Enquiry button font size (PX)', 'label'=>__('Enquiry button font size on product page','pisol-enquiry-quotation-woocommerce'),'type'=>'number', 'default'=>'16', 'placeholder'=>'px', 'min'=>12),
 
             array('field'=>'pi_eqw_enquiry_loop_button_text', 'type'=>'text', 'default'=>__('Add to Enquiry','pisol-enquiry-quotation-woocommerce'),'label'=>__('Enquiry button text','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Text shown in the enquiry button','pisol-enquiry-quotation-woocommerce')),
             
@@ -73,9 +74,9 @@ class Class_Pi_Eqw_Option{
 
             array('field'=>'pi_eqw_enquiry_single_text_color', 'type'=>'color', 'default'=>'#ffffff','label'=>__('Text color','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Text color of the button on the shop / category page','pisol-enquiry-quotation-woocommerce')),
 
-            array('field'=>'pisol_eqw_button_size','desc'=>'Enquiry button width on product page (PX), if left blank it will be 100% width ', 'label'=>__('Enquiry button width on product page'),'type'=>'number', 'default'=>'220', 'min'=>100, 'placeholder'=>'px'),
+            array('field'=>'pisol_eqw_button_size','desc'=>'Enquiry button width on product page (PX), if left blank it will be 100% width ', 'label'=>__('Enquiry button width on product page', 'pisol-enquiry-quotation-woocommerce'),'type'=>'number', 'default'=>'220', 'min'=>100, 'placeholder'=>'px'),
 
-            array('field'=>'pisol_eqw_button_font_size','desc'=>'Enquiry button font size (PX)', 'label'=>__('Enquiry button font size on product page'),'type'=>'number', 'default'=>'16', 'placeholder'=>'px', 'min'=>12),
+            array('field'=>'pisol_eqw_button_font_size','desc'=>'Enquiry button font size (PX)', 'label'=>__('Enquiry button font size on product page','pisol-enquiry-quotation-woocommerce'),'type'=>'number', 'default'=>'16', 'placeholder'=>'px', 'min'=>12),
 
             array('field'=>'pi_eqw_enquiry_single_button_text', 'type'=>'text', 'default'=>__('Add to Enquiry','pisol-enquiry-quotation-woocommerce'),'label'=>__('Enquiry button text','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Text shown in the enquiry button','pisol-enquiry-quotation-woocommerce')),
 

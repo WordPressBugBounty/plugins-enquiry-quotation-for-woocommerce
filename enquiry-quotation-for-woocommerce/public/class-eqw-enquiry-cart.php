@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class class_eqw_enquiry_cart{
 
@@ -45,7 +46,7 @@ class class_eqw_enquiry_cart{
 
         if(isset($_POST['id']) && isset($_POST['variation_id'])){
             $id = absint($_POST['id']);
-            $quantity = (int)(isset($_POST['quantity']) ? $_POST['quantity'] : 1);
+            $quantity = (int)(isset($_POST['quantity']) ? absint(wp_unslash($_POST['quantity'])) : 1);
             $variation = absint($_POST['variation_id']);
             $variation_detail = $this->sanitizeVariationDetail($_POST['variation_detail']);
             $products = $this->addProductToEnquirySession($id, $quantity, $variation, $variation_detail);
@@ -168,7 +169,7 @@ class class_eqw_enquiry_cart{
             'quantity'=>(int)$quantity,
             'variation'=>(int)$variation,
             'variation_detail'=>$variation_detail,
-            'message'=>strip_tags($message)
+            'message'=>wp_strip_all_tags($message)
         );
 
         $hash = self::hashGenerator($new_product['id'], $variation_detail);

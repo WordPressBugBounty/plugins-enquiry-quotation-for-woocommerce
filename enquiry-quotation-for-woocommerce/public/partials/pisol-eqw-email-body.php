@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 function pisol_email_table_row($products){
     $show_message_as_row = get_option('pi_eqw_show_message_as_row', 1);
@@ -72,7 +73,7 @@ function pisol_email_table_row($products){
     }else{
         echo '<tr>';
         echo '<td colspan="6" align="center">';
-        echo esc_html__('There are no product added in the enquiry cart');
+        echo esc_html__('There are no product added in the enquiry cart', 'pisol-enquiry-quotation-woocommerce');
         echo '</td>';
         echo '</tr>';
     }

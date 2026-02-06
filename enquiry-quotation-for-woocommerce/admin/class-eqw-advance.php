@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Class_Pi_Eqw_Advance{
 
@@ -53,7 +54,7 @@ class Class_Pi_Eqw_Advance{
 
             array('field'=>'pi_eqw_redirect_to_enquiry_cart', 'label'=>__('Redirect WooCommerce cart and checkout page to enquiry cart page','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will redirect all the traffic on cart and checkout page to enquiry cart page','pisol-enquiry-quotation-woocommerce')),
 
-            array('field'=>'pi_eqw_success_message', 'label'=>__('Success message shown on form submission','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('Enquiry submitted'),   'desc'=>__('This is the message that is shown on successful submission of the enquiry','pisol-enquiry-quotation-woocommerce'),'pro'=>true),
+            array('field'=>'pi_eqw_success_message', 'label'=>__('Success message shown on form submission','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('Enquiry submitted', 'pisol-enquiry-quotation-woocommerce'),   'desc'=>__('This is the message that is shown on successful submission of the enquiry','pisol-enquiry-quotation-woocommerce'),'pro'=>true),
 
             array('field'=>'pi_eqw_redirect_to_form', 'label'=>__('After Add to enquiry click','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>0, 'value'=>array('0'=> __('Product will be added to enquiry cart only','pisol-enquiry-quotation-woocommerce'), 1 =>__('User will be redirected to enquiry cart page once product is added','pisol-enquiry-quotation-woocommerce'), 'popup'=>__('Enquiry popup will get opened','pisol-enquiry-quotation-woocommerce')),  'desc'=>__('What happen when user click on add to enquiry (Product will be added to the enquiry cart in all the 3 cases),<br>
             Redirect to cart page<br>Open cart page in popup','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),

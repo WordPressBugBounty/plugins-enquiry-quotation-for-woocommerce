@@ -1,19 +1,20 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 <div class="pisol-enquiry-detail-container">
     <h2>Enquiry #<?php echo esc_html( $enquiry->ID ); ?> detail</h2>
     <hr>
     <h3>Personal Detail</h3>
     <table class="pi-personal-detail">
         <tr>
-            <td><strong><?php echo esc_html__('Name'); ?></strong> : <?php echo esc_html($enquiry->pi_name); ?></td>
-            <td><strong><?php echo esc_html__('Email'); ?></strong> : <a href="mailto:<?php echo esc_attr($enquiry->pi_email); ?>"><?php echo esc_html($enquiry->pi_email); ?></a></td>
+            <td><strong><?php echo esc_html__('Name','pisol-enquiry-quotation-woocommerce'); ?></strong> : <?php echo esc_html($enquiry->pi_name); ?></td>
+            <td><strong><?php echo esc_html__('Email','pisol-enquiry-quotation-woocommerce'); ?></strong> : <a href="mailto:<?php echo esc_attr($enquiry->pi_email); ?>"><?php echo esc_html($enquiry->pi_email); ?></a></td>
         </tr>
         <tr>
-            <td><strong><?php echo esc_html__('Phone'); ?></strong> : <?php echo esc_html($enquiry->pi_phone); ?></td>
-            <td><strong><?php echo esc_html__('Subject'); ?></strong> : <?php echo esc_html($enquiry->pi_subject); ?></td>
+            <td><strong><?php echo esc_html__('Phone','pisol-enquiry-quotation-woocommerce'); ?></strong> : <?php echo esc_html($enquiry->pi_phone); ?></td>
+            <td><strong><?php echo esc_html__('Subject','pisol-enquiry-quotation-woocommerce'); ?></strong> : <?php echo esc_html($enquiry->pi_subject); ?></td>
         </tr>
         <tr>
             <td colspan="2">
-                <strong><?php echo esc_html__('Message'); ?></strong> : <?php echo esc_html($enquiry->pi_message); ?>
+                <strong><?php echo esc_html__('Message','pisol-enquiry-quotation-woocommerce'); ?></strong> : <?php echo esc_html($enquiry->pi_message); ?>
             </td>
         </tr>
     </table>

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 function pisol_table_row($products){
     if(is_array($products) && count($products) >0){

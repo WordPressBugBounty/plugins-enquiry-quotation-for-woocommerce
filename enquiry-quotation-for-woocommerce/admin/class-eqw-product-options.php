@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Pisol_eqw_product_options{
 
@@ -27,10 +28,10 @@ class Pisol_eqw_product_options{
     </div>
     <?php
 		woocommerce_wp_checkbox( array(
-            'label' => __('Disable Enquiry'), 
+            'label' => __('Disable Enquiry', 'pisol-enquiry-quotation-woocommerce' ), 
             'id' => 'pisol_disable_enquiry', 
             'name' => 'pisol_disable_enquiry', 
-            'description' => __('You can disable enquiry option for this product')
+            'description' => __('You can disable enquiry option for this product', 'pisol-enquiry-quotation-woocommerce' )
           ) );
 		echo '</div>';
     }

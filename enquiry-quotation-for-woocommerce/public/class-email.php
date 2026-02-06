@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class class_pisol_eqw_email{
 
@@ -24,7 +25,7 @@ class class_pisol_eqw_email{
 
         $this->message = $this->message();
 
-        $this->customer_email = sanitize_email($_POST['pi_email']);
+        $this->customer_email = sanitize_email(wp_unslash($_POST['pi_email']));
         $this->customer_subject = str_replace('{enquiry_no}',  $this->enq_id,__('Your enquiry is submitted, your enquiry no is {enquiry_no}', 'pisol-enquiry-quotation-woocommerce'));
         $this->send_copy_to_customer = 1;
 

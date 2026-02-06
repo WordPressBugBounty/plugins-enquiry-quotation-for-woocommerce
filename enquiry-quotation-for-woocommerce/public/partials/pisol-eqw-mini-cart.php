@@ -1,4 +1,5 @@
 
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 <?php if(empty($products)): ?>
     <p><?php esc_html_e('No products in enquiry cart','pisol-enquiry-quotation-woocommerce'); ?></p>
 <?php else: ?>

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class pisol_enq_other_plugins{
 
@@ -40,22 +41,12 @@ class pisol_enq_other_plugins{
 
         add_action('install_plugins_'.$this->this_tab, [$this, 'plugin_list']);
 
-        $this->register_settings();
-        
-    }
-
-    
-    function register_settings(){   
-
-        foreach($this->settings as $setting){
-            register_setting( $this->setting_key, $setting['field']);
-        }
-    
     }
 
     function tab(){
+        $page = isset($_GET['page']) ? sanitize_text_field( wp_unslash($_GET['page']) ) : '';
         ?>
-        <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab ) ); ?>">
+        <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ) ); ?>">
             <span class="dashicons dashicons-networking"></span> <?php echo esc_html( $this->tab_name ); ?> 
         </a>
         <?php

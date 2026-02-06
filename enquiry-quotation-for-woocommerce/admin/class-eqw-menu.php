@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Pi_Eqw_Menu{
 
@@ -17,8 +18,8 @@ class Pi_Eqw_Menu{
         
         $this->menu = add_submenu_page(
             'edit.php?post_type=pisol_enquiry',
-            __( 'Enquiry Setting'),
-            __( 'Enquiry Setting'),
+            __( 'Enquiry Setting', 'pisol-enquiry-quotation-woocommerce' ),
+            __( 'Enquiry Setting', 'pisol-enquiry-quotation-woocommerce' ),
             'manage_options',
             'pisol-enquiry-quote',
             array($this, 'menu_option_page')
@@ -121,9 +122,10 @@ class Pi_Eqw_Menu{
                         <li class="h6">✓ Show submitted enquiries in My Account</li>
                         <li class="h6">✓ Get instant alerts in Telegram</li>
                     </ul>
-                    <h4 class="pi-bottom-banner">💰 Just <?php echo esc_html(PI_EQW_PRICE); ?></h4>
-                    <h4 class="pi-bottom-banner">🔥 Unlock all features and grow your sales!</h4>
+                    <h4 class="pi-bottom-banner">💰 Only <?php echo esc_html(PI_EQW_PRICE); ?> <small>Billed yearly</small></h4>
+                    <div class="text-center">
                     <a class="btn btn-primary btn-lg mb-3" href="<?php echo esc_url( PI_EQW_BUY_URL ); ?>" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
+                    </div>
                 </div>
             </div>
 
@@ -139,7 +141,7 @@ class Pi_Eqw_Menu{
     }
 
     function isWeekend() {
-        return (date('N', strtotime(date('Y/m/d'))) >= 6);
+        return (wp_date('N', strtotime(wp_date('Y/m/d'))) >= 6);
     }
 
     function support(){

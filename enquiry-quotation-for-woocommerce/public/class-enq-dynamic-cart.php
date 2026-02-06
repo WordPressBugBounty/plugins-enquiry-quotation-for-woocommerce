@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class pisol_enq_dynamic_cart{
     private static $instance = null;
