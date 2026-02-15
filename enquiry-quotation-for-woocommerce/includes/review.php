@@ -22,7 +22,7 @@ class pisol_enq_product_enquiry_review{
         $this->slug = $slug;
         $this->activation_date = "pi_review_activation_date_{$this->slug}";
         $this->saved_value = "pi_review_saved_value_{$this->slug}";
-        $this->review_url = "https://wordpress.org/support/plugin/{$this->slug}/reviews/?rate=5#new-post";
+        $this->review_url = "https://wordpress.org/support/plugin/{$this->slug}/reviews/#wp-bbp_topic_content-wrap";
         $this->review_after = 6;
         $this->buy_url = $buy_url;
         $this->price = $price;
@@ -144,14 +144,14 @@ class pisol_enq_product_enquiry_review{
         $notice .= '<div class="pi-flex">';
         $notice .= '<img style="max-width:90px; height:auto;" src="'.plugin_dir_url( __FILE__ ).'review-icon.svg" alt="pi web solution">';
         $notice .= '<div style="margin-left:20px;">';
-        $notice .= '<p>'.sprintf(__("Hi there, You've been using <strong>%s</strong> on your site for a few days <br>- I hope it's been helpful. If you're enjoying my plugin, would you mind rating it 5-stars to help spread the word?", 'pisol-enquiry-quotation-woocommerce'), esc_html($this->title)).'</p>';
+        $notice .= '<p>'.sprintf(__("Is handling enquiries and quotes easier with this plugin?", 'pisol-enquiry-quotation-woocommerce'), esc_html($this->title)).'</p>';
         $notice .= '<ul class="pi-flex" style="margin-top:15px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 20px;
         text-align: center;">';
-        $notice .= '<li><a val="later" class="pi-active-btn pisol-review-btn" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'later',  '_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'">'.__("Remind me later", 'pisol-enquiry-quotation-woocommerce').'</a></li>';
-        $notice .= '<li><a  class="pi-active-btn pisol-review-btn" style="font-weight:bold;" val="given" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'now','_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'" target="_blank">'.__("Review Here", 'pisol-enquiry-quotation-woocommerce').'</a></li>';
-        $notice .= '<li><a  class="pi-passive-btn pisol-review-btn" val="never" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'never', '_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'">'.__("I would not", 'pisol-enquiry-quotation-woocommerce').'</a></li>';	 
+        $notice .= '<li><a  class="pi-active-btn pisol-review-btn" style="font-weight:bold;" val="given" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'now','_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'" target="_blank">'.__("Yes", 'pisol-enquiry-quotation-woocommerce').'</a></li>';
+        $notice .= '<li><a val="later" class="pi-active-btn pisol-review-btn" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'later',  '_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'">'.__("No", 'pisol-enquiry-quotation-woocommerce').'</a></li>';
+        //$notice .= '<li><a  class="pi-passive-btn pisol-review-btn" val="never" href="'.add_query_arg(array('action' => "pi_save_review_preference_{$this->slug}", 'preference'=>'never', '_wpnonce'=>wp_create_nonce( "pi_save_review_preference_{$this->slug}" )), admin_url('admin-post.php')).'">'.__("I would not", 'pisol-enquiry-quotation-woocommerce').'</a></li>';	 
         if($this->buy_url && $this->price){  
             // translators: %s: price     
             $notice .= '<li><a target="_blank" class="pi-buy-now-btn pisol-review-btn" val="never" href="'.esc_url($this->buy_url).'&utm_ref=review_reminder">'.sprintf(__("BUY PRO FOR %s", 'pisol-enquiry-quotation-woocommerce'), $this->price).'</a></li>';	
