@@ -9,21 +9,21 @@
  * that starts the plugin.
  *
  * @link              piwebsolution.com
- * @since             2.2.34.34
+ * @since             2.2.34.36
  * @package           Pisol_Enquiry_Quotation_Woocommerce
  *
  * @wordpress-plugin
  * Plugin Name:       PiWeb Product Enquiry or product catalog for WooCommerce
  * Plugin URI:        https://piwebsolution.com
  * Description:       Product enquiry and quotation plugin for WooCommerce that can save enquiry and email the enquiry as well
- * Version:           2.2.34.34
+ * Version:           2.2.34.36
  * Author:            PI Websolution
  * Author URI:        https://www.piwebsolution.com/faq-for-woocommerce-product-enquiry-quotation/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       pisol-enquiry-quotation-woocommerce
  * Domain Path:       /languages
- * WC tested up to: 10.5.2
+ * WC tested up to: 10.6
  */
 
 // If this file is called directly, abort.
@@ -45,6 +45,26 @@ if(!is_plugin_active( 'woocommerce/woocommerce.php')){
     deactivate_plugins(plugin_basename(__FILE__));
     return;
 }
+
+add_action('after_plugin_row_enquiry-quotation-for-woocommerce-pro/pisol-enquiry-quotation-woocommerce.php', function ($plugin_file, $plugin_data) {
+    $url = wp_nonce_url(
+        self_admin_url( 'plugins.php?action=deactivate&plugin=enquiry-quotation-for-woocommerce/pisol-enquiry-quotation-woocommerce.php' ),
+        'deactivate-plugin_enquiry-quotation-for-woocommerce/pisol-enquiry-quotation-woocommerce.php'
+    );
+    ?>
+    <tr class="plugin-update-tr">
+        <td colspan="13" class="plugin-update" style="background:rgba(255,0,0,0.5);">
+            <div style="margin: 10px;">
+                <p style="color:#FFF;"><?php echo wp_kses_post( '⚠️ Deactivate the free version of <b>Enquiry Quotation for WooCommerce</b>, then only the PRO version will work', 'pisol-enquiry-quotation-woocommerce' ); ?>
+                    <a href="<?php echo esc_url( $url ); ?>" class="button button-secondary">
+                        <?php esc_html_e( 'Deactivate Free Version', 'pisol-enquiry-quotation-woocommerce' ); ?>
+                    </a>
+                </p>
+            </div>
+        </td>
+    </tr>
+    <?php
+}, 10, 2);
 
 if(is_plugin_active( 'enquiry-quotation-for-woocommerce-pro/pisol-enquiry-quotation-woocommerce.php')){
     function pi_eqw_notification_my_pro_notice() {
@@ -70,10 +90,10 @@ add_action( 'before_woocommerce_init', function() {
 
 /**
  * Currently plugin version.
- * Start at version 2.2.34.34 and use SemVer - https://semver.org
+ * Start at version 2.2.34.36 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PISOL_ENQUIRY_QUOTATION_WOOCOMMERCE_VERSION', '2.2.34.34' );
+define( 'PISOL_ENQUIRY_QUOTATION_WOOCOMMERCE_VERSION', '2.2.34.36' );
 define( 'PI_EQW_PRICE', '$2 / month' );
 define( 'PI_EQW_BUY_URL', 'https://www.piwebsolution.com/cart/?add-to-cart=1734&variation_id=1735&utm_campaign=enquiry-cart&utm_source=website&utm_medium=direct-buy' );
 define( 'PI_EQW_DELETE_SETTING', false);
