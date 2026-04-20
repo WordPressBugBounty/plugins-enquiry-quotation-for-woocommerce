@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 3.0.1
 Tested up to: 6.9
-Stable tag: 2.2.34.37
+Stable tag: 2.2.34.39
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -245,6 +245,9 @@ Protect your enquiry form from spam by using CAPTCHA, which requires users to co
 Yes, in the pro version you can get the enquiry in Telegram as well. You will have to set your Telegram bot token and chat ID in the plugin settings page; once you do that all the enquiries will be sent to your Telegram account as well
 
 == Changelog ==
+
+= 2.2.34.39 =
+* Tested for WC 10.7.0
 
 = 2.2.34.33 =
 * compatible with WC 10.5.0
