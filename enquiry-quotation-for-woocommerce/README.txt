@@ -1,26 +1,26 @@
 === PiWeb Product Enquiry or product catalog for WooCommerce ===
 Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
-Requires at least: 3.0.1
+Requires at least: 5.5
 Tested up to: 7.0
-Stable tag: 2.2.34.42
+Stable tag: 2.2.34.43
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Product enquiry for WooCommerce and quote request plugin that can save enquiries and email the WooCommerce product enquiry as well
+Product enquiry for WooCommerce and product catalog plugin that can save enquiries and email the WooCommerce product enquiry as well
 
 == Description ==
 
+The **Product Enquiry or product catalog for WooCommerce plugin** adds an enquiry button to products. Using this, customers can send you an enquiry or request a quote for a product.
+
+Using this Product enquiry or product catalog for WooCommerce plugin, customers will be able to send aggregated enquiries for multiple products at the same time, as all the enquired products get added into the enquiry cart  
+
 [Try Pro version front and backend demo](https://websitemaintenanceservice.in/enquiry_demo/) | [Documentation](https://www.piwebsolution.com/user-documentation-product-enquiry-for-woocommerce/)
 
-The **Product Enquiry for WooCommerce plugin** adds an enquiry button to products. Using this, customers can send you an enquiry or request a quote for a product.
-
-Using this Product enquiry for WooCommerce plugin, customers will be able to send aggregated enquiries for multiple products at the same time, as all the enquired products get added into the enquiry cart  
-
-== Product enquiry for WooCommerce plugin features ==
+== Product enquiry or product catalog for WooCommerce plugin features ==
 
 * Show enquiry button on **Shop/Category page** and **Single product page**
-* WooCommerce product enquiry plugin creates a complete **cart of inquiry**
+* WooCommerce product enquiry or product catalog plugin creates a complete **cart of inquiry**
 * Add multiple products in **enquiry cart**
 * Add different **message along with each product** in the enquiry cart
 * Receive **inquiry details in the email**
@@ -245,6 +245,9 @@ Protect your enquiry form from spam by using CAPTCHA, which requires users to co
 Yes, in the pro version you can get the enquiry in Telegram as well. You will have to set your Telegram bot token and chat ID in the plugin settings page; once you do that all the enquiries will be sent to your Telegram account as well
 
 == Changelog ==
+
+= 2.2.34.43 =
+* Tested for WC 10.9.0
 
 = 2.2.34.42 =
 * Product enquiry tested for WC 10.8.0
