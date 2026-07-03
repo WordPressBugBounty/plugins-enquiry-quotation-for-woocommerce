@@ -112,7 +112,8 @@ class class_eqw_enquiry_cart{
 
     function pi_update_products(){
        
-        $products = $this->addProductsToEnquirySession($_POST['products']);
+        $validated_products = $this->validateProductUpdates($_POST['products']);
+        $products = $this->addProductsToEnquirySession($validated_products);
         ob_start();
         pisol_table_row($products);
         $cart = ob_get_contents(); // read ob2 ("b")
@@ -123,6 +124,43 @@ class class_eqw_enquiry_cart{
         );  
         echo json_encode($data, JSON_UNESCAPED_SLASHES);
         die;
+    }
+
+    function validateProductUpdates($incoming_products){
+        $session_products = self::getProductsInEnquirySession();
+        $validated_products = array();
+        $immutable_keys = array('id', 'variation');
+
+        if(!is_array($incoming_products) || count($incoming_products) == 0){
+            return array();
+        }
+
+        foreach($incoming_products as $hash => $incoming_product){
+            // Check if product exists in session
+            if(!isset($session_products[$hash])){
+                // Product not in session, skip it
+                unset($incoming_products[$hash]);
+                continue;
+            }
+
+            $session_product = $session_products[$hash];
+            $is_valid = true;
+
+            // Verify immutable keys haven't been modified
+            foreach($immutable_keys as $key){
+                if($incoming_product[$key] != $session_product[$key]){
+                    $is_valid = false;
+                    break;
+                }
+            }
+
+            // Only add product if it passes validation
+            if($is_valid){
+                $validated_products[$hash] = $incoming_product;
+            }
+        }
+
+        return $validated_products;
     }
 
     function addProductsToEnquirySession($products){
