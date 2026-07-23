@@ -114,6 +114,11 @@ class PISOL_ENQ_CaptchaGenerator{
     }
 
     private function generate_captcha_image() {
+        if ( ! isset( WC()->session ) ) {
+            // don't send image header if we can't produce an image
+            wp_die( esc_html__( 'Session unavailable', 'text-domain' ), '', array( 'response' => 500 ) );
+        }
+
         header('Content-Type: image/png');        
         $captcha_string = $this->generateCaptchaCode();
         
@@ -346,6 +351,7 @@ class PISOL_ENQ_CaptchaGenerator{
 
     function get_characters() {
         $type_of_string = get_option('pi_eqw_captcha_characters', 'mix');
+        $characters = 'ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789';
         if($type_of_string === 'mix') {
             $characters = 'ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789';
         } 

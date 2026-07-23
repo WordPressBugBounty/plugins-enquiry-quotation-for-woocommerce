@@ -34,7 +34,8 @@ class Pisol_Enquiry_Quotation_Woocommerce_Admin {
 			delete_option('pi_ewq_do_activation_redirect');
 			if(!isset($_GET['activate-multi']) && (function_exists('is_multisite') && !is_multisite()))
 			{
-				wp_redirect("admin.php?page=pisol-enquiry-quote");
+				wp_safe_redirect(admin_url("admin.php?page=pisol-enquiry-quote"));
+				exit;
 			}
 		}
 	}
@@ -44,7 +45,7 @@ class Pisol_Enquiry_Quotation_Woocommerce_Admin {
 
 		
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pisol-enquiry-quotation-woocommerce-admin.css', array(), $this->version, 'all' );
+		
 
 	}
 

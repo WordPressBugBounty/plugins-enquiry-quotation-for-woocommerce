@@ -45,7 +45,7 @@ class class_eqw_save_enquiry{
     }
 
     function getMessage(){
-        $this->message = isset($_POST['pi_message']) ? sanitize_text_field($_POST['pi_message']) : "";
+        $this->message = isset($_POST['pi_message']) ? sanitize_textarea_field($_POST['pi_message']) : "";
         return $this->message;
     }
 
@@ -91,7 +91,10 @@ class class_eqw_save_enquiry{
     function staticProducts(){
         $static_products = array();
         foreach($this->products as $product){
-            $static_products[] = $this->staticProduct($product);
+            $result = $this->staticProduct($product);
+            if(!empty($result) && is_array($result)){
+                $static_products[] = $result;
+            }
         }
         return serialize($static_products);
     }
@@ -106,6 +109,11 @@ class class_eqw_save_enquiry{
 
     function staticProduct($product){
         $product_obj = wc_get_product($product['id']);
+
+        if ( ! $product_obj instanceof WC_Product ) {
+            return;
+        }
+
         $product_permalink = $product_obj->get_permalink();
         $image_id = $product_obj->get_image_id();
         $img = wp_get_attachment_thumb_url($image_id);

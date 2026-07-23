@@ -77,7 +77,7 @@ class Pi_Eqw_Enquiry{
           if($attribute != ""){
             $pair = explode('|',$attribute);
             echo isset($pair[0]) ? '<strong>'.esc_html($pair[0]).'</strong> : ' : "";
-            echo isset($pair[1]) ? '<span>'.esc_html($pair[0]).'</span><br>' : "";
+            echo isset($pair[1]) ? '<span>'.esc_html($pair[1]).'</span><br>' : "";
           }
         }
       }

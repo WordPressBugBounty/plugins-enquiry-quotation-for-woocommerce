@@ -26,7 +26,16 @@ class Pi_Eqw_Menu{
         );
 
         add_action("load-".$this->menu, array($this,"bootstrap_style"));
+
+        add_action( 'admin_enqueue_scripts', array($this,'enqueue_styles') );
  
+    }
+
+    public function enqueue_styles() {
+        $screen = get_current_screen();
+        if(!isset($screen->post_type) || $screen->post_type != 'pisol_enquiry') return;
+        
+        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pisol-enquiry-quotation-woocommerce-admin.css', array(), $this->version, 'all' );
     }
 
     public function bootstrap_style() {
@@ -40,6 +49,8 @@ class Pi_Eqw_Menu{
         wp_enqueue_script( $this->plugin_name."_quick_save", plugin_dir_url( __FILE__ ) . 'js/pisol-quick-save.js', array('jquery'), $this->version, 'all' );
 
         wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/pisol-enquiry-quotation-woocommerce-admin.js', array( 'jquery' ), $this->version, false );
+
+        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pisol-enquiry-quotation-woocommerce-admin.css', array(), $this->version, 'all' );
 		
 	}
 
@@ -122,7 +133,7 @@ class Pi_Eqw_Menu{
                         <li class="h6">✓ Show submitted enquiries in My Account</li>
                         <li class="h6">✓ Get instant alerts in Telegram</li>
                     </ul>
-                    <h4 class="pi-bottom-banner">💰 Only <?php echo esc_html(PI_EQW_PRICE); ?> <small>Billed yearly</small></h4>
+                    <h4 class="pi-bottom-banner">💰 <?php echo esc_html(PI_EQW_PRICE); ?> <small>only</small></h4>
                     <div class="text-center">
                     <a class="btn btn-primary btn-lg mb-3" href="<?php echo esc_url( PI_EQW_BUY_URL ); ?>" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
                     </div>

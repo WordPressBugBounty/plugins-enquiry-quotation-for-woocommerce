@@ -48,7 +48,7 @@ class class_eqw_enquiry_cart{
             $id = absint($_POST['id']);
             $quantity = (int)(isset($_POST['quantity']) ? absint(wp_unslash($_POST['quantity'])) : 1);
             $variation = absint($_POST['variation_id']);
-            $variation_detail = $this->sanitizeVariationDetail($_POST['variation_detail']);
+            $variation_detail = $this->sanitizeVariationDetail($_POST['variation_detail'] ?? []);
             $products = $this->addProductToEnquirySession($id, $quantity, $variation, $variation_detail);
             wp_send_json($products);
         }
@@ -97,6 +97,10 @@ class class_eqw_enquiry_cart{
             $product = wc_get_product($variation_id);
         }
 
+        if ( ! $product instanceof WC_Product ) {
+            return '';
+        }
+
         $image_id = $product->get_image_id();
 
         $placeholder = wc_placeholder_img_src( 'thumbnail' );
@@ -112,7 +116,7 @@ class class_eqw_enquiry_cart{
 
     function pi_update_products(){
        
-        $validated_products = $this->validateProductUpdates($_POST['products']);
+        $validated_products = $this->validateProductUpdates($_POST['products'] ?? []);
         $products = $this->addProductsToEnquirySession($validated_products);
         ob_start();
         pisol_table_row($products);
@@ -173,14 +177,20 @@ class class_eqw_enquiry_cart{
 
     function sanitizeProducts($products){
         if(is_array($products)){
-            foreach($products as $key =>$product){
-                $products[$key]['id'] = (int)$products[$key]['id'];
-                $products[$key]['variation'] = (int)$products[$key]['variation'];
-                $products[$key]['variation_detail'] = $this->sanitizeVariationDetail($products[$key]['variation_detail']);
+            foreach($products as $key => $product){
+                $products[$key]['id']               = (int)($product['id'] ?? 0);
+                $products[$key]['variation']         = (int)($product['variation'] ?? 0);
+                $products[$key]['variation_detail']  = $this->sanitizeVariationDetail($product['variation_detail'] ?? []);
+                $products[$key]['quantity']          = (int)($product['quantity'] ?? 0);
+                $products[$key]['message']           = sanitize_textarea_field($product['message'] ?? '');
 
-                $products[$key]['quantity'] = (int) $products[$key]['quantity'];
-                $products[$key]['message'] = sanitize_text_field($products[$key]['message']);
                 if($products[$key]['quantity'] <= 0){
+                    unset($products[$key]);
+                    continue;
+                }
+
+                // reject anything with no valid product id — bad/tampered payload
+                if($products[$key]['id'] <= 0){
                     unset($products[$key]);
                 }
             }
@@ -229,6 +239,11 @@ class class_eqw_enquiry_cart{
 
     static function is_variable($id){
         $product = wc_get_product($id);
+
+        if ( ! $product instanceof WC_Product ) {
+            return false;
+        }
+
         if($product->is_type('variable')){
             return true;
         }

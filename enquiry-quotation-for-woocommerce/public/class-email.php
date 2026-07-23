@@ -25,7 +25,7 @@ class class_pisol_eqw_email{
 
         $this->message = $this->message();
 
-        $this->customer_email = sanitize_email(wp_unslash($_POST['pi_email']));
+        $this->customer_email = sanitize_email(wp_unslash($_POST['pi_email'] ?? ''));
         $this->customer_subject = str_replace('{enquiry_no}',  $this->enq_id,__('Your enquiry is submitted, your enquiry no is {enquiry_no}', 'pisol-enquiry-quotation-woocommerce'));
         $this->send_copy_to_customer = 1;
 
@@ -124,6 +124,11 @@ class class_pisol_eqw_email{
     function attachProductImages($phpmailer){
         foreach($this->products as $key => $product){
             $prod = wc_get_product($product['id']);
+
+            if ( ! $prod instanceof WC_Product ) {
+                continue;
+            }
+            
             $image_id = $prod->get_image_id();
             $this->attachImage($image_id, $phpmailer);
         }

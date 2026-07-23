@@ -24,11 +24,11 @@ class Pisol_Enquiry_Quotation_Woocommerce_Public {
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pisol-enquiry-quotation-woocommerce-public.css', array(), $this->version, 'all' );
 
-		$pi_eqw_enquiry_loop_bg_color = get_option('pi_eqw_enquiry_loop_bg_color', '#ee6443');
-		$pi_eqw_enquiry_loop_text_color = get_option('pi_eqw_enquiry_loop_text_color', '#ffffff');
+		$pi_eqw_enquiry_loop_bg_color = sanitize_hex_color(get_option('pi_eqw_enquiry_loop_bg_color', '#ee6443'));
+		$pi_eqw_enquiry_loop_text_color = sanitize_hex_color(get_option('pi_eqw_enquiry_loop_text_color', '#ffffff'));
 
-		$pi_eqw_enquiry_single_bg_color = get_option('pi_eqw_enquiry_single_bg_color', '#ee6443');
-		$pi_eqw_enquiry_single_text_color = get_option('pi_eqw_enquiry_single_text_color', '#ffffff');
+		$pi_eqw_enquiry_single_bg_color = sanitize_hex_color(get_option('pi_eqw_enquiry_single_bg_color', '#ee6443'));
+		$pi_eqw_enquiry_single_text_color = sanitize_hex_color(get_option('pi_eqw_enquiry_single_text_color', '#ffffff'));
 
 		$css = "
 			.add-to-enquiry-loop{

@@ -92,6 +92,10 @@ class pisol_enq_dynamic_cart{
                 $product_obj = wc_get_product($product['variation']);
             }
 
+            if ( ! $product_obj instanceof WC_Product ) {
+                continue;
+            }
+
             $products[$key]['name'] = $product_obj->get_name();
             $products[$key]['permalink'] = $product_obj->get_permalink();
             $products[$key]['thumbnail'] = class_eqw_enquiry_cart::get_image($product['id'], $product['variation']);

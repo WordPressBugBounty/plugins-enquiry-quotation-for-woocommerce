@@ -30,36 +30,48 @@ function pisol_email_table_row($products){
         <?php
         foreach($products as $key => $product){ 
             $product_obj = wc_get_product($product['id']);
+
+            if ( ! $product_obj instanceof WC_Product ) {
+                ?>
+                <tr class="woocommerce-cart-form__cart-item" id="<?php echo esc_attr( $key ); ?>">
+                    <td colspan="<?php echo esc_attr($col_count); ?>" style="padding:10px; text-align:center;">
+                        <?php esc_html_e( 'Product no longer available', 'pisol-enquiry-quotation-woocommerce' ); ?>
+                    </td>
+                </tr>
+                <?php
+                continue;
+            }
+
             $product_permalink = $product_obj->get_permalink();
             $image_id = class_pisol_eqw_email::imageUrl( $product_obj->get_image_id() );
             ?>
-        <tr class="woocommerce-cart-form__cart-item" id="<?php echo esc_attr( $key ); ?>">
-            <td>
-                <img alt="" width="70" height="70" border="0" src="<?php echo esc_attr( $image_id ); ?>" style="max-width:70px; width:70px; height:auto;">
-            </td>
-            <td class="product-name"  style="padding:6px 6px;" nowrap>
-                <?php printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), esc_html( $product_obj->get_name() ) ); 
-                class_eqw_enquiry_shortcode::get_variations($product_obj, $product['variation_detail'],true);
-                ?>
-            </td>
-            <?php if(!class_eqw_advance::checkHidePrice()): ?>
-            <td class="product-price"  style="padding:10px 0; text-align:center;" nowrap>
-                <?php echo wp_kses_post( wc_price(class_eqw_enquiry_shortcode::get_price_simple_variation($product_obj, $product['variation'])) ); ?>
-            </td>
-            <?php endif; ?>
-            <td class="product-sku"  style="padding:6px 6px;" nowrap>
-                <?php echo esc_html( $product_obj->get_sku() ); ?>
-            </td>
-            <td class="product-quantity"  style="padding:10px 0; text-align:center;"  nowrap>
-                <?php echo esc_html($product['quantity']); ?>
-                <input type="hidden" value="<?php echo (isset($product['variation']) && $product['variation'] != "" && is_array($product['variation'])) ? json_encode($product['variation']) : ''; ?>" data-hash="<?php echo esc_attr( $key ); ?>" name="products[<?php echo esc_attr( $key ); ?>][variation]" />
-            </td>
-            <?php if(empty( $show_message_as_row)): ?>
-            <td class="product-message"  style="padding:10px 0; text-align:center;"  nowrap>
-            <?php echo wp_kses_post( wp_unslash(esc_html($product['message'])) ); ?>
-            </td>
-            <?php endif; ?>
-        </tr>
+            <tr class="woocommerce-cart-form__cart-item" id="<?php echo esc_attr( $key ); ?>">
+                <td>
+                    <img alt="" width="70" height="70" border="0" src="<?php echo esc_attr( $image_id ); ?>" style="max-width:70px; width:70px; height:auto;">
+                </td>
+                <td class="product-name"  style="padding:6px 6px;" nowrap>
+                    <?php printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), esc_html( $product_obj->get_name() ) ); 
+                    class_eqw_enquiry_shortcode::get_variations($product_obj, $product['variation_detail'],true);
+                    ?>
+                </td>
+                <?php if(!class_eqw_advance::checkHidePrice()): ?>
+                <td class="product-price"  style="padding:10px 0; text-align:center;" nowrap>
+                    <?php echo wp_kses_post( wc_price(class_eqw_enquiry_shortcode::get_price_simple_variation($product_obj, $product['variation'])) ); ?>
+                </td>
+                <?php endif; ?>
+                <td class="product-sku"  style="padding:6px 6px;" nowrap>
+                    <?php echo esc_html( $product_obj->get_sku() ); ?>
+                </td>
+                <td class="product-quantity"  style="padding:10px 0; text-align:center;"  nowrap>
+                    <?php echo esc_html($product['quantity']); ?>
+                    <input type="hidden" value="<?php echo (isset($product['variation']) && $product['variation'] != "" && is_array($product['variation'])) ? json_encode($product['variation']) : ''; ?>" data-hash="<?php echo esc_attr( $key ); ?>" name="products[<?php echo esc_attr( $key ); ?>][variation]" />
+                </td>
+                <?php if(empty( $show_message_as_row)): ?>
+                <td class="product-message"  style="padding:10px 0; text-align:center;"  nowrap>
+                <?php echo wp_kses_post( wp_unslash(esc_html($product['message'])) ); ?>
+                </td>
+                <?php endif; ?>
+            </tr>
             <?php if(!empty( $show_message_as_row) && !empty($product['message'])): ?>
                 <tr>
                 <td class="product-message"  style="padding:12px; text-align:left;" colspan="<?php echo esc_attr($col_count); ?>">

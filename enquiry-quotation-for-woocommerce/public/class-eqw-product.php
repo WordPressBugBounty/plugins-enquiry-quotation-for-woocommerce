@@ -134,6 +134,8 @@ class class_eqw_product{
     }
 
     function showButtonOnLoopPage($product){
+        if( ! $product instanceof WC_Product ) return false;
+        
         if( $product->is_type('grouped') || $product->is_type('variable') ) return false;
 
 

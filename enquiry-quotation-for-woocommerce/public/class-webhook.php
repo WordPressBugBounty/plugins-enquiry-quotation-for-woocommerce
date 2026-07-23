@@ -40,15 +40,17 @@ class pisol_eqw_webhook{
         $meta_data['pi_products_info'] = unserialize(get_post_meta($enq_id, 'pi_products_info', true));
         
         if(!empty($meta_data)){
-            try{
-                $response = wp_remote_post($webhook_url, array(
-                    'body' => json_encode($meta_data),
-                    'headers' => array('Content-Type' => 'application/json'),
-                ));
-            }catch(Exception $e){
-                error_log($e->getMessage());
-                return;
+           
+            $response = wp_remote_post($webhook_url, array(
+                'body' => json_encode($meta_data),
+                'headers' => array('Content-Type' => 'application/json'),
+                'blocking' => false
+            ));
+
+            if (is_wp_error($response)) {
+                error_log('ENQ Webhook dispatch error: ' . $response->get_error_message());
             }
+            
         }
     }
 }
