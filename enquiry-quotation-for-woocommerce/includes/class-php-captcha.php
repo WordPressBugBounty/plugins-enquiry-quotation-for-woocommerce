@@ -44,7 +44,7 @@ class PISOL_ENQ_CaptchaGenerator{
             return;
         }
 
-        $this->fontPath = __DIR__.'/ARIAL.TTF';
+        $this->fontPath = __DIR__.'/deja.ttf';
 
         $this->captchaLength = $this->get_captcha_length();
 
@@ -72,7 +72,7 @@ class PISOL_ENQ_CaptchaGenerator{
         echo '<div id="pi_enq_captcha">';
         echo '<input type="text" name="captcha_field" id="captcha_field" class="input-text" required placeholder="'.esc_attr($placeholder).'">';
         echo '<div class="captcha_image_container">';
-        echo '<img src="' . esc_url( admin_url('admin-ajax.php?action=pi_enq_generate_captcha') ) . '" alt="CAPTCHA" id="captcha_image">';
+        echo '<img src="' . esc_url( admin_url('admin-ajax.php?action=pi_enq_generate_captcha&_=' . time()) ) . '" alt="CAPTCHA" id="captcha_image">';
         echo '</div>';
         echo '<a href="#" id="refresh_captcha" title="'.esc_attr($refresh_title).'"><img src="'.esc_url(plugin_dir_url( __FILE__ ).'img/refresh.svg').'" id="captcha_refresh_icon">.</a>';
         echo '</div>';

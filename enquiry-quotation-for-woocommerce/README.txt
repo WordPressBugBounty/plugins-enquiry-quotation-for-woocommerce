@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 5.5
 Tested up to: 7.0
-Stable tag: 2.2.34.46
+Stable tag: 2.2.34.47
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -246,8 +246,12 @@ Yes, in the pro version you can get the enquiry in Telegram as well. You will ha
 
 == Changelog ==
 
+= 2.2.34.47 =
+* product table design change in enquiry cart, with option in Advance option >Enquiry Cart Table Design  to fall back to old desing that is "Classic design" for those who want to keep the old design
+
 = 2.2.34.46 =
 * code optimized
+* form submission error will not wipe out the data entered by the user
 
 = 2.2.34.44 =
 * bug fix so user cant modify hash of product 

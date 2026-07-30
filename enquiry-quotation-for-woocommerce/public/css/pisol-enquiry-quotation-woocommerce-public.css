@@ -417,3 +417,276 @@ label.error{
     }
 }
 /* mini cart end */
+
+#pi-enquiry-container:has(#pi-form-submitted-success) .enquiry-cart-content-table{
+    display:none;
+}
+
+/** Modern card-based design for enquiry cart table - v2 */
+.enquiry-cart-content-table-1 {
+    width: 100%;
+    border-spacing: 0 16px;
+    border: none !important;
+    border-collapse: collapse !important;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Table Header Styling */
+.enquiry-cart-content-table-1 thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.enquiry-cart-content-table-1 th {
+    text-align: center;
+    padding: 16px 12px;
+    background: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none !important;
+}
+
+/* Table Row Styling (Card-like design) */
+.enquiry-cart-content-table-1 tbody tr {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.enquiry-cart-content-table-1 tbody tr:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    border-color: #667eea !important;
+}
+
+/* Table Cell Styling */
+.enquiry-cart-content-table-1 td {
+    padding: 16px 12px !important;
+    text-align: center;
+    border: none !important;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333333;
+}
+
+/* Product Remove Button */
+.enquiry-cart-content-table-1 td.product-remove {
+    padding: 16px 8px !important;
+}
+
+.enquiry-cart-content-table-1 .pi-remove-product {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #fee;
+    color: #e74c3c;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+}
+
+.enquiry-cart-content-table-1 .pi-remove-product:hover {
+    background: #e74c3c;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Product Thumbnail */
+.enquiry-cart-content-table-1 td.product-thumbnail {
+    padding: 12px !important;
+}
+
+.enquiry-cart-content-table-1 .pi-eqw-product-thumb {
+    display: inline-block;
+    max-width: 70px;
+    height: auto;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #f8f8f8;
+    padding: 4px;
+}
+
+/* Product Name and Details */
+.enquiry-cart-content-table-1 td.product-name {
+    text-align: left;
+    padding: 16px 14px !important;
+    font-weight: 500;
+    max-width: 250px;
+}
+
+.enquiry-cart-content-table-1 td.product-name a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 600;
+}
+
+.enquiry-cart-content-table-1 td.product-name a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* Product Price and Quantity */
+.enquiry-cart-content-table-1 td.product-price,
+.enquiry-cart-content-table-1 td.product-quantity {
+    font-weight: 500;
+}
+
+.enquiry-cart-content-table-1 td.product-price {
+    color: #764ba2;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Quantity Input */
+.enquiry-cart-content-table-1 .pi-quantity {
+    max-width: 80px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.enquiry-cart-content-table-1 .pi-quantity:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Textarea for Messages */
+.enquiry-cart-content-table-1 td textarea {
+    padding: 12px;
+    width: 100%;
+    resize: vertical;
+    box-sizing: border-box;
+    border-radius: 6px !important;
+    border: 1px solid #ddd !important;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #555;
+    transition: all 0.2s ease-in-out;
+    min-height: 80px;
+    background: #fafafa;
+}
+
+.enquiry-cart-content-table-1 td textarea::placeholder {
+    color: #999;
+}
+
+.enquiry-cart-content-table-1 td textarea:focus {
+    background: #ffffff;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+    outline: none;
+}
+
+/* SKU Column */
+.enquiry-cart-content-table-1 td.product-sku {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    background: #f8f8f8;
+    padding: 10px !important;
+    border-radius: 4px;
+    color: #666;
+}
+
+/* Message Column */
+.enquiry-cart-content-table-1 td.product-message {
+    max-width: 280px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .enquiry-cart-content-table-1 {
+        border-spacing: 0 12px;
+        margin-top: 16px;
+        margin-bottom: 24px;
+    }
+
+    .enquiry-cart-content-table-1 thead {
+        display: none;
+    }
+
+    .enquiry-cart-content-table-1 tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .enquiry-cart-content-table-1 td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 8px 0 !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+
+    .enquiry-cart-content-table-1 td:last-child {
+        border-bottom: none !important;
+    }
+
+    .enquiry-cart-content-table-1 td:before {
+        content: attr(data-title);
+        font-weight: 600;
+        color: #667eea;
+        display: block;
+        margin-bottom: 6px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .enquiry-cart-content-table-1 td.product-remove {
+        width: auto;
+        padding: 8px !important;
+    }
+
+    .enquiry-cart-content-table-1 td.product-thumbnail {
+        width: auto;
+        text-align: left;
+        padding: 8px 0 !important;
+    }
+
+    .enquiry-cart-content-table-1 td.product-thumbnail img {
+        max-width: 60px;
+    }
+
+    .enquiry-cart-content-table-1 td.product-name,
+    .enquiry-cart-content-table-1 td.product-price,
+    .enquiry-cart-content-table-1 td.product-sku,
+    .enquiry-cart-content-table-1 td.product-quantity {
+        text-align: left;
+        padding: 8px 0 !important;
+    }
+
+    .enquiry-cart-content-table-1 td.product-quantity input {
+        display: inline-block;
+        width: 70px !important;
+    }
+
+    .enquiry-cart-content-table-1 td textarea {
+        min-height: 70px;
+        padding: 10px !important;
+    }
+}
+/** end of modern cart table design */

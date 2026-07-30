@@ -118,6 +118,7 @@ class Pi_Eqw_Menu{
                         <li class="h6">✓ Show enquiry only when product is out of stock</li>
                         <li class="h6">✓ Change button position on product pages</li>
                         <li class="h6">✓ Remove Add to Cart to get only enquiries</li>
+                        <li class="h6">✓ Product manager to receive product enquiries</li>
                     </ul>
                     <ul class="text-left pisol-pro-feature-list mb-3">
                         <li class="h6 font-weight-bold mt-3"><b>💬 Smart Communication</b></li>

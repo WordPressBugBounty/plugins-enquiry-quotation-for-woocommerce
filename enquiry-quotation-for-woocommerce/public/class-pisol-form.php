@@ -192,7 +192,12 @@ class class_pisol_form{
             $placeholder = $item['placeholder'];
         }
 
-       $field = '<input type="text" name="'.esc_attr($item['name']).'" '.($item['required'] == 'required' ? 'required' : '').' placeholder="'.esc_attr($placeholder).'" class="%s"  '.(isset($rule) ? $rule : '').'  '.$error_label.'/>';
+        $value = '';
+        if(isset($_POST[$item['name']])){
+            $value = sanitize_text_field(wp_unslash($_POST[$item['name']]));
+        }
+
+       $field = '<input type="text" name="'.esc_attr($item['name']).'" '.($item['required'] == 'required' ? 'required' : '').' placeholder="'.esc_attr($placeholder).'" class="%s" value="'.(isset($value) ? esc_attr($value) : '').'" '.(isset($rule) ? $rule : '').'  '.$error_label.'/>';
 
        $this->{$this->template}($field, $item);
     }
@@ -206,7 +211,12 @@ class class_pisol_form{
             $placeholder = $item['placeholder'];
         }
 
-        $field = '<input type="email" name="'.$item['name'].'" '.($item['required'] == 'required' ? 'required' : '').' placeholder="'.esc_attr($placeholder).'" class="%s"  '.$error_label.'/>';
+        $value = '';
+        if(isset($_POST[$item['name']])){
+            $value = sanitize_text_field(wp_unslash($_POST[$item['name']]));
+        }
+
+        $field = '<input type="email" name="'.$item['name'].'" '.($item['required'] == 'required' ? 'required' : '').' placeholder="'.esc_attr($placeholder).'" class="%s" value="'.(isset($value) ? esc_attr($value) : '').'" '.$error_label.'/>';
  
         $this->{$this->template}($field, $item);
     }
@@ -226,7 +236,12 @@ class class_pisol_form{
             $placeholder = $item['placeholder'];
         }
 
-        $field = '<textarea name="'.$item['name'].'" '.($item['required'] == 'required' ? 'required' : '').' placeholder="'.esc_attr($placeholder).'" class="%s" '.$error_label.'></textarea>';
+        $value = '';
+        if(isset($_POST[$item['name']])){
+            $value = sanitize_textarea_field(wp_unslash($_POST[$item['name']]));
+        }
+
+        $field = '<textarea name="'.$item['name'].'" '.($item['required'] == 'required' ? 'required' : '').' placeholder="'.esc_attr($placeholder).'" class="%s" '.$error_label.'>'.(isset($value) ? esc_textarea($value) : '').'</textarea>';
  
         $this->{$this->template}($field, $item);
      }

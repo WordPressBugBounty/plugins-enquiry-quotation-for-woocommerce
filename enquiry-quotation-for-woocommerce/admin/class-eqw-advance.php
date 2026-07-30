@@ -42,27 +42,38 @@ class Class_Pi_Eqw_Advance{
 
             array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Advance option', 'type'=>'setting_category'),
             
-            array('field'=>'pi_eqw_remove_add_to_cart2', 'label'=>__('Remove add to cart button','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>'hide-if-enquiry',   'desc'=>__('This will remove the add to cart button from website<br>Dont Hide<br>Hide for All Products<br>Hide for product which has enquiry enabled','pisol-enquiry-quotation-woocommerce'), 'value'=>array('hide-if-enquiry'=>__('Hide if enquiry enabled','pisol-enquiry-quotation-woocommerce')), 'pro'=>true),
 
             array('field'=>'pi_eqw_hide_price', 'label'=>__('Hide price','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>'no',   'desc'=>__('This will hide the price based on the selections, If price is hidden then the add to cart button will also be hidden','pisol-enquiry-quotation-woocommerce'), 'value'=>array('no'=>__('Don\'t hide','pisol-enquiry-quotation-woocommerce'), 'all'=>__('Hide for all','pisol-enquiry-quotation-woocommerce'), 'guest'=>__('Hide for non log-in users','pisol-enquiry-quotation-woocommerce'))),
+
+            array('field'=>'pi_eqw_cart_table_design', 'label'=>__('Enquiry Cart Table Design','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=> 'enquiry-cart-content-table-1', 'value'=>array('enquiry-cart-content-table'=> 'Classic design', 'enquiry-cart-content-table-1' =>'Design 1'),  'desc'=>__('Choose the design for the enquiry cart table.','pisol-enquiry-quotation-woocommerce')),
+
+             array('field'=>'pi_eqw_enquiry_cart', 'label'=>__('Select the page where to show the enquiry cart','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>0, 'value'=>$this->pages(),  'desc'=>__('Enquiry button position on shop / category page, If you make some other page as Enquiry make sure to put the short code <strong>[pisol_enquiry_cart]</strong> on that page','pisol-enquiry-quotation-woocommerce')),
+
+              array('field'=>'pi_eqw_redirect_to_enquiry_cart', 'label'=>__('Redirect WooCommerce cart and checkout page to enquiry cart page','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will redirect all the traffic on cart and checkout page to enquiry cart page','pisol-enquiry-quotation-woocommerce')),
+
+              array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Webhook Integration",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
+
+            array('field'=>'pi_eqw_webhook_url', 'label'=>__('Webhook url','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>'',   'desc'=>__('Insert webhook url where the enquiry data will send, you can insert webhook url of zapier or Pabbly or any other platform that support webhook url','pisol-enquiry-quotation-woocommerce')),
+
+
+            array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Pro options",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
+
+             array('field'=>'pi_eqw_remove_add_to_cart2', 'label'=>__('Remove add to cart button','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>'hide-if-enquiry',   'desc'=>__('This will remove the add to cart button from website<br>Dont Hide<br>Hide for All Products<br>Hide for product which has enquiry enabled','pisol-enquiry-quotation-woocommerce'), 'value'=>array('hide-if-enquiry'=>__('Hide if enquiry enabled','pisol-enquiry-quotation-woocommerce')), 'pro'=>true),
 
             array('field'=>'pi_eqw_hide_price_in_cart', 'label'=>__('Remove price columns from the enquiry cart and enquiry emails','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will remove the price columns from the cart page and enquiry emails','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
             array('field'=>'pi_eqw_hide_message_in_cart_1', 'label'=>__('Remove product specific message columns from the enquiry cart and enquiry emails','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will remove the message columns from the cart page and enquiry emails','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
             
-            array('field'=>'pi_eqw_enquiry_cart', 'label'=>__('Select the page where to show the enquiry cart','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>0, 'value'=>$this->pages(),  'desc'=>__('Enquiry button position on shop / category page, If you make some other page as Enquiry make sure to put the short code <strong>[pisol_enquiry_cart]</strong> on that page','pisol-enquiry-quotation-woocommerce')),
+           
 
-            array('field'=>'pi_eqw_redirect_to_enquiry_cart', 'label'=>__('Redirect WooCommerce cart and checkout page to enquiry cart page','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will redirect all the traffic on cart and checkout page to enquiry cart page','pisol-enquiry-quotation-woocommerce')),
+           
 
             array('field'=>'pi_eqw_success_message', 'label'=>__('Success message shown on form submission','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>__('Enquiry submitted', 'pisol-enquiry-quotation-woocommerce'),   'desc'=>__('This is the message that is shown on successful submission of the enquiry','pisol-enquiry-quotation-woocommerce'),'pro'=>true),
 
             array('field'=>'pi_eqw_redirect_to_form', 'label'=>__('After Add to enquiry click','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=>0, 'value'=>array('0'=> __('Product will be added to enquiry cart only','pisol-enquiry-quotation-woocommerce'), 1 =>__('User will be redirected to enquiry cart page once product is added','pisol-enquiry-quotation-woocommerce'), 'popup'=>__('Enquiry popup will get opened','pisol-enquiry-quotation-woocommerce')),  'desc'=>__('What happen when user click on add to enquiry (Product will be added to the enquiry cart in all the 3 cases),<br>
             Redirect to cart page<br>Open cart page in popup','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
-            array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Webhook Integration",'pisol-enquiry-quotation-woocommerce'), 'type'=>"setting_category"),
-
-            array('field'=>'pi_eqw_webhook_url', 'label'=>__('Webhook url','pisol-enquiry-quotation-woocommerce'),'type'=>'text', 'default'=>'',   'desc'=>__('Insert webhook url where the enquiry data will send, you can insert webhook url of zapier or Pabbly or any other platform that support webhook url','pisol-enquiry-quotation-woocommerce')),
-
+            
             array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Enquiry popup settings','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category', 'pro'=>true),
 
             array('field'=>'pi_eqw_show_products_in_cart_in_popup', 'label'=>__('Show products added to the enquiry cart in the popup','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('Show products added in the inquiry cart in the popup','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),

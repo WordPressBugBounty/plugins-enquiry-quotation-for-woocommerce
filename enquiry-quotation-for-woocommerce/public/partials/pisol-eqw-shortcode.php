@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 //old style 'shop_table shop_table_responsive cart woocommerce-cart-form__contents' 
-$table_style = apply_filters('pisol_eqw_table_style', 'enquiry-cart-content-table');
+$table_style = apply_filters('pisol_eqw_table_style', get_option('pi_eqw_cart_table_design','enquiry-cart-content-table-1'));
 ?>
 <div class="woocommerce" id="pi-enquiry-container">
 <table class="<?php echo esc_attr($table_style); ?>" cellspacing="0">
