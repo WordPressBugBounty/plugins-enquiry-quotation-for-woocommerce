@@ -1,0 +1,318 @@
+.peq-banner,
+.peq-banner div,
+.peq-banner p,
+.peq-banner span,
+.peq-banner a,
+.peq-banner ul,
+.peq-banner li,
+.peq-banner section,
+.peq-banner strong {
+  all: revert;
+  box-sizing: border-box !important;
+}
+
+.peq-banner svg {
+  box-sizing: border-box !important;
+}
+
+.peq-banner {
+  --peq-ink: #0f1b24;
+  --peq-paper: #ffffff;
+  --peq-paper-2: #f6f8f9;
+  --peq-orange: #ff6a3d;
+  --peq-orange-dark: #c9491f;
+  --peq-teal: #0d9488;
+  --peq-teal-dark: #085f57;
+  --peq-purple: #7f54b3;
+  --peq-purple-dark: #4f3272;
+  --peq-gold: #f5a623;
+  --peq-text: #16232c;
+  --peq-text-dim: #64798a;
+  --peq-border: #e7ecf0;
+
+  display: block !important;
+  width: 320px !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  background: var(--peq-paper) !important;
+  border: 1px solid var(--peq-border) !important;
+  box-shadow: 0 12px 28px -14px rgba(15, 27, 36, 0.28) !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: var(--peq-text) !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+}
+
+.peq-banner .peq-head {
+  display: block !important;
+  background: var(--peq-ink) !important;
+  padding: 22px 20px 18px !important;
+  text-align: center !important;
+}
+
+.peq-banner .peq-stars {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+}
+
+.peq-banner .peq-stars svg {
+  display: block !important;
+  width: 17px !important;
+  height: 17px !important;
+  flex: none !important;
+}
+
+.peq-banner .peq-stars svg path {
+  fill: var(--peq-gold) !important;
+}
+
+.peq-banner .peq-trust {
+  display: block !important;
+  margin: 0 0 3px !important;
+  padding: 0 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+}
+
+.peq-banner .peq-trust strong {
+  font-weight: 700 !important;
+  color: #ff9166 !important;
+}
+
+.peq-banner .peq-rating {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #a9bac4 !important;
+}
+
+.peq-banner .peq-rating strong {
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.peq-banner .peq-body {
+  display: block !important;
+  background: var(--peq-paper) !important;
+  padding: 20px 20px 4px !important;
+}
+
+.peq-banner .peq-section {
+  display: block !important;
+  margin: 0 0 20px !important;
+  padding: 0 0 20px !important;
+  border-bottom: 1px solid var(--peq-border) !important;
+}
+
+.peq-banner .peq-section:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+.peq-banner .peq-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin: 0 0 12px !important;
+  padding: 5px 12px !important;
+  border-radius: 999px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  font-family: inherit !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.4px !important;
+  line-height: 1.6 !important;
+}
+
+.peq-banner .peq-tag svg {
+  display: block !important;
+  width: 13px !important;
+  height: 13px !important;
+  flex: none !important;
+}
+
+.peq-banner .peq-tag-orange {
+  background: #ffe4d9 !important;
+  color: var(--peq-orange-dark) !important;
+}
+.peq-banner .peq-tag-orange svg path { fill: var(--peq-orange-dark) !important; }
+
+.peq-banner .peq-tag-teal {
+  background: #d3f2ee !important;
+  color: var(--peq-teal-dark) !important;
+}
+.peq-banner .peq-tag-teal svg path { fill: var(--peq-teal-dark) !important; }
+
+.peq-banner .peq-tag-purple {
+  background: #eae1f7 !important;
+  color: var(--peq-purple-dark) !important;
+}
+.peq-banner .peq-tag-purple svg path { fill: var(--peq-purple-dark) !important; }
+
+.peq-banner .peq-section ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 9px !important;
+}
+
+.peq-banner .peq-section li {
+  position: relative !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 0 0 20px !important;
+  font-size: 13.5px !important;
+  font-weight: 400 !important;
+  font-family: inherit !important;
+  line-height: 1.4 !important;
+  color: var(--peq-text) !important;
+  list-style: none !important;
+  background: none !important;
+}
+
+.peq-banner .peq-section li::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 1px !important;
+  top: 4px !important;
+  width: 9px !important;
+  height: 5px !important;
+  border-left: 2px solid var(--peq-orange) !important;
+  border-bottom: 2px solid var(--peq-orange) !important;
+  border-top: none !important;
+  border-right: none !important;
+  background: none !important;
+  border-radius: 0 !important;
+  transform: rotate(-45deg) !important;
+}
+
+.peq-banner .peq-foot {
+  display: block !important;
+  background: var(--peq-paper-2) !important;
+  padding: 26px 20px 20px !important;
+  text-align: center !important;
+}
+
+.peq-banner .peq-ticket {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: baseline !important;
+  gap: 2px !important;
+  margin: 0 0 -12px !important;
+  padding: 9px 20px 9px 28px !important;
+  background: var(--peq-orange) !important;
+  border-radius: 6px 14px 14px 6px !important;
+  transform: rotate(-4deg) !important;
+  box-shadow: 0 8px 16px -6px rgba(255, 106, 61, 0.55) !important;
+}
+
+.peq-banner .peq-ticket::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 9px !important;
+  top: 50% !important;
+  width: 9px !important;
+  height: 9px !important;
+  margin-top: -4.5px !important;
+  background: var(--peq-paper-2) !important;
+  border-radius: 50% !important;
+}
+
+.peq-banner .peq-ticket-currency {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #ffe9df !important;
+}
+
+.peq-banner .peq-ticket-amount {
+  font-size: 25px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  font-family: inherit !important;
+  line-height: 1 !important;
+}
+
+.peq-banner .peq-ticket-word {
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: #ffe9df !important;
+  margin-left: 2px !important;
+}
+
+.peq-banner .peq-btn {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 15px 16px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  background: var(--peq-ink) !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  font-family: inherit !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  letter-spacing: 0.1px !important;
+  line-height: 1.2 !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition: transform 0.15s ease, background 0.15s ease !important;
+}
+
+.peq-banner .peq-btn svg {
+  display: block !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none !important;
+}
+
+.peq-banner .peq-btn svg path {
+  fill: var(--peq-orange) !important;
+}
+
+.peq-banner .peq-btn:hover {
+  background: #1b2e3b !important;
+  transform: translateY(-1px) !important;
+  color: #ffffff !important;
+}
+
+.peq-banner .peq-btn:visited {
+  color: #ffffff !important;
+}
+
+.peq-banner .peq-btn:focus-visible {
+  outline: 2px solid var(--peq-orange) !important;
+  outline-offset: 3px !important;
+}
+
+@media (max-width: 360px) {
+  .peq-banner {
+    width: 100% !important;
+  }
+  .peq-banner .peq-ticket-amount {
+    font-size: 22px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peq-banner .peq-btn {
+    transition: none !important;
+  }
+}

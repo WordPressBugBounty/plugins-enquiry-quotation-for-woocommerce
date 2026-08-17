@@ -51,6 +51,9 @@ class Pi_Eqw_Menu{
         wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/pisol-enquiry-quotation-woocommerce-admin.js', array( 'jquery' ), $this->version, false );
 
         wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pisol-enquiry-quotation-woocommerce-admin.css', array(), $this->version, 'all' );
+
+        wp_enqueue_style( $this->plugin_name.'_promotion', plugin_dir_url( __FILE__ ) . 'css/promotion.css', array(), $this->version, 'all' );
+
 		
 	}
 
@@ -104,45 +107,81 @@ class Pi_Eqw_Menu{
     function promotion(){
         if(isset($_GET['tab']) &&  $_GET['tab'] == 'form_control') return;
         ?>
-        <div class="col-12 col-sm-12 col-md-4 pt-3 border-left">
-            <div class="pi-shadow px-3 py-3 rounded">
-                <h2 id="pi-banner-tagline" class="mb-0 mt-3" style="color:#ccc !important;">
-                        <span class="d-block mb-4">⭐️⭐️⭐️⭐️⭐️</span>
-                        <span class="d-block mb-2">🚀 Trusted by <span style="color:#fff;">2,000+</span> WooCommerce Stores</span>
-                        <span class="d-block mb-2">Rated <span style="color:#fff;">4.9/5</span> – Users love it</span>
-                </h2>
-                <div class="inside">
-                    <ul class="text-left pisol-pro-feature-list mb-3 mt-3">
-                        <li class="h6 font-weight-bold"><b>🔧 Advanced Controls</b></li>
-                        <li class="h6">✓ Disable enquiry by product category</li>
-                        <li class="h6">✓ Show enquiry only when product is out of stock</li>
-                        <li class="h6">✓ Change button position on product pages</li>
-                        <li class="h6">✓ Remove Add to Cart to get only enquiries</li>
-                        <li class="h6">✓ Product manager to receive product enquiries</li>
-                    </ul>
-                    <ul class="text-left pisol-pro-feature-list mb-3">
-                        <li class="h6 font-weight-bold mt-3"><b>💬 Smart Communication</b></li>
-                        <li class="h6">✓ Custom messages in customer/admin emails</li>
-                        <li class="h6">✓ Support multiple admin emails</li>
-                        <li class="h6">✓ Accept terms before submitting enquiry</li>
-                        <li class="h6">✓ Fully customize enquiry fields & labels</li>
-                    </ul>
-                    <ul class="text-left pisol-pro-feature-list mb-3">
-                        <li class="h6 font-weight-bold mt-3"><b>🛒 Enquiry Cart Boost</b></li>
-                        <li class="h6">✓ Dynamic enquiry cart with popup support</li>
-                        <li class="h6">✓ Shortcode to show enquiry cart</li>
-                        <li class="h6">✓ Show submitted enquiries in My Account</li>
-                        <li class="h6">✓ Get instant alerts in Telegram</li>
-                    </ul>
-                    <h4 class="pi-bottom-banner">💰 <?php echo esc_html(PI_EQW_PRICE); ?> <small>only</small></h4>
-                    <div class="text-center">
-                    <a class="btn btn-primary btn-lg mb-3" href="<?php echo esc_url( PI_EQW_BUY_URL ); ?>" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
+        <div class="col-12 col-sm-12 col-md-3 pt-3 border-left">
+            <!-- Pisol Enquiry Quote — Pro Upsell Side Banner -->
+            <div class="peq-banner">
+
+                <div class="peq-head">
+                    <div class="peq-stars" aria-label="Rated 5 out of 5 stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7-5.4-4.7 7.1-.6z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7-5.4-4.7 7.1-.6z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7-5.4-4.7 7.1-.6z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7-5.4-4.7 7.1-.6z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L5.7 21l1.7-7-5.4-4.7 7.1-.6z"/></svg>
                     </div>
+                    <p class="peq-trust">Trusted by <strong>2,000+</strong> WooCommerce Stores</p>
+                    <p class="peq-rating">Rated <strong>4.9/5</strong> — Users love it</p>
                 </div>
+
+                <div class="peq-body">
+
+                    <section class="peq-section">
+                    <span class="peq-tag peq-tag-orange">
+                        <svg viewBox="0 0 24 24"><path d="M21.7 15.9l-3.1-3.1a5 5 0 00-6.4-6.4L9 9.6 3.9 4.5 2.5 5.9 7.6 11l-3.2 3.2a5 5 0 006.4 6.4l3.1-3.1 3.2 3.2 1.4-1.4-3.2-3.2z"/></svg>
+                        Advanced controls
+                    </span>
+                    <ul>
+                        <li>Disable enquiry by product category</li>
+                        <li>Show enquiry only when product is out of stock</li>
+                        <li>Change button position on product pages</li>
+                        <li>Remove Add to Cart to get only enquiries</li>
+                        <li>Product manager to receive product enquiries</li>
+                    </ul>
+                    </section>
+
+                    <section class="peq-section">
+                    <span class="peq-tag peq-tag-teal">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v9a2 2 0 01-2 2H9l-5 4v-4a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+                        Smart communication
+                    </span>
+                    <ul>
+                        <li>Custom messages in customer/admin emails</li>
+                        <li>Support multiple admin emails</li>
+                        <li>Accept terms before submitting enquiry</li>
+                        <li>Fully customize enquiry fields &amp; labels</li>
+                    </ul>
+                    </section>
+
+                    <section class="peq-section">
+                    <span class="peq-tag peq-tag-purple">
+                        <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 8.5a2 2 0 01-2 1.5H8.5a2 2 0 01-2-1.6L4.3 3H1V1h4.3a1 1 0 011 .8L6 6zM8 20a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm9 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/></svg>
+                        Enquiry cart boost
+                    </span>
+                    <ul>
+                        <li>Dynamic enquiry cart with popup support</li>
+                        <li>Shortcode to show enquiry cart</li>
+                        <li>Show submitted enquiries in My Account</li>
+                        <li>Get instant alerts in Telegram</li>
+                    </ul>
+                    </section>
+
+                </div>
+
+                <div class="peq-foot">
+                    <div class="peq-ticket">
+                    <span class="peq-ticket-amount"><?php echo esc_html(PI_EQW_PRICE); ?></span>
+                    <span class="peq-ticket-word">only</span>
+                    </div>
+                    <a href="<?php echo esc_url( PI_EQW_PRODUCT_PAGE_URL ); ?>" class="peq-btn" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M6 10V8a6 6 0 1112 0v2h1a1 1 0 011 1v9a1 1 0 01-1 1H5a1 1 0 01-1-1v-9a1 1 0 011-1h1zm2 0h8V8a4 4 0 00-8 0v2z"/></svg>
+                    Unlock the full potential
+                    </a>
+                </div>
+
             </div>
 
             <div class="bg-primary  text-center my-3">
-                <a class="" href="<?php echo esc_url( PI_EQW_BUY_URL ); ?>" target="_blank">
+                <a class="" href="<?php echo esc_url( PI_EQW_PRODUCT_PAGE_URL ); ?>" target="_blank">
                 <?php new pisol_promotion('pisol_enquiry_installation_date'); ?>
                 </a>
             </div>
