@@ -42,7 +42,8 @@
 					add_to_enquiry.sendData(this);
 				});
 
-				$(document).on('click', '.pi-remove-product', function () {
+				$(document).on('click', '.pi-remove-product', function (event) {
+					event.preventDefault();
 					var hash = $(this).data('id');
 					add_to_enquiry.removeProduct(hash);
 				});

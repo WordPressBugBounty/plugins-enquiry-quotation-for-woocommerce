@@ -18,7 +18,7 @@
                     ) ); ?></div>
                 </div>
                 <div class="remove">
-                    <a href="javascript:void(0)" data-id="<?php echo esc_attr($key); ?>" class="remove pi-remove-product" title="<?php esc_attr_e('Remove this item','pisol-enquiry-quotation-woocommerce'); ?>"><img src="<?php echo esc_url( plugin_dir_url( __DIR__ ) . 'img/remove.svg' ); ?>" alt="<?php esc_attr_e( 'Remove', 'pisol-enquiry-quotation-woocommerce' ); ?>" class="remove"></a>
+                    <a href="#" data-id="<?php echo esc_attr($key); ?>" class="remove pi-remove-product" title="<?php esc_attr_e('Remove this item','pisol-enquiry-quotation-woocommerce'); ?>"><img src="<?php echo esc_url( plugin_dir_url( __DIR__ ) . 'img/remove.svg' ); ?>" alt="<?php esc_attr_e( 'Remove', 'pisol-enquiry-quotation-woocommerce' ); ?>" class="remove"></a>
                 </div>
             </div>
         <?php endforeach; ?>

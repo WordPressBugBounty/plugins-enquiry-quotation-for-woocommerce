@@ -443,7 +443,7 @@ label.error{
 .enquiry-cart-content-table-1 th {
     text-align: center;
     padding: 16px 12px;
-    background: transparent;
+    background: transparent !important;
     color: #ffffff;
     font-weight: 600;
     font-size: 13px;
@@ -482,13 +482,13 @@ label.error{
     padding: 16px 8px !important;
 }
 
-.enquiry-cart-content-table-1 .pi-remove-product {
+.enquiry-cart-content-table-1 a.remove.pi-remove-product {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: #fee;
+    background: transparent !important;
     color: #e74c3c;
     border: none;
     border-radius: 6px;
@@ -499,9 +499,9 @@ label.error{
     text-decoration: none !important;
 }
 
-.enquiry-cart-content-table-1 .pi-remove-product:hover {
-    background: #e74c3c;
-    color: #ffffff;
+.enquiry-cart-content-table-1 a.remove.pi-remove-product:hover {
+    background: transparent !important;
+    color: #df6254 !important;
     transform: scale(1.1);
 }
 

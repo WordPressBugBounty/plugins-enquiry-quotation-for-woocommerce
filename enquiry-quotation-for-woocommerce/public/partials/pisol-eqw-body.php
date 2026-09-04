@@ -15,7 +15,7 @@ function pisol_table_row($products){
             ?>
         <tr class="woocommerce-cart-form__cart-item" id="<?php echo esc_attr( $key ); ?>">
             <td class="product-remove">
-                <a href="javascript:void(0)" class="remove pi-remove-product"  data-id="<?php echo esc_attr( $key ); ?>">&times;</a>
+                <a href="#" class="remove pi-remove-product"  data-id="<?php echo esc_attr( $key ); ?>">&times;</a>
                 <input type="hidden" name="products[<?php echo esc_attr( $key ); ?>][id]" value="<?php echo esc_attr( $product['id'] ); ?>"/>
             </td>
             <td class="product-thumbnail pi-thumbnail">

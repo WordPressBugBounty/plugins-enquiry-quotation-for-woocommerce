@@ -1,0 +1,535 @@
+/**
+ * Admin - Enquiry Detail - Material 3 inspired
+ * Modern, clean, card-based layout for #pisol_enquiry_detail
+ */
+
+/* --- Design tokens --- */
+#pisol_enquiry_detail {
+    --pi-primary: var(--pisol-primary-color, #ee6443);
+    --pi-primary-hover: var(--pisol-primary-color, #ee6443);
+    --pi-primary-container: #e8f0fe;
+    --pi-on-primary-container: #174ea6;
+    --pi-surface: #ffffff;
+    --pi-surface-container: #f8f9fb;
+    --pi-surface-container-high: #f1f3f4;
+    --pi-outline: #dadce0;
+    --pi-outline-variant: #e8eaed;
+    --pi-on-surface: #202124;
+    --pi-on-surface-variant: #5f6368;
+    --pi-radius-xl: 16px;
+    --pi-radius-lg: 12px;
+    --pi-radius-md: 10px;
+    --pi-radius-pill: 999px;
+    --pi-shadow-sm: 0 1px 2px rgba(60, 64, 67, .08), 0 1px 3px rgba(60, 64, 67, .12);
+    --pi-shadow-md: 0 1px 3px rgba(60, 64, 67, .10), 0 4px 12px rgba(60, 64, 67, .12);
+}
+
+/* --- Postbox shell --- */
+#pisol_enquiry_detail {
+    border: 1px solid var(--pi-outline-variant) !important;
+    border-radius: var(--pi-radius-xl) !important;
+    overflow: hidden !important;
+    background: var(--pi-surface) !important;
+    box-shadow: var(--pi-shadow-md) !important;
+}
+
+#pisol_enquiry_detail .postbox-header {
+    display: none !important;
+}
+#pisol_enquiry_detail .handlediv,
+#pisol_enquiry_detail .hndle {
+    display: none !important;
+}
+#pisol_enquiry_detail .inside {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* --- Container --- */
+.pisol-enquiry-detail-container {
+    padding: 28px 28px 24px;
+    font-family: "Google Sans", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--pi-on-surface);
+    background: var(--pi-surface);
+}
+
+/* --- Title: Enquiry #xxx --- */
+#pisol_enquiry_detail h2 {
+    margin: 0 !important;
+    font-family: inherit !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--pi-on-surface) !important;
+    text-shadow: none !important;
+    padding: 0 0 2px 14px !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 28px;
+}
+#pisol_enquiry_detail h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 22px;
+    background: var(--pi-primary);
+    border-radius: var(--pi-radius-pill);
+}
+
+/* subtle ID pill feeling - if number is inside h2 we can't split, so add decorative icon on right */
+#pisol_enquiry_detail h2::after {
+    content: "\f465";
+    font-family: "dashicons";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    width: 36px;
+    height: 36px;
+    background: var(--pi-primary-container);
+    color: var(--pi-primary);
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    /* fallback if dashicons not loaded - show ● */
+}
+
+/* --- Divider --- */
+.pisol-enquiry-detail-container > hr {
+    border: 0 !important;
+    height: 1px !important;
+    background: var(--pi-outline-variant) !important;
+    margin: 18px 0 22px !important;
+}
+
+/* --- Section headings --- */
+#pisol_enquiry_detail h3 {
+    margin: 0 0 14px !important;
+    font-family: inherit !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: var(--pi-on-surface-variant) !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#pisol_enquiry_detail h3::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--pi-primary);
+    box-shadow: 0 0 0 6px var(--pi-primary-container);
+    flex-shrink: 0;
+}
+
+/* --- Personal Detail: card grid --- */
+#pisol_enquiry_detail table {
+    width: 100%;
+}
+#pisol_enquiry_detail .pi-personal-detail {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100%;
+}
+#pisol_enquiry_detail .pi-personal-detail tbody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+#pisol_enquiry_detail .pi-personal-detail tr {
+    display: contents;
+}
+#pisol_enquiry_detail .pi-personal-detail td {
+    width: auto !important;
+    padding: 14px 16px !important;
+    background: var(--pi-surface-container);
+    border: 1px solid var(--pi-outline-variant);
+    border-radius: var(--pi-radius-lg);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--pi-on-surface);
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    word-break: break-word;
+}
+#pisol_enquiry_detail .pi-personal-detail td:hover {
+    background: #fff;
+    border-color: var(--pi-outline);
+    box-shadow: var(--pi-shadow-sm);
+}
+#pisol_enquiry_detail .pi-personal-detail td[colspan="2"] {
+    grid-column: 1 / -1;
+}
+/* full-width message cell - a bit taller, dashed when empty */
+#pisol_enquiry_detail .pi-personal-detail td[colspan="2"]:empty,
+#pisol_enquiry_detail .pi-personal-detail td[colspan="2"]:has(strong:only-child) {
+    min-height: 56px;
+}
+
+#pisol_enquiry_detail .pi-personal-detail td strong {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pi-on-surface-variant);
+    margin-right: 6px;
+    vertical-align: middle;
+}
+#pisol_enquiry_detail .pi-personal-detail td a {
+    color: var(--pi-primary);
+    font-weight: 500;
+    text-decoration: none;
+    word-break: break-all;
+    border-bottom: 1px solid transparent;
+    transition: color 150ms ease, border-color 150ms ease;
+}
+#pisol_enquiry_detail .pi-personal-detail td a:hover {
+    color: var(--pi-primary-hover);
+    border-bottom-color: currentColor;
+}
+
+/* Message label + content */
+#pisol_enquiry_detail .pi-personal-detail td[colspan="2"] strong + br,
+#pisol_enquiry_detail .pi-personal-detail td[colspan="2"] strong {
+    /* keep inline */
+}
+
+/* --- Product Detail Table - elevated card --- */
+.pi-product-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border: 1px solid var(--pi-outline-variant);
+    border-radius: var(--pi-radius-lg);
+    overflow: hidden;
+    background: var(--pi-surface);
+    box-shadow: var(--pi-shadow-sm);
+}
+
+.pi-product-table thead {
+    background: var(--pi-surface-container) !important;
+    color: var(--pi-on-surface) !important;
+}
+.pi-product-table thead tr th {
+    background: transparent !important;
+    color: var(--pi-on-surface-variant) !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.07em !important;
+    text-transform: uppercase !important;
+    padding: 13px 16px !important;
+    text-align: left !important;
+    border-bottom: 1px solid var(--pi-outline-variant) !important;
+    white-space: nowrap;
+}
+.pi-product-table thead th.pi-img-col {
+    width: 84px !important;
+    text-align: center !important;
+}
+
+.pi-product-table td {
+    padding: 16px 16px !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--pi-on-surface);
+    border-bottom: 1px solid #f1f3f4 !important;
+    background: #fff;
+    transition: background 150ms ease;
+}
+.pi-product-table tbody tr:last-child td {
+    border-bottom: 0 !important;
+}
+.pi-product-table tbody tr:hover td {
+    background: #f8f9ff !important;
+}
+
+.pi-product-table td.pi-thumb-col {
+    text-align: center !important;
+    width: 84px;
+}
+.pi-thumb {
+    max-width: 56px !important;
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 12px !important;
+    border: 1px solid var(--pi-outline-variant);
+    background: var(--pi-surface-container);
+    box-shadow: 0 1px 3px rgba(60, 64, 67, .12);
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.pi-product-table a:hover .pi-thumb {
+    transform: scale(1.04);
+    box-shadow: 0 2px 8px rgba(60, 64, 67, .18);
+}
+
+/* Product name link */
+.pi-product-table td:nth-child(2) a {
+    color: var(--pi-on-surface);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1.3;
+}
+.pi-product-table td:nth-child(2) a:hover {
+    color: var(--pi-primary);
+}
+.pi-product-table td:nth-child(2) br + strong {
+    margin-top: 6px;
+    display: inline-block;
+}
+.pi-product-table td:nth-child(2) strong {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--pi-on-surface-variant);
+    font-weight: 700;
+}
+.pi-product-table td:nth-child(2) span {
+    font-size: 13px;
+    color: var(--pi-on-surface);
+}
+
+/* Price & Quantity - pill emphasis */
+.pi-product-table td.pi-bold {
+    font-weight: 700 !important;
+    letter-spacing: -0.01em;
+}
+.pi-product-table td:nth-child(3).pi-bold {
+    color: var(--pi-on-surface) !important;
+    font-weight: 700 !important;
+    white-space: nowrap;
+}
+.pi-product-table td:nth-child(4).pi-bold {
+    text-align: center !important;
+}
+.pi-product-table td:nth-child(4).pi-bold {
+    /* quantity pill - use background via inline flex trick with pseudo not possible, so style text as pill-like by adding bg on the td content wrapper via? fallback: center pill text */
+}
+.pi-product-table tbody td:nth-child(4) {
+    font-weight: 700 !important;
+    color: var(--pi-on-primary-container) !important;
+}
+.pi-product-table tbody td:nth-child(4)::after {
+    /* keep for spacing - no content */
+}
+
+/* Make quantity look like a chip - wrap number visually */
+.pi-product-table td.pi-bold:nth-child(4) {
+    /* chip */
+}
+@media (min-width: 600px) {
+    .pi-product-table td:nth-child(4) {
+        /* visual pill */
+        position: relative;
+    }
+}
+
+/* Message column muted */
+.pi-product-table td:last-child {
+    color: var(--pi-on-surface-variant);
+    font-size: 13px;
+    max-width: 220px;
+    word-break: break-word;
+}
+.pi-product-table td:last-child:empty::before {
+    content: "—";
+    color: #9aa0a6;
+}
+
+/* Zebra - remove old grey, use subtle */
+.pi-product-table tr:nth-child(2n) {
+    background-color: transparent !important;
+}
+.pi-product-table tr:nth-child(2n) td {
+    background: #fff;
+}
+.pi-product-table tbody tr:nth-child(2n):hover td {
+    background: #f8f9ff !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: 782px) {
+    .pisol-enquiry-detail-container {
+        padding: 16px;
+        overflow: hidden; /* prevent any table overflow from page */
+    }
+    #pisol_enquiry_detail .pi-personal-detail tbody {
+        grid-template-columns: 1fr;
+    }
+
+    /* Product table becomes stacked material cards - no cutoff */
+    .pi-product-table {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+        box-sizing: border-box;
+    }
+    .pi-product-table thead {
+        display: none !important;
+    }
+    .pi-product-table tbody {
+        display: grid !important;
+        gap: 12px;
+        width: 100% !important;
+    }
+    .pi-product-table tr {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+        background: #fff !important;
+        border: 1px solid var(--pi-outline-variant) !important;
+        border-radius: var(--pi-radius-lg) !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        box-shadow: var(--pi-shadow-sm);
+    }
+    .pi-product-table td {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 11px 14px !important;
+        border-bottom: 1px solid #f1f3f4 !important;
+        text-align: left !important;
+        font-size: 13px !important;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        background: #fff !important;
+    }
+    .pi-product-table tbody tr:last-child td:last-child,
+    .pi-product-table td:last-child {
+        border-bottom: 0 !important;
+    }
+    .pi-product-table tbody tr:hover td {
+        background: #fff !important;
+    }
+    .pi-product-table td::before {
+        content: "";
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--pi-on-surface-variant);
+        flex-shrink: 0;
+        flex-basis: 88px;
+        max-width: 88px;
+        padding-top: 2px;
+        line-height: 1.3;
+    }
+    /* labels via nth-child - no data-label attr needed */
+    .pi-product-table td:nth-child(1)::before { display: none; }
+    .pi-product-table td:nth-child(2)::before { content: "Product"; }
+    .pi-product-table td:nth-child(3)::before { content: "Price"; }
+    .pi-product-table td:nth-child(4)::before { content: "Quantity"; }
+    .pi-product-table td:nth-child(5)::before { content: "Message"; }
+
+    /* image row - full width header of card */
+    .pi-product-table td.pi-thumb-col {
+        justify-content: flex-start !important;
+        align-items: center !important;
+        background: var(--pi-surface-container) !important;
+        border-bottom: 1px solid var(--pi-outline-variant) !important;
+        padding: 12px 14px !important;
+    }
+    .pi-product-table td.pi-thumb-col::before {
+        display: none !important;
+        content: none !important;
+    }
+    .pi-product-table td.pi-thumb-col a {
+        display: inline-flex;
+    }
+
+    /* value side takes remaining space and right-aligns where appropriate */
+    .pi-product-table td > a,
+    .pi-product-table td > span,
+    .pi-product-table td.pi-bold {
+        flex: 1;
+        min-width: 0;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+    .pi-product-table td:nth-child(3),
+    .pi-product-table td:nth-child(4) {
+        align-items: center;
+    }
+    .pi-product-table td:nth-child(3).pi-bold,
+    .pi-product-table td:nth-child(4).pi-bold {
+        text-align: right !important;
+        justify-content: space-between;
+    }
+
+    /* product name + variation stacks nicely */
+    .pi-product-table td:nth-child(2) {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+    }
+    .pi-product-table td:nth-child(2) > a,
+    .pi-product-table td:nth-child(2) {
+        flex-wrap: wrap;
+    }
+    /* message cell - label on top, value below so long text never cuts */
+    .pi-product-table td:nth-child(5) {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+    }
+    .pi-product-table td:nth-child(5)::before {
+        flex-basis: auto;
+        max-width: none;
+    }
+    .pi-product-table td:last-child {
+        max-width: none !important;
+    }
+    .pi-product-table td:nth-child(5):empty::before {
+        margin-bottom: 0;
+    }
+
+    /* ensure thumb never overflows */
+    .pi-thumb {
+        max-width: 48px !important;
+        width: 48px !important;
+        height: 48px !important;
+    }
+}
+
+/* --- Polish: focus & selection --- */
+#pisol_enquiry_detail a:focus-visible {
+    outline: 2px solid var(--pi-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* --- Optional: empty table state --- */
+.pi-product-table tbody:empty::after {
+    content: "No products in this enquiry";
+    display: block;
+    padding: 24px;
+    text-align: center;
+    color: var(--pi-on-surface-variant);
+    font-size: 13px;
+}

@@ -86,7 +86,7 @@ class Class_Pi_Eqw_Form_Control{
     function tab_content(){
         ?>
         <div class="free-version">
-        <img class="img-fluid" src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>img/form-control.png">
+        <img class="pisol-img-fluid" src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>img/form-control.png">
         </div>
        <?php
     }
