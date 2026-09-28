@@ -35,19 +35,11 @@ class Class_Pi_Eqw_Option{
     function init(){
         $this->settings = array(
 
-            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Enable enquiry for specific roles of users only', 'type'=>'setting_category'),
-
-            array('field'=>'pi_eqw_show_enquiry_button_to_role2', 'type'=>'multiselect', 'default'=>array('guest'),'label'=>__('Show enquiry button for user with role', 'pisol-enquiry-quotation-woocommerce'),'desc'=>__('select roles to whom the enquiry button will be shown', 'pisol-enquiry-quotation-woocommerce'), 'value'=>$this->allUserRoles(), 'pro'=>true),
+            
             
             array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Enquiry button on shop / category page','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
 
             array('field'=>'pi_eqw_enquiry_loop', 'label'=>__('Enquiry button on shop / category page', 'pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('This will show enquiry button on loop product like shop, category page', 'pisol-enquiry-quotation-woocommerce')),
-
-            array('field'=>'pi_eqw_enquiry_loop_pro', 'label'=>__('Show button on Variable Product', 'pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will show enquiry button on variable product', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
-
-            array('field'=>'pi_eqw_loop_show_on_out_of_stock_pro', 'label'=>__('Show enquiry option only when product is out of stock', 'pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('On shop / category product page', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
-
-            array('field'=>'pi_eqw_enquiry_loop_position', 'label'=>__('Position on shop/category page', 'pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=> 'woocommerce_after_shop_loop_item', 'value'=>array('woocommerce_after_shop_loop_item'=>__('At the end of product', 'pisol-enquiry-quotation-woocommerce'), 'woocommerce_before_shop_loop_item'=>__('At the start of the product', 'pisol-enquiry-quotation-woocommerce'), 'woocommerce_before_shop_loop_item_title'=>__('Before product title', 'pisol-enquiry-quotation-woocommerce'), 'woocommerce_after_shop_loop_item_title'=>__('After product title', 'pisol-enquiry-quotation-woocommerce')),  'desc'=>__('Enquiry button position on shop / category page','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
 
             array('field'=>'pi_eqw_enquiry_loop_bg_color', 'type'=>'color', 'default'=>'#ee6443','label'=>__('Background color','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Background color of the button on the shop / category page','pisol-enquiry-quotation-woocommerce')),
 
@@ -58,17 +50,19 @@ class Class_Pi_Eqw_Option{
             array('field'=>'pisol_eqw_loop_button_font_size','desc'=>'Enquiry button font size (PX)', 'label'=>__('Enquiry button font size on product page','pisol-enquiry-quotation-woocommerce'),'type'=>'number', 'default'=>'16', 'placeholder'=>'px', 'min'=>12),
 
             array('field'=>'pi_eqw_enquiry_loop_button_text', 'type'=>'text', 'default'=>__('Add to Enquiry','pisol-enquiry-quotation-woocommerce'),'label'=>__('Enquiry button text','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Text shown in the enquiry button','pisol-enquiry-quotation-woocommerce')),
+
+            array('field'=>'pi_eqw_enquiry_loop_pro', 'label'=>__('Show button on Variable Product', 'pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will show enquiry button on variable product', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
+
+            array('field'=>'pi_eqw_loop_show_on_out_of_stock_pro', 'label'=>__('Show enquiry option only when product is out of stock', 'pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('On shop / category product page', 'pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
+
+            array('field'=>'pi_eqw_enquiry_loop_position', 'label'=>__('Position on shop/category page', 'pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=> 'woocommerce_after_shop_loop_item', 'value'=>array('woocommerce_after_shop_loop_item'=>__('At the end of product', 'pisol-enquiry-quotation-woocommerce'), 'woocommerce_before_shop_loop_item'=>__('At the start of the product', 'pisol-enquiry-quotation-woocommerce'), 'woocommerce_before_shop_loop_item_title'=>__('Before product title', 'pisol-enquiry-quotation-woocommerce'), 'woocommerce_after_shop_loop_item_title'=>__('After product title', 'pisol-enquiry-quotation-woocommerce')),  'desc'=>__('Enquiry button position on shop / category page','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
             
 
             array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('Enquiry button on single product page','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
 
             array('field'=>'pi_eqw_enquiry_single', 'label'=>__('Enquiry button on single product page','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>1,   'desc'=>__('This will show enquiry button on single product page','pisol-enquiry-quotation-woocommerce')),
 
-            array('field'=>'pi_eqw_enquiry_single_pro', 'label'=>__('Show button on Variable Product','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will show enquiry button on variable product','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
-
-            array('field'=>'pi_eqw_single_show_on_out_of_stock_pro', 'label'=>__('Show enquiry option Only when product is out of stock','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('On single product page','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
-
-            array('field'=>'pi_eqw_enquiry_single_position', 'label'=>__('Position on single product page','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=> 52, 'value'=> array(4 =>__('Before summary','pisol-enquiry-quotation-woocommerce'), 52 => __('After Summary','pisol-enquiry-quotation-woocommerce'), 36 => __('After add to cart button','pisol-enquiry-quotation-woocommerce'), 29 => __('Before add to cart button','pisol-enquiry-quotation-woocommerce')),  'desc'=>__('Enquiry button position on single product page','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
+           
 
             array('field'=>'pi_eqw_enquiry_single_bg_color', 'type'=>'color', 'default'=>'#ee6443','label'=>__('Background color','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Background color of the button on the shop / category page','pisol-enquiry-quotation-woocommerce')),
 
@@ -79,6 +73,16 @@ class Class_Pi_Eqw_Option{
             array('field'=>'pisol_eqw_button_font_size','desc'=>'Enquiry button font size (PX)', 'label'=>__('Enquiry button font size on product page','pisol-enquiry-quotation-woocommerce'),'type'=>'number', 'default'=>'16', 'placeholder'=>'px', 'min'=>12),
 
             array('field'=>'pi_eqw_enquiry_single_button_text', 'type'=>'text', 'default'=>__('Add to Enquiry','pisol-enquiry-quotation-woocommerce'),'label'=>__('Enquiry button text','pisol-enquiry-quotation-woocommerce'),'desc'=>__('Text shown in the enquiry button','pisol-enquiry-quotation-woocommerce')),
+
+             array('field'=>'pi_eqw_enquiry_single_pro', 'label'=>__('Show button on Variable Product','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('This will show enquiry button on variable product','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
+
+            array('field'=>'pi_eqw_single_show_on_out_of_stock_pro', 'label'=>__('Show enquiry option Only when product is out of stock','pisol-enquiry-quotation-woocommerce'),'type'=>'switch', 'default'=>0,   'desc'=>__('On single product page','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
+
+            array('field'=>'pi_eqw_enquiry_single_position', 'label'=>__('Position on single product page','pisol-enquiry-quotation-woocommerce'),'type'=>'select', 'default'=> 52, 'value'=> array(4 =>__('Before summary','pisol-enquiry-quotation-woocommerce'), 52 => __('After Summary','pisol-enquiry-quotation-woocommerce'), 36 => __('After add to cart button','pisol-enquiry-quotation-woocommerce'), 29 => __('Before add to cart button','pisol-enquiry-quotation-woocommerce')),  'desc'=>__('Enquiry button position on single product page','pisol-enquiry-quotation-woocommerce'), 'pro'=>true),
+
+            array('field'=>'title', 'class'=> 'hide-pro bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>'Enable enquiry for specific roles of users only', 'type'=>'setting_category'),
+
+            array('field'=>'pi_eqw_show_enquiry_button_to_role2', 'type'=>'multiselect', 'default'=>array('guest'),'label'=>__('Show enquiry button for user with role', 'pisol-enquiry-quotation-woocommerce'),'desc'=>__('select roles to whom the enquiry button will be shown', 'pisol-enquiry-quotation-woocommerce'), 'value'=>$this->allUserRoles(), 'pro'=>true),
 
             array('field'=>'title', 'class'=> 'bg-dark opacity-75 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__('If you notice change in enquiry button after upgrading to v2.1.2, then enable the below option to fall back to old way of position','pisol-enquiry-quotation-woocommerce'), 'type'=>'setting_category'),
 
