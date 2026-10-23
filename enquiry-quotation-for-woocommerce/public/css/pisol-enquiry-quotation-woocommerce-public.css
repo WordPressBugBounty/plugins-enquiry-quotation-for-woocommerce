@@ -419,7 +419,7 @@ label.error{
 }
 /* mini cart end */
 
-#pi-enquiry-container:has(#pi-form-submitted-success) .enquiry-cart-content-table{
+#pi-enquiry-container:has(#pi-form-submitted-success) table{
     display:none;
 }
 
