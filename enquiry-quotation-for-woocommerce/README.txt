@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: WooCommerce inquiry, WooCommerce enquiry, WooCommerce catalog, product enquiry for WooCommerce, product inquiry for WooCommerce, request a quote woocommerce
 Requires at least: 5.5
 Tested up to: 7.1
-Stable tag: 2.2.34.63
+Stable tag: 2.2.34.64
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
